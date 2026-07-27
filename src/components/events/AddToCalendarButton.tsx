@@ -40,7 +40,7 @@ export function AddToCalendarButton({
       <button
         type="button"
         onClick={() => setOpen((prev) => !prev)}
-        className="inline-flex items-center gap-2 rounded-xl border-2 border-[#5B2C83]/20 bg-white px-4 py-2 text-sm font-medium text-[#5B2C83] transition-colors hover:bg-[#5B2C83]/5 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#5B2C83] focus-visible:ring-offset-2"
+        className="inline-flex items-center gap-2 rounded-xl border-2 border-[#46A0DC]/20 bg-white px-4 py-2 text-sm font-medium text-[#46A0DC] transition-colors hover:bg-[#46A0DC]/5 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#46A0DC] focus-visible:ring-offset-2"
         aria-expanded={open}
         aria-haspopup="menu"
       >
@@ -52,7 +52,7 @@ export function AddToCalendarButton({
       {open && (
         <ul
           role="menu"
-          className="absolute left-0 z-20 mt-2 min-w-[12rem] overflow-hidden rounded-xl border border-[#5B2C83]/10 bg-white py-1 shadow-lg"
+          className="absolute left-0 z-20 mt-2 min-w-[12rem] overflow-hidden rounded-xl border border-[#46A0DC]/10 bg-white py-1 shadow-lg"
         >
           <li role="none">
             <a
@@ -60,7 +60,7 @@ export function AddToCalendarButton({
               href={getGoogleCalendarUrl(event)}
               target="_blank"
               rel="noopener noreferrer"
-              className="block px-4 py-2.5 text-sm text-[#252525] transition-colors hover:bg-[#5B2C83]/5"
+              className="block px-4 py-2.5 text-sm text-[#1E1E1E] transition-colors hover:bg-[#46A0DC]/5"
               onClick={() => setOpen(false)}
             >
               Google Calendar
@@ -72,7 +72,7 @@ export function AddToCalendarButton({
               href={getOutlookCalendarUrl(event)}
               target="_blank"
               rel="noopener noreferrer"
-              className="block px-4 py-2.5 text-sm text-[#252525] transition-colors hover:bg-[#5B2C83]/5"
+              className="block px-4 py-2.5 text-sm text-[#1E1E1E] transition-colors hover:bg-[#46A0DC]/5"
               onClick={() => setOpen(false)}
             >
               Outlook
@@ -82,7 +82,7 @@ export function AddToCalendarButton({
             <button
               type="button"
               role="menuitem"
-              className="block w-full px-4 py-2.5 text-left text-sm text-[#252525] transition-colors hover:bg-[#5B2C83]/5"
+              className="block w-full px-4 py-2.5 text-left text-sm text-[#1E1E1E] transition-colors hover:bg-[#46A0DC]/5"
               onClick={() => {
                 downloadIcsFile(event);
                 setOpen(false);

@@ -11,15 +11,15 @@ const statusStyles: Record<
 > = {
   active: {
     label: "Active",
-    className: "bg-[#218C83]/15 text-[#218C83]",
+    className: "bg-[#782882]/15 text-[#782882]",
   },
   upcoming: {
     label: "Upcoming",
-    className: "bg-[#F4B942]/20 text-[#8a6d1a]",
+    className: "bg-[#F0A070]/20 text-[#8a6d1a]",
   },
   completed: {
     label: "Completed",
-    className: "bg-[#5B2C83]/15 text-[#5B2C83]",
+    className: "bg-[#46A0DC]/15 text-[#46A0DC]",
   },
 };
 
@@ -61,10 +61,10 @@ export function ProjectCard({ project, className }: ProjectCardProps) {
       </div>
 
       <div className="flex flex-1 flex-col p-6">
-        <h3 className="font-serif text-xl font-semibold text-[#252525]">
+        <h3 className="font-serif text-xl font-semibold text-[#1E1E1E]">
           {project.title}
         </h3>
-        <p className="mt-2 flex-1 text-sm leading-relaxed text-[#252525]/70">
+        <p className="mt-2 flex-1 text-sm leading-relaxed text-[#1E1E1E]/70">
           {project.shortDescription}
         </p>
 
@@ -81,7 +81,7 @@ export function ProjectCard({ project, className }: ProjectCardProps) {
 
         <Link
           href={`/projects/${project.slug}`}
-          className="mt-4 inline-flex items-center gap-1.5 text-sm font-semibold text-[#5B2C83] transition-colors hover:text-[#4a2470] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#5B2C83] focus-visible:ring-offset-2 rounded"
+          className="mt-4 inline-flex items-center gap-1.5 text-sm font-semibold text-[#46A0DC] transition-colors hover:text-[#2E86C1] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#46A0DC] focus-visible:ring-offset-2 rounded"
         >
           View project
           <ArrowRight className="h-4 w-4" aria-hidden="true" />

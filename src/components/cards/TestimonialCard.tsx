@@ -17,15 +17,15 @@ export function TestimonialCard({ testimonial, className }: TestimonialCardProps
       )}
     >
       <Quote
-        className="h-8 w-8 text-[#5B2C83]/30"
+        className="h-8 w-8 text-[#46A0DC]/30"
         aria-hidden="true"
       />
 
-      <p className="mt-4 flex-1 text-base leading-relaxed text-[#252525]/80">
+      <p className="mt-4 flex-1 text-base leading-relaxed text-[#1E1E1E]/80">
         &ldquo;{testimonial.quote}&rdquo;
       </p>
 
-      <footer className="mt-6 flex items-center gap-3 border-t border-[#5B2C83]/10 pt-4">
+      <footer className="mt-6 flex items-center gap-3 border-t border-[#46A0DC]/10 pt-4">
         {testimonial.imageUrl && (
           <div className="relative h-12 w-12 shrink-0 overflow-hidden rounded-full">
             <Image
@@ -38,10 +38,10 @@ export function TestimonialCard({ testimonial, className }: TestimonialCardProps
           </div>
         )}
         <div>
-          <cite className="not-italic font-semibold text-[#252525]">
+          <cite className="not-italic font-semibold text-[#1E1E1E]">
             {testimonial.author}
           </cite>
-          <p className="text-sm text-[#252525]/60">
+          <p className="text-sm text-[#1E1E1E]/60">
             {testimonial.role}
             {testimonial.organization && ` · ${testimonial.organization}`}
           </p>

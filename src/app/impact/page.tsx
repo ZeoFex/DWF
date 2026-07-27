@@ -19,7 +19,7 @@ import {
 export const metadata: Metadata = {
   title: "Our Impact",
   description:
-    "See the impact of Dr. Wynnie's Foundation — statistics, success stories, community reach, and annual reports across Ghana.",
+    "See the impact of Dr. Winnie's Foundation — statistics, success stories, community reach, and annual reports across Ghana.",
 };
 
 export default function ImpactPage() {
@@ -53,14 +53,14 @@ export default function ImpactPage() {
               </li>
             ))}
           </ul>
-          <p className="mx-auto mt-10 max-w-2xl text-center text-xs text-[#252525]/50">
+          <p className="mx-auto mt-10 max-w-2xl text-center text-xs text-[#1E1E1E]/50">
             {IMPACT_DATA_DISCLAIMER}
           </p>
         </Container>
       </section>
 
       {/* Program Breakdown */}
-      <section className="bg-[#FFF9F7] py-16 sm:py-20">
+      <section className="bg-[#F5FAFE] py-16 sm:py-20">
         <Container>
           <SectionHeading
             title="Impact by Program"
@@ -73,19 +73,19 @@ export default function ImpactPage() {
               <li key={item.programSlug}>
                 <div className="flex items-center justify-between gap-4">
                   <div>
-                    <h3 className="font-serif text-lg font-semibold text-[#252525]">
+                    <h3 className="font-serif text-lg font-semibold text-[#1E1E1E]">
                       {item.programTitle}
                     </h3>
-                    <p className="mt-1 text-sm text-[#252525]/70">
+                    <p className="mt-1 text-sm text-[#1E1E1E]/70">
                       {item.description}
                     </p>
                   </div>
-                  <span className="shrink-0 font-serif text-2xl font-bold text-[#5B2C83]">
+                  <span className="shrink-0 font-serif text-2xl font-bold text-[#46A0DC]">
                     {item.percentage}%
                   </span>
                 </div>
                 <div
-                  className="mt-3 h-2 overflow-hidden rounded-full bg-[#5B2C83]/10"
+                  className="mt-3 h-2 overflow-hidden rounded-full bg-[#46A0DC]/10"
                   role="progressbar"
                   aria-valuenow={item.percentage}
                   aria-valuemin={0}
@@ -93,7 +93,7 @@ export default function ImpactPage() {
                   aria-label={`${item.programTitle}: ${item.percentage}% of impact`}
                 >
                   <div
-                    className="h-full rounded-full bg-gradient-to-r from-[#5B2C83] to-[#218C83]"
+                    className="h-full rounded-full bg-gradient-to-r from-[#46A0DC] to-[#782882]"
                     style={{ width: `${item.percentage}%` }}
                   />
                 </div>
@@ -114,7 +114,7 @@ export default function ImpactPage() {
           <div className="grid gap-10 lg:grid-cols-2">
             {/* Map-looking section */}
             <div
-              className="relative flex min-h-[320px] items-center justify-center overflow-hidden rounded-2xl bg-gradient-to-br from-[#5B2C83]/10 via-[#218C83]/10 to-[#F4B942]/10"
+              className="relative flex min-h-[320px] items-center justify-center overflow-hidden rounded-2xl bg-gradient-to-br from-[#46A0DC]/10 via-[#782882]/10 to-[#F0A070]/10"
               aria-hidden="true"
             >
               <div className="absolute inset-0 opacity-20">
@@ -123,18 +123,18 @@ export default function ImpactPage() {
                   className="h-full w-full"
                   preserveAspectRatio="xMidYMid slice"
                 >
-                  <circle cx="180" cy="140" r="80" fill="#5B2C83" opacity="0.15" />
-                  <circle cx="220" cy="120" r="50" fill="#218C83" opacity="0.2" />
-                  <circle cx="160" cy="180" r="40" fill="#F4B942" opacity="0.15" />
-                  <circle cx="240" cy="160" r="30" fill="#D94F70" opacity="0.1" />
+                  <circle cx="180" cy="140" r="80" fill="#46A0DC" opacity="0.15" />
+                  <circle cx="220" cy="120" r="50" fill="#782882" opacity="0.2" />
+                  <circle cx="160" cy="180" r="40" fill="#F0A070" opacity="0.15" />
+                  <circle cx="240" cy="160" r="30" fill="#E85A28" opacity="0.1" />
                 </svg>
               </div>
               <div className="relative text-center">
-                <MapPin className="mx-auto h-12 w-12 text-[#5B2C83]" />
-                <p className="mt-3 font-serif text-xl font-semibold text-[#252525]">
+                <MapPin className="mx-auto h-12 w-12 text-[#46A0DC]" />
+                <p className="mt-3 font-serif text-xl font-semibold text-[#1E1E1E]">
                   Ghana
                 </p>
-                <p className="text-sm text-[#252525]/60">
+                <p className="text-sm text-[#1E1E1E]/60">
                   Greater Accra & Eastern Region
                 </p>
               </div>
@@ -147,30 +147,30 @@ export default function ImpactPage() {
                 {impactData.locations.map((location) => (
                   <li
                     key={location.name}
-                    className="rounded-2xl border border-[#5B2C83]/10 bg-white p-5 shadow-sm"
+                    className="rounded-2xl border border-[#46A0DC]/10 bg-white p-5 shadow-sm"
                   >
                     <div className="flex items-start gap-3">
                       <MapPin
-                        className="mt-0.5 h-5 w-5 shrink-0 text-[#218C83]"
+                        className="mt-0.5 h-5 w-5 shrink-0 text-[#782882]"
                         aria-hidden="true"
                       />
                       <div>
-                        <h4 className="font-semibold text-[#252525]">
+                        <h4 className="font-semibold text-[#1E1E1E]">
                           {location.name}
                         </h4>
-                        <p className="text-sm text-[#252525]/60">
+                        <p className="text-sm text-[#1E1E1E]/60">
                           {location.region}
                         </p>
                         <dl className="mt-2 flex gap-6 text-sm">
                           <div>
-                            <dt className="text-[#252525]/50">Girls reached</dt>
-                            <dd className="font-semibold text-[#5B2C83]">
+                            <dt className="text-[#1E1E1E]/50">Girls reached</dt>
+                            <dd className="font-semibold text-[#46A0DC]">
                               {location.girlsReached.toLocaleString()}
                             </dd>
                           </div>
                           <div>
-                            <dt className="text-[#252525]/50">Schools</dt>
-                            <dd className="font-semibold text-[#5B2C83]">
+                            <dt className="text-[#1E1E1E]/50">Schools</dt>
+                            <dd className="font-semibold text-[#46A0DC]">
                               {location.schoolsPartnered}
                             </dd>
                           </div>
@@ -180,7 +180,7 @@ export default function ImpactPage() {
                   </li>
                 ))}
               </ul>
-              <p className="mt-4 text-xs text-[#252525]/50">
+              <p className="mt-4 text-xs text-[#1E1E1E]/50">
                 Location data is illustrative for website development.
               </p>
             </div>
@@ -189,7 +189,7 @@ export default function ImpactPage() {
       </section>
 
       {/* Success Stories */}
-      <section className="bg-[#FFF9F7] py-16 sm:py-20">
+      <section className="bg-[#F5FAFE] py-16 sm:py-20">
         <Container>
           <SectionHeading
             title="Success Stories"
@@ -213,10 +213,10 @@ export default function ImpactPage() {
                   />
                 </div>
                 <div className="p-6">
-                  <h3 className="font-serif text-xl font-semibold text-[#252525]">
+                  <h3 className="font-serif text-xl font-semibold text-[#1E1E1E]">
                     {story.title}
                   </h3>
-                  <p className="mt-3 text-sm leading-relaxed text-[#252525]/75">
+                  <p className="mt-3 text-sm leading-relaxed text-[#1E1E1E]/75">
                     {story.summary}
                   </p>
                 </div>
@@ -239,25 +239,25 @@ export default function ImpactPage() {
             {impactData.beforeAfterStories.map((story) => (
               <li
                 key={story.id}
-                className="rounded-2xl border border-[#5B2C83]/10 bg-white p-6 shadow-sm"
+                className="rounded-2xl border border-[#46A0DC]/10 bg-white p-6 shadow-sm"
               >
-                <h3 className="font-serif text-lg font-semibold text-[#252525]">
+                <h3 className="font-serif text-lg font-semibold text-[#1E1E1E]">
                   {story.title}
                 </h3>
                 <div className="mt-4 space-y-4">
                   <div>
-                    <p className="text-xs font-semibold uppercase tracking-wider text-[#D94F70]">
+                    <p className="text-xs font-semibold uppercase tracking-wider text-[#E85A28]">
                       Before
                     </p>
-                    <p className="mt-1 text-sm leading-relaxed text-[#252525]/75">
+                    <p className="mt-1 text-sm leading-relaxed text-[#1E1E1E]/75">
                       {story.before}
                     </p>
                   </div>
                   <div>
-                    <p className="text-xs font-semibold uppercase tracking-wider text-[#218C83]">
+                    <p className="text-xs font-semibold uppercase tracking-wider text-[#782882]">
                       After
                     </p>
-                    <p className="mt-1 text-sm leading-relaxed text-[#252525]/75">
+                    <p className="mt-1 text-sm leading-relaxed text-[#1E1E1E]/75">
                       {story.after}
                     </p>
                   </div>
@@ -270,7 +270,7 @@ export default function ImpactPage() {
 
       {/* Photo Section */}
       {workshopAlbum && (
-        <section className="bg-[#5B2C83]/5 py-16 sm:py-20">
+        <section className="bg-[#46A0DC]/5 py-16 sm:py-20">
           <Container>
             <SectionHeading
               title="Photos From the Field"
@@ -312,7 +312,7 @@ export default function ImpactPage() {
               className="mb-10"
             />
             <div className="grid gap-8 md:grid-cols-2">
-              <div className="relative flex aspect-video items-center justify-center overflow-hidden rounded-2xl bg-[#252525]">
+              <div className="relative flex aspect-video items-center justify-center overflow-hidden rounded-2xl bg-[#1E1E1E]">
                 <div className="text-center text-white">
                   <Play
                     className="mx-auto h-16 w-16 text-white/80"
@@ -327,7 +327,7 @@ export default function ImpactPage() {
                 {eventsAlbum.images.slice(0, 3).map((image) => (
                   <li
                     key={image.url}
-                    className="flex items-center gap-4 rounded-xl bg-[#FFF9F7] p-3"
+                    className="flex items-center gap-4 rounded-xl bg-[#F5FAFE] p-3"
                   >
                     <div className="relative h-16 w-24 shrink-0 overflow-hidden rounded-lg">
                       <Image
@@ -339,11 +339,11 @@ export default function ImpactPage() {
                       />
                     </div>
                     <div>
-                      <div className="flex items-center gap-1.5 text-xs text-[#218C83]">
+                      <div className="flex items-center gap-1.5 text-xs text-[#782882]">
                         <Video className="h-3.5 w-3.5" aria-hidden="true" />
                         Event highlight
                       </div>
-                      <p className="mt-0.5 text-sm font-medium text-[#252525]">
+                      <p className="mt-0.5 text-sm font-medium text-[#1E1E1E]">
                         {image.caption}
                       </p>
                     </div>
@@ -356,7 +356,7 @@ export default function ImpactPage() {
       )}
 
       {/* Annual Reports */}
-      <section className="bg-[#FFF9F7] py-16 sm:py-20">
+      <section className="bg-[#F5FAFE] py-16 sm:py-20">
         <Container>
           <SectionHeading
             title="Annual Reports"
@@ -373,20 +373,20 @@ export default function ImpactPage() {
                 <div>
                   <time
                     dateTime={String(report.year)}
-                    className="text-sm font-semibold text-[#218C83]"
+                    className="text-sm font-semibold text-[#782882]"
                   >
                     {report.year}
                   </time>
-                  <h3 className="mt-1 font-serif text-lg font-semibold text-[#252525]">
+                  <h3 className="mt-1 font-serif text-lg font-semibold text-[#1E1E1E]">
                     {report.title}
                   </h3>
-                  <p className="mt-2 text-sm text-[#252525]/70">
+                  <p className="mt-2 text-sm text-[#1E1E1E]/70">
                     {report.summary}
                   </p>
                 </div>
                 <a
                   href={report.downloadUrl}
-                  className="inline-flex shrink-0 items-center gap-2 rounded-xl bg-[#5B2C83] px-5 py-2.5 text-sm font-medium text-white transition-colors hover:bg-[#4a2470] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#5B2C83] focus-visible:ring-offset-2"
+                  className="inline-flex shrink-0 items-center gap-2 rounded-xl bg-[#46A0DC] px-5 py-2.5 text-sm font-medium text-white transition-colors hover:bg-[#2E86C1] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#46A0DC] focus-visible:ring-offset-2"
                 >
                   <Download className="h-4 w-4" aria-hidden="true" />
                   Download
@@ -394,7 +394,7 @@ export default function ImpactPage() {
               </li>
             ))}
           </ul>
-          <p className="mx-auto mt-6 max-w-xl text-center text-xs text-[#252525]/50">
+          <p className="mx-auto mt-6 max-w-xl text-center text-xs text-[#1E1E1E]/50">
             Reports are illustrative placeholders. Verified reports will be
             published following audit.
           </p>
@@ -414,21 +414,21 @@ export default function ImpactPage() {
             {impactData.donationUsage.map((item) => (
               <li
                 key={item.category}
-                className="rounded-2xl border border-[#5B2C83]/10 bg-white p-5"
+                className="rounded-2xl border border-[#46A0DC]/10 bg-white p-5"
               >
                 <div className="flex items-center justify-between gap-4">
-                  <h3 className="font-semibold text-[#252525]">
+                  <h3 className="font-semibold text-[#1E1E1E]">
                     {item.category}
                   </h3>
-                  <span className="font-serif text-xl font-bold text-[#5B2C83]">
+                  <span className="font-serif text-xl font-bold text-[#46A0DC]">
                     {item.percentage}%
                   </span>
                 </div>
-                <p className="mt-2 text-sm text-[#252525]/70">
+                <p className="mt-2 text-sm text-[#1E1E1E]/70">
                   {item.description}
                 </p>
                 <div
-                  className="mt-3 h-1.5 overflow-hidden rounded-full bg-[#5B2C83]/10"
+                  className="mt-3 h-1.5 overflow-hidden rounded-full bg-[#46A0DC]/10"
                   role="progressbar"
                   aria-valuenow={item.percentage}
                   aria-valuemin={0}
@@ -436,7 +436,7 @@ export default function ImpactPage() {
                   aria-label={`${item.category}: ${item.percentage}%`}
                 >
                   <div
-                    className="h-full rounded-full bg-[#218C83]"
+                    className="h-full rounded-full bg-[#782882]"
                     style={{ width: `${item.percentage}%` }}
                   />
                 </div>

@@ -12,9 +12,9 @@ interface PartnerFormProps {
 type FormStatus = "idle" | "loading" | "success" | "error";
 
 const inputClass =
-  "w-full rounded-xl border border-[#5B2C83]/20 bg-white px-4 py-2.5 text-sm text-[#252525] placeholder:text-[#252525]/40 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#5B2C83] focus-visible:ring-offset-2";
+  "w-full rounded-xl border border-[#46A0DC]/20 bg-white px-4 py-2.5 text-sm text-[#1E1E1E] placeholder:text-[#1E1E1E]/40 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#46A0DC] focus-visible:ring-offset-2";
 
-const labelClass = "mb-1.5 block text-sm font-medium text-[#252525]";
+const labelClass = "mb-1.5 block text-sm font-medium text-[#1E1E1E]";
 
 const partnershipTypes = [
   "Corporate Sponsorship",
@@ -77,15 +77,15 @@ export function PartnerForm({ className }: PartnerFormProps) {
     return (
       <div
         className={cn(
-          "rounded-2xl bg-[#218C83]/10 p-6 text-center",
+          "rounded-2xl bg-[#782882]/10 p-6 text-center",
           className
         )}
         role="status"
       >
-        <p className="font-semibold text-[#218C83]">
+        <p className="font-semibold text-[#782882]">
           Thank you, we received your message.
         </p>
-        <p className="mt-2 text-sm text-[#252525]/70">
+        <p className="mt-2 text-sm text-[#1E1E1E]/70">
           Our partnerships team will review your inquiry and respond soon.
         </p>
       </div>
@@ -96,7 +96,7 @@ export function PartnerForm({ className }: PartnerFormProps) {
     <form onSubmit={handleSubmit} className={cn("space-y-5", className)} noValidate>
       <div>
         <label htmlFor="organizationName" className={labelClass}>
-          Individual or organization name <span className="text-[#D94F70]">*</span>
+          Individual or organization name <span className="text-[#E85A28]">*</span>
         </label>
         <input
           id="organizationName"
@@ -110,7 +110,7 @@ export function PartnerForm({ className }: PartnerFormProps) {
           aria-invalid={errors.organizationName ? "true" : undefined}
         />
         {errors.organizationName && (
-          <p className="mt-1 text-xs text-[#D94F70]" role="alert">
+          <p className="mt-1 text-xs text-[#E85A28]" role="alert">
             {errors.organizationName}
           </p>
         )}
@@ -119,7 +119,7 @@ export function PartnerForm({ className }: PartnerFormProps) {
       <div className="grid gap-5 sm:grid-cols-2">
         <div>
           <label htmlFor="contactPerson" className={labelClass}>
-            Contact person <span className="text-[#D94F70]">*</span>
+            Contact person <span className="text-[#E85A28]">*</span>
           </label>
           <input
             id="contactPerson"
@@ -133,14 +133,14 @@ export function PartnerForm({ className }: PartnerFormProps) {
             aria-invalid={errors.contactPerson ? "true" : undefined}
           />
           {errors.contactPerson && (
-            <p className="mt-1 text-xs text-[#D94F70]" role="alert">
+            <p className="mt-1 text-xs text-[#E85A28]" role="alert">
               {errors.contactPerson}
             </p>
           )}
         </div>
         <div>
           <label htmlFor="email" className={labelClass}>
-            Email <span className="text-[#D94F70]">*</span>
+            Email <span className="text-[#E85A28]">*</span>
           </label>
           <input
             id="email"
@@ -152,7 +152,7 @@ export function PartnerForm({ className }: PartnerFormProps) {
             aria-invalid={errors.email ? "true" : undefined}
           />
           {errors.email && (
-            <p className="mt-1 text-xs text-[#D94F70]" role="alert">
+            <p className="mt-1 text-xs text-[#E85A28]" role="alert">
               {errors.email}
             </p>
           )}
@@ -162,7 +162,7 @@ export function PartnerForm({ className }: PartnerFormProps) {
       <div className="grid gap-5 sm:grid-cols-2">
         <div>
           <label htmlFor="phone" className={labelClass}>
-            Phone <span className="text-[#D94F70]">*</span>
+            Phone <span className="text-[#E85A28]">*</span>
           </label>
           <input
             id="phone"
@@ -174,14 +174,14 @@ export function PartnerForm({ className }: PartnerFormProps) {
             aria-invalid={errors.phone ? "true" : undefined}
           />
           {errors.phone && (
-            <p className="mt-1 text-xs text-[#D94F70]" role="alert">
+            <p className="mt-1 text-xs text-[#E85A28]" role="alert">
               {errors.phone}
             </p>
           )}
         </div>
         <div>
           <label htmlFor="partnershipType" className={labelClass}>
-            Partnership type <span className="text-[#D94F70]">*</span>
+            Partnership type <span className="text-[#E85A28]">*</span>
           </label>
           <select
             id="partnershipType"
@@ -201,7 +201,7 @@ export function PartnerForm({ className }: PartnerFormProps) {
             ))}
           </select>
           {errors.partnershipType && (
-            <p className="mt-1 text-xs text-[#D94F70]" role="alert">
+            <p className="mt-1 text-xs text-[#E85A28]" role="alert">
               {errors.partnershipType}
             </p>
           )}
@@ -210,7 +210,7 @@ export function PartnerForm({ className }: PartnerFormProps) {
 
       <div>
         <label htmlFor="proposedSupport" className={labelClass}>
-          Proposed support <span className="text-[#D94F70]">*</span>
+          Proposed support <span className="text-[#E85A28]">*</span>
         </label>
         <textarea
           id="proposedSupport"
@@ -225,7 +225,7 @@ export function PartnerForm({ className }: PartnerFormProps) {
           aria-invalid={errors.proposedSupport ? "true" : undefined}
         />
         {errors.proposedSupport && (
-          <p className="mt-1 text-xs text-[#D94F70]" role="alert">
+          <p className="mt-1 text-xs text-[#E85A28]" role="alert">
             {errors.proposedSupport}
           </p>
         )}
@@ -233,7 +233,7 @@ export function PartnerForm({ className }: PartnerFormProps) {
 
       <div>
         <label htmlFor="message" className={labelClass}>
-          Message <span className="text-[#D94F70]">*</span>
+          Message <span className="text-[#E85A28]">*</span>
         </label>
         <textarea
           id="message"
@@ -245,7 +245,7 @@ export function PartnerForm({ className }: PartnerFormProps) {
           aria-invalid={errors.message ? "true" : undefined}
         />
         {errors.message && (
-          <p className="mt-1 text-xs text-[#D94F70]" role="alert">
+          <p className="mt-1 text-xs text-[#E85A28]" role="alert">
             {errors.message}
           </p>
         )}
@@ -257,24 +257,24 @@ export function PartnerForm({ className }: PartnerFormProps) {
           type="checkbox"
           checked={consent}
           onChange={(e) => setConsent(e.target.checked)}
-          className="mt-1 h-4 w-4 rounded border-[#5B2C83]/30 text-[#5B2C83] focus-visible:ring-2 focus-visible:ring-[#5B2C83]"
+          className="mt-1 h-4 w-4 rounded border-[#46A0DC]/30 text-[#46A0DC] focus-visible:ring-2 focus-visible:ring-[#46A0DC]"
           disabled={status === "loading"}
           aria-invalid={errors.consent ? "true" : undefined}
         />
-        <label htmlFor="partner-consent" className="text-sm text-[#252525]/80">
+        <label htmlFor="partner-consent" className="text-sm text-[#1E1E1E]/80">
           I consent to being contacted about partnership opportunities and agree
           to the foundation&apos;s privacy policy.{" "}
-          <span className="text-[#D94F70]">*</span>
+          <span className="text-[#E85A28]">*</span>
         </label>
       </div>
       {errors.consent && (
-        <p className="text-xs text-[#D94F70]" role="alert">
+        <p className="text-xs text-[#E85A28]" role="alert">
           {errors.consent}
         </p>
       )}
 
       {status === "error" && (
-        <p className="text-sm text-[#D94F70]" role="alert">
+        <p className="text-sm text-[#E85A28]" role="alert">
           Something went wrong. Please try again.
         </p>
       )}

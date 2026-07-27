@@ -25,7 +25,7 @@ import {
 export const metadata: Metadata = {
   title: "About Us",
   description:
-    "Learn about Dr. Wynnie's Foundation — our story, vision, mission, values, and the team working to empower girls across Ghana.",
+    "Learn about Dr. Winnie's Foundation — our story, vision, mission, values, and the team working to empower girls across Ghana.",
 };
 
 const valueIconMap = {
@@ -43,7 +43,7 @@ export default function AboutPage() {
   return (
     <>
       <PageHero
-        title="About Dr. Wynnie's Foundation"
+        title="About Dr. Winnie's Foundation"
         description="Rooted in dignity, driven by community, and committed to every girl's right to health, wellness, and opportunity."
         backgroundImage={images.hero.about}
         breadcrumbs={[{ label: "Home", href: "/" }, { label: "About" }]}
@@ -57,7 +57,7 @@ export default function AboutPage() {
             title="How It All Began"
             className="mb-8"
           />
-          <div className="prose prose-lg max-w-none space-y-4 text-[#252525]/80 leading-relaxed">
+          <div className="prose prose-lg max-w-none space-y-4 text-[#1E1E1E]/80 leading-relaxed">
             {valuesData.aboutStory.map((paragraph, index) => (
               <p key={index}>{paragraph}</p>
             ))}
@@ -66,22 +66,22 @@ export default function AboutPage() {
       </section>
 
       {/* Vision & Mission */}
-      <section className="bg-[#FFF9F7] py-16 sm:py-20">
+      <section className="bg-[#F5FAFE] py-16 sm:py-20">
         <Container>
           <div className="grid gap-10 md:grid-cols-2">
             <article className="rounded-2xl bg-white p-8 shadow-sm">
-              <h2 className="font-serif text-2xl font-bold text-[#5B2C83]">
+              <h2 className="font-serif text-2xl font-bold text-[#46A0DC]">
                 Our Vision
               </h2>
-              <p className="mt-4 leading-relaxed text-[#252525]/80">
+              <p className="mt-4 leading-relaxed text-[#1E1E1E]/80">
                 {valuesData.vision}
               </p>
             </article>
             <article className="rounded-2xl bg-white p-8 shadow-sm">
-              <h2 className="font-serif text-2xl font-bold text-[#218C83]">
+              <h2 className="font-serif text-2xl font-bold text-[#782882]">
                 Our Mission
               </h2>
-              <p className="mt-4 leading-relaxed text-[#252525]/80">
+              <p className="mt-4 leading-relaxed text-[#1E1E1E]/80">
                 {valuesData.mission}
               </p>
             </article>
@@ -104,15 +104,15 @@ export default function AboutPage() {
               return (
                 <li
                   key={value.title}
-                  className="rounded-2xl border border-[#5B2C83]/10 bg-white p-6 shadow-sm"
+                  className="rounded-2xl border border-[#46A0DC]/10 bg-white p-6 shadow-sm"
                 >
-                  <div className="flex h-12 w-12 items-center justify-center rounded-full bg-[#5B2C83]/10 text-[#5B2C83]">
+                  <div className="flex h-12 w-12 items-center justify-center rounded-full bg-[#46A0DC]/10 text-[#46A0DC]">
                     <Icon className="h-6 w-6" aria-hidden="true" />
                   </div>
-                  <h3 className="mt-4 font-serif text-xl font-semibold text-[#252525]">
+                  <h3 className="mt-4 font-serif text-xl font-semibold text-[#1E1E1E]">
                     {value.title}
                   </h3>
-                  <p className="mt-2 text-sm leading-relaxed text-[#252525]/70">
+                  <p className="mt-2 text-sm leading-relaxed text-[#1E1E1E]/70">
                     {value.description}
                   </p>
                 </li>
@@ -123,7 +123,7 @@ export default function AboutPage() {
       </section>
 
       {/* Timeline */}
-      <section className="bg-[#5B2C83]/5 py-16 sm:py-20">
+      <section className="bg-[#46A0DC]/5 py-16 sm:py-20">
         <Container>
           <SectionHeading
             eyebrow="Our Journey"
@@ -131,7 +131,7 @@ export default function AboutPage() {
             align="center"
             className="mb-12"
           />
-          <ol className="relative mx-auto max-w-3xl space-y-8 before:absolute before:left-4 before:top-2 before:h-[calc(100%-1rem)] before:w-0.5 before:bg-[#5B2C83]/20 sm:before:left-1/2 sm:before:-translate-x-px">
+          <ol className="relative mx-auto max-w-3xl space-y-8 before:absolute before:left-4 before:top-2 before:h-[calc(100%-1rem)] before:w-0.5 before:bg-[#46A0DC]/20 sm:before:left-1/2 sm:before:-translate-x-px">
             {valuesData.timeline.map((milestone, index) => (
               <li
                 key={milestone.year}
@@ -142,7 +142,7 @@ export default function AboutPage() {
                 }`}
               >
                 <div
-                  className={`absolute left-4 top-1 h-3 w-3 rounded-full border-2 border-[#5B2C83] bg-white sm:left-1/2 sm:-translate-x-1/2 ${
+                  className={`absolute left-4 top-1 h-3 w-3 rounded-full border-2 border-[#46A0DC] bg-white sm:left-1/2 sm:-translate-x-1/2 ${
                     index % 2 === 0 ? "sm:left-auto sm:right-0 sm:translate-x-1/2" : ""
                   }`}
                   aria-hidden="true"
@@ -150,14 +150,14 @@ export default function AboutPage() {
                 <article className="ml-10 rounded-2xl bg-white p-6 shadow-sm sm:ml-0">
                   <time
                     dateTime={String(milestone.year)}
-                    className="text-sm font-semibold text-[#218C83]"
+                    className="text-sm font-semibold text-[#782882]"
                   >
                     {milestone.year}
                   </time>
-                  <h3 className="mt-1 font-serif text-lg font-semibold text-[#252525]">
+                  <h3 className="mt-1 font-serif text-lg font-semibold text-[#1E1E1E]">
                     {milestone.title}
                   </h3>
-                  <p className="mt-2 text-sm leading-relaxed text-[#252525]/70">
+                  <p className="mt-2 text-sm leading-relaxed text-[#1E1E1E]/70">
                     {milestone.description}
                   </p>
                 </article>
@@ -187,13 +187,13 @@ export default function AboutPage() {
                 />
               </div>
               <div className="lg:col-span-3">
-                <h3 className="font-serif text-3xl font-bold text-[#252525]">
+                <h3 className="font-serif text-3xl font-bold text-[#1E1E1E]">
                   {founder.name}
                 </h3>
-                <p className="mt-1 text-lg font-medium text-[#218C83]">
+                <p className="mt-1 text-lg font-medium text-[#782882]">
                   {founder.role}
                 </p>
-                <p className="mt-6 leading-relaxed text-[#252525]/80">
+                <p className="mt-6 leading-relaxed text-[#1E1E1E]/80">
                   {founder.bio}
                 </p>
               </div>
@@ -203,7 +203,7 @@ export default function AboutPage() {
       )}
 
       {/* Team */}
-      <section className="bg-[#FFF9F7] py-16 sm:py-20">
+      <section className="bg-[#F5FAFE] py-16 sm:py-20">
         <Container>
           <SectionHeading
             eyebrow="Our Team"

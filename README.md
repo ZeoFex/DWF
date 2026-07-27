@@ -1,6 +1,6 @@
-# Dr. Wynnie's Foundation Website
+# Dr. Winnie's Foundation Website
 
-Production-ready marketing site for **Dr. Wynnie's Foundation** — menstrual health education, mental health awareness, career development, and community outreach in Ghana.
+Production-ready marketing site for **Dr. Winnie's Foundation** — menstrual health education, mental health awareness, career development, and community outreach in Ghana.
 
 ## Stack
 

@@ -25,18 +25,18 @@ export function TeamCard({ member, className }: TeamCardProps) {
           sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 25vw"
         />
         {member.isFounder && (
-          <span className="absolute left-4 top-4 rounded-full bg-[#F4B942] px-3 py-1 text-xs font-semibold text-[#252525]">
+          <span className="absolute left-4 top-4 rounded-full bg-[#F0A070] px-3 py-1 text-xs font-semibold text-[#1E1E1E]">
             Founder
           </span>
         )}
       </div>
 
       <div className="p-6">
-        <h3 className="font-serif text-xl font-semibold text-[#252525]">
+        <h3 className="font-serif text-xl font-semibold text-[#1E1E1E]">
           {member.name}
         </h3>
-        <p className="mt-1 text-sm font-medium text-[#218C83]">{member.role}</p>
-        <p className="mt-3 line-clamp-4 text-sm leading-relaxed text-[#252525]/70">
+        <p className="mt-1 text-sm font-medium text-[#782882]">{member.role}</p>
+        <p className="mt-3 line-clamp-4 text-sm leading-relaxed text-[#1E1E1E]/70">
           {member.bio}
         </p>
 
@@ -45,7 +45,7 @@ export function TeamCard({ member, className }: TeamCardProps) {
             <a
               href={`mailto:${member.email}`}
               aria-label={`Email ${member.name}`}
-              className="flex h-9 w-9 items-center justify-center rounded-full bg-[#5B2C83]/10 text-[#5B2C83] transition-colors hover:bg-[#5B2C83] hover:text-white focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#5B2C83] focus-visible:ring-offset-2"
+              className="flex h-9 w-9 items-center justify-center rounded-full bg-[#46A0DC]/10 text-[#46A0DC] transition-colors hover:bg-[#46A0DC] hover:text-white focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#46A0DC] focus-visible:ring-offset-2"
             >
               <Mail className="h-4 w-4" aria-hidden="true" />
             </a>
@@ -56,7 +56,7 @@ export function TeamCard({ member, className }: TeamCardProps) {
               target="_blank"
               rel="noopener noreferrer"
               aria-label={`${member.name} on LinkedIn`}
-              className="flex h-9 w-9 items-center justify-center rounded-full bg-[#5B2C83]/10 text-[#5B2C83] transition-colors hover:bg-[#5B2C83] hover:text-white focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#5B2C83] focus-visible:ring-offset-2"
+              className="flex h-9 w-9 items-center justify-center rounded-full bg-[#46A0DC]/10 text-[#46A0DC] transition-colors hover:bg-[#46A0DC] hover:text-white focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#46A0DC] focus-visible:ring-offset-2"
             >
               <Linkedin className="h-4 w-4" aria-hidden="true" />
             </a>

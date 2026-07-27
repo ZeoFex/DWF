@@ -1,14 +1,14 @@
 import type { SiteConfig } from "@/types";
 
-/** Site-wide configuration for Dr. Wynnie's Foundation. */
+/** Site-wide configuration for Dr. Winnie's Foundation. */
 export const siteConfig: SiteConfig = {
-  name: "Dr. Wynnie's Foundation",
+  name: "Dr. Winnie's Foundation",
   shortName: "DWF",
   tagline: "Empowering girls through health, wellness, and opportunity",
   description:
-    "Dr. Wynnie's Foundation supports young women and girls in Ghana through menstrual health education, mental wellness programs, and career development initiatives — building confident, capable leaders in their communities.",
+    "Dr. Winnie's Foundation supports young women and girls in Ghana through menstrual health education, mental wellness programs, and career development initiatives — building confident, capable leaders in their communities.",
   contact: {
-    email: "info@drwynniesfoundation.org",
+    email: "info@drwinniesfoundation.org",
     phone: "+233 24 XXX XXXX",
     whatsapp: "+233 24 XXX XXXX",
     whatsappLink: "https://wa.me/23324XXXXXXX",
@@ -30,27 +30,27 @@ export const siteConfig: SiteConfig = {
     {
       platform: "facebook",
       label: "Facebook",
-      href: "https://facebook.com/drwynniesfoundation",
+      href: "https://facebook.com/drwinniesfoundation",
     },
     {
       platform: "instagram",
       label: "Instagram",
-      href: "https://instagram.com/drwynniesfoundation",
+      href: "https://instagram.com/drwinniesfoundation",
     },
     {
       platform: "twitter",
       label: "X (Twitter)",
-      href: "https://twitter.com/drwynniesfoundation",
+      href: "https://twitter.com/drwinniesfoundation",
     },
     {
       platform: "linkedin",
       label: "LinkedIn",
-      href: "https://linkedin.com/company/drwynniesfoundation",
+      href: "https://linkedin.com/company/drwinniesfoundation",
     },
     {
       platform: "youtube",
       label: "YouTube",
-      href: "https://youtube.com/@drwynniesfoundation",
+      href: "https://youtube.com/@drwinniesfoundation",
     },
   ],
   announcementBar: {

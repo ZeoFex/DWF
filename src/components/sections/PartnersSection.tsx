@@ -36,7 +36,7 @@ export function PartnersSection({
         </ul>
 
         {showDisclaimer && (
-          <p className="mt-8 text-center text-xs text-[#252525]/50">
+          <p className="mt-8 text-center text-xs text-[#1E1E1E]/50">
             {PARTNERS_DISCLAIMER}
           </p>
         )}

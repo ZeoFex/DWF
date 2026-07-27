@@ -120,24 +120,24 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
       <article className="py-12 sm:py-16">
         <Container>
           <div className="mx-auto max-w-3xl">
-            <div className="flex flex-wrap items-center gap-4 text-sm text-[#252525]/70">
-              <span className="rounded-full bg-[#5B2C83] px-3 py-1 text-xs font-semibold text-white">
+            <div className="flex flex-wrap items-center gap-4 text-sm text-[#1E1E1E]/70">
+              <span className="rounded-full bg-[#46A0DC] px-3 py-1 text-xs font-semibold text-white">
                 {categoryLabels[post.category]}
               </span>
               <span className="inline-flex items-center gap-1.5">
-                <Calendar className="h-4 w-4 text-[#5B2C83]" aria-hidden="true" />
+                <Calendar className="h-4 w-4 text-[#46A0DC]" aria-hidden="true" />
                 <time dateTime={post.publishedAt}>
                   {formatDate(post.publishedAt)}
                 </time>
               </span>
               <span className="inline-flex items-center gap-1.5">
-                <User className="h-4 w-4 text-[#5B2C83]" aria-hidden="true" />
+                <User className="h-4 w-4 text-[#46A0DC]" aria-hidden="true" />
                 {post.author}
               </span>
             </div>
 
             {post.isIllustrative && (
-              <p className="mt-6 rounded-xl bg-[#F4B942]/15 px-4 py-3 text-sm text-[#252525]/80">
+              <p className="mt-6 rounded-xl bg-[#F0A070]/15 px-4 py-3 text-sm text-[#1E1E1E]/80">
                 This article contains illustrative placeholder content for
                 website development. Verified facts and figures will be published
                 before public launch.
@@ -155,13 +155,13 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
               />
             </div>
 
-            <div className="prose-custom mt-10 space-y-6 text-base leading-relaxed text-[#252525]/85">
+            <div className="prose-custom mt-10 space-y-6 text-base leading-relaxed text-[#1E1E1E]/85">
               {post.content.map((paragraph, index) => (
                 <p key={index}>{renderParagraph(paragraph)}</p>
               ))}
             </div>
 
-            <div className="mt-10 border-t border-[#5B2C83]/10 pt-10">
+            <div className="mt-10 border-t border-[#46A0DC]/10 pt-10">
               <ShareButtons url={url} title={post.title} />
             </div>
 
@@ -176,7 +176,7 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
           </div>
 
           {relatedPosts.length > 0 && (
-            <div className="mt-16 border-t border-[#5B2C83]/10 pt-16">
+            <div className="mt-16 border-t border-[#46A0DC]/10 pt-16">
               <SectionHeading
                 title="Related Articles"
                 description="More stories from the same topic area."
@@ -195,7 +195,7 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
 
       <NewsletterSection
         title="Never Miss an Update"
-        description="Subscribe for new articles, program news, and event invitations from Dr. Wynnie's Foundation."
+        description="Subscribe for new articles, program news, and event invitations from Dr. Winnie's Foundation."
       />
     </>
   );

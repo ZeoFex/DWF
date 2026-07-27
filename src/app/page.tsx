@@ -28,7 +28,7 @@ import {
 export const metadata: Metadata = {
   title: "Home",
   description:
-    "Dr. Wynnie's Foundation empowers girls in Ghana through menstrual health education, mental wellness programs, and career development. Donate, volunteer, or partner with us today.",
+    "Dr. Winnie's Foundation empowers girls in Ghana through menstrual health education, mental wellness programs, and career development. Donate, volunteer, or partner with us today.",
 };
 
 export default function HomePage() {
@@ -49,7 +49,7 @@ export default function HomePage() {
           sizes="100vw"
         />
         <div
-          className="absolute inset-0 bg-gradient-to-r from-[#5B2C83]/95 via-[#5B2C83]/80 to-[#5B2C83]/60"
+          className="absolute inset-0 bg-gradient-to-r from-[#46A0DC]/95 via-[#46A0DC]/80 to-[#46A0DC]/60"
           aria-hidden="true"
         />
         <Container className="relative py-20 sm:py-28 lg:py-32">
@@ -108,9 +108,9 @@ export default function HomePage() {
               <SectionHeading
                 eyebrow="About Us"
                 title="Building Confident, Capable Leaders"
-                description="Dr. Wynnie's Foundation meets girls where they are — with health education, emotional support, and career opportunities designed to work together. We believe dignity, not charity, is the foundation of lasting change."
+                description="Dr. Winnie's Foundation meets girls where they are — with health education, emotional support, and career opportunities designed to work together. We believe dignity, not charity, is the foundation of lasting change."
               />
-              <p className="mt-4 text-[#252525]/75 leading-relaxed">
+              <p className="mt-4 text-[#1E1E1E]/75 leading-relaxed">
                 From dignity kit distributions to mentorship circles and STEM
                 workshops, our integrated approach ensures no girl&apos;s potential
                 is left unrealized because of preventable barriers.
@@ -125,7 +125,7 @@ export default function HomePage() {
       </section>
 
       {/* Focus Areas */}
-      <section className="bg-[#FFF9F7] py-16 sm:py-20">
+      <section className="bg-[#F5FAFE] py-16 sm:py-20">
         <Container>
           <SectionHeading
             eyebrow="Our Programs"
@@ -161,7 +161,7 @@ export default function HomePage() {
               </li>
             ))}
           </ul>
-          <p className="mx-auto mt-10 max-w-2xl text-center text-xs text-[#252525]/50">
+          <p className="mx-auto mt-10 max-w-2xl text-center text-xs text-[#1E1E1E]/50">
             {IMPACT_DATA_DISCLAIMER}
           </p>
         </Container>
@@ -169,7 +169,7 @@ export default function HomePage() {
 
       {/* Featured Campaign */}
       {featuredProject && (
-        <section className="bg-[#5B2C83]/5 py-16 sm:py-20">
+        <section className="bg-[#46A0DC]/5 py-16 sm:py-20">
           <Container>
             <div className="grid items-center gap-10 lg:grid-cols-2 lg:gap-16">
               <div className="relative aspect-[4/3] overflow-hidden rounded-2xl">
@@ -196,8 +196,8 @@ export default function HomePage() {
                         currency={featuredProject.currency}
                       />
                       {featuredProject.girlsSupported != null && (
-                        <p className="mt-3 text-sm text-[#252525]/70">
-                          <strong className="text-[#252525]">
+                        <p className="mt-3 text-sm text-[#1E1E1E]/70">
+                          <strong className="text-[#1E1E1E]">
                             {featuredProject.girlsSupported.toLocaleString()}
                           </strong>{" "}
                           girls currently supported (illustrative)
@@ -247,22 +247,22 @@ export default function HomePage() {
                 title={featuredStory.title}
                 description={featuredStory.summary}
               />
-              <blockquote className="mt-6 rounded-2xl bg-[#FFF9F7] p-6">
+              <blockquote className="mt-6 rounded-2xl bg-[#F5FAFE] p-6">
                 <Quote
-                  className="h-8 w-8 text-[#5B2C83]/30"
+                  className="h-8 w-8 text-[#46A0DC]/30"
                   aria-hidden="true"
                 />
-                <p className="mt-3 text-base italic leading-relaxed text-[#252525]/80">
+                <p className="mt-3 text-base italic leading-relaxed text-[#1E1E1E]/80">
                   &ldquo;Before the program, I used to stay home every month. Now
                   I know how to manage and I don&apos;t feel ashamed anymore.&rdquo;
                 </p>
-                <footer className="mt-4 text-sm text-[#252525]/60">
+                <footer className="mt-4 text-sm text-[#1E1E1E]/60">
                   — Ama K., Student · Partner School, Accra (illustrative)
                 </footer>
               </blockquote>
               <Link
                 href="/impact"
-                className="mt-6 inline-flex items-center gap-1.5 text-sm font-semibold text-[#5B2C83] hover:text-[#4a2470] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#5B2C83] focus-visible:ring-offset-2 rounded"
+                className="mt-6 inline-flex items-center gap-1.5 text-sm font-semibold text-[#46A0DC] hover:text-[#2E86C1] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#46A0DC] focus-visible:ring-offset-2 rounded"
               >
                 Read more success stories
                 <ArrowRight className="h-4 w-4" aria-hidden="true" />

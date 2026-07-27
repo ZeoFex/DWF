@@ -46,18 +46,18 @@ export function ShareButtons({ url, title, className }: ShareButtonsProps) {
 
   return (
     <div className={cn("space-y-4", className)}>
-      <h2 className="font-serif text-lg font-semibold text-[#252525]">
+      <h2 className="font-serif text-lg font-semibold text-[#1E1E1E]">
         Share this article
       </h2>
       <div className="flex flex-wrap gap-3">
         <button
           type="button"
           onClick={copyLink}
-          className="inline-flex items-center gap-2 rounded-xl border border-[#5B2C83]/20 bg-white px-4 py-2 text-sm font-medium text-[#5B2C83] transition-colors hover:bg-[#5B2C83]/5 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#5B2C83] focus-visible:ring-offset-2"
+          className="inline-flex items-center gap-2 rounded-xl border border-[#46A0DC]/20 bg-white px-4 py-2 text-sm font-medium text-[#46A0DC] transition-colors hover:bg-[#46A0DC]/5 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#46A0DC] focus-visible:ring-offset-2"
         >
           {copied ? (
             <>
-              <Check className="h-4 w-4 text-[#218C83]" aria-hidden="true" />
+              <Check className="h-4 w-4 text-[#782882]" aria-hidden="true" />
               Link copied
             </>
           ) : (
@@ -75,7 +75,7 @@ export function ShareButtons({ url, title, className }: ShareButtonsProps) {
             target="_blank"
             rel="noopener noreferrer"
             aria-label={label}
-            className="inline-flex items-center gap-2 rounded-xl border border-[#5B2C83]/20 bg-white px-4 py-2 text-sm font-medium text-[#5B2C83] transition-colors hover:bg-[#5B2C83]/5 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#5B2C83] focus-visible:ring-offset-2"
+            className="inline-flex items-center gap-2 rounded-xl border border-[#46A0DC]/20 bg-white px-4 py-2 text-sm font-medium text-[#46A0DC] transition-colors hover:bg-[#46A0DC]/5 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#46A0DC] focus-visible:ring-offset-2"
           >
             <Icon className="h-4 w-4" aria-hidden="true" />
             <span className="sr-only sm:not-sr-only">{label.split(" ").slice(2).join(" ")}</span>

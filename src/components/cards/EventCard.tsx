@@ -46,8 +46,8 @@ export function EventCard({ event, className }: EventCardProps) {
           className={cn(
             "absolute left-4 top-4 rounded-full px-3 py-1 text-xs font-semibold",
             event.isPast
-              ? "bg-[#252525]/60 text-white"
-              : "bg-[#218C83] text-white"
+              ? "bg-[#1E1E1E]/60 text-white"
+              : "bg-[#782882] text-white"
           )}
         >
           {event.isPast ? "Past" : categoryLabels[event.category]}
@@ -55,32 +55,32 @@ export function EventCard({ event, className }: EventCardProps) {
       </div>
 
       <div className="flex flex-1 flex-col p-6">
-        <h3 className="font-serif text-xl font-semibold text-[#252525]">
+        <h3 className="font-serif text-xl font-semibold text-[#1E1E1E]">
           {event.title}
         </h3>
 
-        <ul className="mt-3 space-y-2 text-sm text-[#252525]/70">
+        <ul className="mt-3 space-y-2 text-sm text-[#1E1E1E]/70">
           <li className="flex items-start gap-2">
-            <Calendar className="mt-0.5 h-4 w-4 shrink-0 text-[#5B2C83]" aria-hidden="true" />
+            <Calendar className="mt-0.5 h-4 w-4 shrink-0 text-[#46A0DC]" aria-hidden="true" />
             <time dateTime={event.date}>{formatDate(event.date)}</time>
           </li>
           <li className="flex items-start gap-2">
-            <Clock className="mt-0.5 h-4 w-4 shrink-0 text-[#5B2C83]" aria-hidden="true" />
+            <Clock className="mt-0.5 h-4 w-4 shrink-0 text-[#46A0DC]" aria-hidden="true" />
             {event.time}
           </li>
           <li className="flex items-start gap-2">
-            <MapPin className="mt-0.5 h-4 w-4 shrink-0 text-[#5B2C83]" aria-hidden="true" />
+            <MapPin className="mt-0.5 h-4 w-4 shrink-0 text-[#46A0DC]" aria-hidden="true" />
             {event.location}
           </li>
         </ul>
 
-        <p className="mt-3 flex-1 text-sm leading-relaxed text-[#252525]/70 line-clamp-2">
+        <p className="mt-3 flex-1 text-sm leading-relaxed text-[#1E1E1E]/70 line-clamp-2">
           {event.description}
         </p>
 
         <Link
           href={event.registrationUrl ?? `/events#${event.slug}`}
-          className="mt-4 inline-flex items-center gap-1.5 text-sm font-semibold text-[#5B2C83] transition-colors hover:text-[#4a2470] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#5B2C83] focus-visible:ring-offset-2 rounded"
+          className="mt-4 inline-flex items-center gap-1.5 text-sm font-semibold text-[#46A0DC] transition-colors hover:text-[#2E86C1] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#46A0DC] focus-visible:ring-offset-2 rounded"
         >
           {event.registrationRequired && !event.isPast
             ? "Register"

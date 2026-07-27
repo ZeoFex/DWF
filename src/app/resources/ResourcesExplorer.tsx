@@ -65,7 +65,7 @@ export function ResourcesExplorer({
           placeholder="Search resources by title or description…"
           value={query}
           onChange={(e) => setQuery(e.target.value)}
-          className="w-full rounded-xl border border-[#5B2C83]/20 bg-white px-4 py-3 text-sm text-[#252525] placeholder:text-[#252525]/40 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#5B2C83] focus-visible:ring-offset-2"
+          className="w-full rounded-xl border border-[#46A0DC]/20 bg-white px-4 py-3 text-sm text-[#1E1E1E] placeholder:text-[#1E1E1E]/40 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#46A0DC] focus-visible:ring-offset-2"
         />
 
         <div className="flex flex-wrap gap-2" role="group" aria-label="Filter by topic">
@@ -76,10 +76,10 @@ export function ResourcesExplorer({
               onClick={() => setTopic(filter.value)}
               aria-pressed={topic === filter.value}
               className={cn(
-                "rounded-full px-4 py-2 text-sm font-medium transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#5B2C83] focus-visible:ring-offset-2",
+                "rounded-full px-4 py-2 text-sm font-medium transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#46A0DC] focus-visible:ring-offset-2",
                 topic === filter.value
-                  ? "bg-[#5B2C83] text-white"
-                  : "bg-[#5B2C83]/10 text-[#5B2C83] hover:bg-[#5B2C83]/20"
+                  ? "bg-[#46A0DC] text-white"
+                  : "bg-[#46A0DC]/10 text-[#46A0DC] hover:bg-[#46A0DC]/20"
               )}
             >
               {filter.label}
@@ -95,10 +95,10 @@ export function ResourcesExplorer({
               onClick={() => setType(filter.value)}
               aria-pressed={type === filter.value}
               className={cn(
-                "rounded-full px-4 py-2 text-sm font-medium transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#5B2C83] focus-visible:ring-offset-2",
+                "rounded-full px-4 py-2 text-sm font-medium transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#46A0DC] focus-visible:ring-offset-2",
                 type === filter.value
-                  ? "bg-[#218C83] text-white"
-                  : "bg-[#218C83]/10 text-[#218C83] hover:bg-[#218C83]/20"
+                  ? "bg-[#782882] text-white"
+                  : "bg-[#782882]/10 text-[#782882] hover:bg-[#782882]/20"
               )}
             >
               {filter.label}
@@ -107,12 +107,12 @@ export function ResourcesExplorer({
         </div>
       </div>
 
-      <p className="text-sm text-[#252525]/60" aria-live="polite">
+      <p className="text-sm text-[#1E1E1E]/60" aria-live="polite">
         Showing {filtered.length} of {resources.length} resources
       </p>
 
       {filtered.length === 0 ? (
-        <p className="py-12 text-center text-[#252525]/60">
+        <p className="py-12 text-center text-[#1E1E1E]/60">
           No resources match your search. Try adjusting filters or keywords.
         </p>
       ) : (

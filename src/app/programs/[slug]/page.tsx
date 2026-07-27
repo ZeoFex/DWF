@@ -77,12 +77,12 @@ export default async function ProgramDetailPage({
       <section className="py-16 sm:py-20">
         <Container>
           <div className="flex items-start gap-4">
-            <div className="flex h-14 w-14 shrink-0 items-center justify-center rounded-full bg-[#5B2C83]/10 text-[#5B2C83]">
+            <div className="flex h-14 w-14 shrink-0 items-center justify-center rounded-full bg-[#46A0DC]/10 text-[#46A0DC]">
               <Icon className="h-7 w-7" aria-hidden="true" />
             </div>
             <div className="max-w-3xl">
               <SectionHeading title="Program Overview" />
-              <p className="mt-4 text-lg leading-relaxed text-[#252525]/80">
+              <p className="mt-4 text-lg leading-relaxed text-[#1E1E1E]/80">
                 {program.intro}
               </p>
             </div>
@@ -91,7 +91,7 @@ export default async function ProgramDetailPage({
       </section>
 
       {/* Problem */}
-      <section className="bg-[#FFF9F7] py-16 sm:py-20">
+      <section className="bg-[#F5FAFE] py-16 sm:py-20">
         <Container>
           <div className="grid gap-10 lg:grid-cols-2 lg:gap-16">
             <SectionHeading
@@ -100,10 +100,10 @@ export default async function ProgramDetailPage({
               description={program.problem}
             />
             <div>
-              <h3 className="font-serif text-xl font-semibold text-[#252525]">
+              <h3 className="font-serif text-xl font-semibold text-[#1E1E1E]">
                 Who We Serve
               </h3>
-              <p className="mt-3 leading-relaxed text-[#252525]/80">
+              <p className="mt-3 leading-relaxed text-[#1E1E1E]/80">
                 {program.beneficiaries}
               </p>
             </div>
@@ -121,10 +121,10 @@ export default async function ProgramDetailPage({
                 {program.activities.map((activity) => (
                   <li
                     key={activity}
-                    className="flex gap-3 text-[#252525]/80 leading-relaxed"
+                    className="flex gap-3 text-[#1E1E1E]/80 leading-relaxed"
                   >
                     <span
-                      className="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-[#218C83]"
+                      className="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-[#782882]"
                       aria-hidden="true"
                     />
                     {activity}
@@ -134,7 +134,7 @@ export default async function ProgramDetailPage({
             </div>
             <div>
               <SectionHeading title="Our Approach" className="mb-6" />
-              <p className="leading-relaxed text-[#252525]/80">
+              <p className="leading-relaxed text-[#1E1E1E]/80">
                 {program.approach}
               </p>
             </div>
@@ -143,7 +143,7 @@ export default async function ProgramDetailPage({
       </section>
 
       {/* Stats */}
-      <section className="bg-[#5B2C83]/5 py-16 sm:py-20">
+      <section className="bg-[#46A0DC]/5 py-16 sm:py-20">
         <Container>
           <SectionHeading
             title="Program Impact"
@@ -156,14 +156,14 @@ export default async function ProgramDetailPage({
                 key={stat.label}
                 className="rounded-2xl bg-white p-6 text-center shadow-sm"
               >
-                <p className="font-serif text-3xl font-bold text-[#5B2C83]">
+                <p className="font-serif text-3xl font-bold text-[#46A0DC]">
                   {stat.value}
                 </p>
-                <p className="mt-2 text-sm text-[#252525]/70">{stat.label}</p>
+                <p className="mt-2 text-sm text-[#1E1E1E]/70">{stat.label}</p>
               </li>
             ))}
           </ul>
-          <p className="mx-auto mt-8 max-w-xl text-center text-xs text-[#252525]/50">
+          <p className="mx-auto mt-8 max-w-xl text-center text-xs text-[#1E1E1E]/50">
             Figures are illustrative placeholders for website development.
           </p>
         </Container>
@@ -193,7 +193,7 @@ export default async function ProgramDetailPage({
       )}
 
       {/* Gallery Preview */}
-      <section className="bg-[#FFF9F7] py-16 sm:py-20">
+      <section className="bg-[#F5FAFE] py-16 sm:py-20">
         <Container>
           <SectionHeading
             title="Program in Action"
@@ -237,18 +237,18 @@ export default async function ProgramDetailPage({
               <li key={resource.href}>
                 <Link
                   href={resource.href}
-                  className="group block rounded-2xl border border-[#5B2C83]/10 bg-white p-6 shadow-sm transition-shadow hover:shadow-md focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#5B2C83] focus-visible:ring-offset-2"
+                  className="group block rounded-2xl border border-[#46A0DC]/10 bg-white p-6 shadow-sm transition-shadow hover:shadow-md focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#46A0DC] focus-visible:ring-offset-2"
                 >
-                  <span className="text-xs font-semibold uppercase tracking-wider text-[#218C83]">
+                  <span className="text-xs font-semibold uppercase tracking-wider text-[#782882]">
                     {resource.type}
                   </span>
-                  <h3 className="mt-2 font-serif text-lg font-semibold text-[#252525] group-hover:text-[#5B2C83]">
+                  <h3 className="mt-2 font-serif text-lg font-semibold text-[#1E1E1E] group-hover:text-[#46A0DC]">
                     {resource.title}
                   </h3>
-                  <p className="mt-2 text-sm text-[#252525]/70">
+                  <p className="mt-2 text-sm text-[#1E1E1E]/70">
                     {resource.description}
                   </p>
-                  <span className="mt-3 inline-flex items-center gap-1 text-sm font-semibold text-[#5B2C83]">
+                  <span className="mt-3 inline-flex items-center gap-1 text-sm font-semibold text-[#46A0DC]">
                     View resource
                     <ArrowRight className="h-4 w-4" aria-hidden="true" />
                   </span>
@@ -266,7 +266,7 @@ export default async function ProgramDetailPage({
 
       {/* Testimonials */}
       {program.testimonials.length > 0 && (
-        <section className="bg-[#FFF9F7] py-16 sm:py-20">
+        <section className="bg-[#F5FAFE] py-16 sm:py-20">
           <Container>
             <SectionHeading
               title="What People Say"

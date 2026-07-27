@@ -12,11 +12,11 @@ const lastUpdated = "July 20, 2026";
 export const metadata: Metadata = {
   title: "Privacy Policy",
   description:
-    "Privacy Policy for Dr. Wynnie's Foundation — how we collect, use, and protect personal information for visitors, donors, volunteers, and program participants in Ghana.",
+    "Privacy Policy for Dr. Winnie's Foundation — how we collect, use, and protect personal information for visitors, donors, volunteers, and program participants in Ghana.",
   openGraph: {
-    title: "Privacy Policy | Dr. Wynnie's Foundation",
+    title: "Privacy Policy | Dr. Winnie's Foundation",
     description:
-      "Learn how Dr. Wynnie's Foundation handles your personal data in accordance with applicable privacy standards in Ghana.",
+      "Learn how Dr. Winnie's Foundation handles your personal data in accordance with applicable privacy standards in Ghana.",
     url: `${siteUrl}/privacy`,
   },
   alternates: {
@@ -37,8 +37,8 @@ function PolicySection({
 }) {
   return (
     <section className="scroll-mt-24">
-      <h2 className="font-serif text-2xl font-bold text-[#252525]">{title}</h2>
-      <div className="mt-4 space-y-4 text-base leading-relaxed text-[#252525]/80">
+      <h2 className="font-serif text-2xl font-bold text-[#1E1E1E]">{title}</h2>
+      <div className="mt-4 space-y-4 text-base leading-relaxed text-[#1E1E1E]/80">
         {children}
       </div>
     </section>
@@ -52,7 +52,7 @@ export default function PrivacyPage() {
     <>
       <PageHero
         title="Privacy Policy"
-        description="Your privacy matters to us. This policy explains how Dr. Wynnie's Foundation collects, uses, and protects personal information."
+        description="Your privacy matters to us. This policy explains how Dr. Winnie's Foundation collects, uses, and protects personal information."
         breadcrumbs={[
           { label: "Home", href: "/" },
           { label: "Privacy Policy" },
@@ -62,21 +62,21 @@ export default function PrivacyPage() {
       <div className="py-12 sm:py-16">
         <Container>
           <div className="mx-auto max-w-3xl">
-            <p className="rounded-xl bg-[#F4B942]/15 px-4 py-3 text-sm text-[#252525]/80">
+            <p className="rounded-xl bg-[#F0A070]/15 px-4 py-3 text-sm text-[#1E1E1E]/80">
               <strong>Note:</strong> Contact details on this page (email, phone,
               and address) are illustrative placeholders for website development.
               Replace with verified foundation contact information before public
               launch.
             </p>
 
-            <p className="mt-8 text-sm text-[#252525]/60">
+            <p className="mt-8 text-sm text-[#1E1E1E]/60">
               Last updated: {lastUpdated}
             </p>
 
             <div className="mt-10 space-y-12">
               <PolicySection title="1. Introduction">
                 <p>
-                  Dr. Wynnie&apos;s Foundation (&quot;we,&quot; &quot;us,&quot; or
+                  Dr. Winnie&apos;s Foundation (&quot;we,&quot; &quot;us,&quot; or
                   &quot;our&quot;) is a nonprofit organization based in Accra,
                   Ghana, dedicated to empowering girls through health, wellness,
                   and opportunity. This Privacy Policy describes how we collect,
@@ -315,7 +315,7 @@ export default function PrivacyPage() {
                   Email:{" "}
                   <a
                     href={`mailto:${contact.email}`}
-                    className="text-[#5B2C83] underline-offset-2 hover:underline"
+                    className="text-[#46A0DC] underline-offset-2 hover:underline"
                   >
                     {contact.email}
                   </a>
@@ -326,7 +326,7 @@ export default function PrivacyPage() {
                   You may also use our{" "}
                   <Link
                     href="/contact"
-                    className="font-medium text-[#5B2C83] underline-offset-2 hover:underline"
+                    className="font-medium text-[#46A0DC] underline-offset-2 hover:underline"
                   >
                     contact form
                   </Link>

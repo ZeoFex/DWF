@@ -8,7 +8,7 @@ export const valuesData: ValuesData = {
   vision:
     "A Ghana where every girl grows up with the health knowledge, emotional support, and career opportunities she needs to lead with confidence — free from stigma, limitation, or exclusion.",
   mission:
-    "Dr. Wynnie's Foundation empowers girls and young women through menstrual health education, mental wellness programs, and career development initiatives — working alongside schools, families, and communities to build lasting change rooted in dignity and respect.",
+    "Dr. Winnie's Foundation empowers girls and young women through menstrual health education, mental wellness programs, and career development initiatives — working alongside schools, families, and communities to build lasting change rooted in dignity and respect.",
   coreValues: [
     {
       title: "Dignity First",
@@ -42,9 +42,9 @@ export const valuesData: ValuesData = {
     },
   ],
   aboutStory: [
-    "Dr. Wynnie's Foundation began with a simple observation: too many girls in Ghana were missing school, silencing their ambitions, and facing preventable barriers — not because they lacked talent, but because they lacked support.",
+    "Dr. Winnie's Foundation began with a simple observation: too many girls in Ghana were missing school, silencing their ambitions, and facing preventable barriers — not because they lacked talent, but because they lacked support.",
     "Founder Dr. Wynette Mensah spent years working in health education and community outreach across Greater Accra. In school after school, she encountered the same patterns: girls absent during menstruation because supplies were unaffordable and facilities inadequate; teenagers struggling with anxiety and depression with nowhere to turn; bright young women who had never met a professional mentor who looked like them.",
-    "Rather than address these challenges in isolation, Dr. Mensah envisioned an integrated approach — one organization that could meet girls where they are with health, wellness, and opportunity programs designed to work together. In 2022 (illustrative founding year), Dr. Wynnie's Foundation was established with a small team, a handful of partner schools, and a commitment to dignity-centered service.",
+    "Rather than address these challenges in isolation, Dr. Mensah envisioned an integrated approach — one organization that could meet girls where they are with health, wellness, and opportunity programs designed to work together. In 2022 (illustrative founding year), Dr. Winnie's Foundation was established with a small team, a handful of partner schools, and a commitment to dignity-centered service.",
     "From distributing the first dignity kits to a single classroom, the foundation has grown into a multi-program organization reaching thousands of girls across Greater Accra and the Eastern Region (illustrative reach). Our 1000 Girl Project represents the next chapter — an ambitious campaign to prove that comprehensive, coordinated support can transform outcomes at scale.",
     "We are still growing, still learning, and still guided by the belief that every girl deserves someone in her corner. Whether you are a donor, volunteer, partner, or parent — we invite you to join us in building a future where no girl's potential is left unrealized.",
     "(This organizational narrative contains illustrative details for website development. Founding dates, reach figures, and biographical details should be verified and updated by the foundation before publication.)",
@@ -54,7 +54,7 @@ export const valuesData: ValuesData = {
       year: 2022,
       title: "Foundation Established",
       description:
-        "Dr. Wynette Mensah founds Dr. Wynnie's Foundation in Accra with an initial focus on menstrual health education and dignity kit distribution. (Illustrative milestone.)",
+        "Dr. Wynette Mensah founds Dr. Winnie's Foundation in Accra with an initial focus on menstrual health education and dignity kit distribution. (Illustrative milestone.)",
       isIllustrative: true,
     },
     {

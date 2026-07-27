@@ -13,7 +13,7 @@ import { images } from "@/content";
 export const metadata: Metadata = {
   title: "Partner With Us",
   description:
-    "Partner with Dr. Wynnie's Foundation — corporate sponsorship, school partnerships, in-kind donations, and community collaborations in Ghana.",
+    "Partner with Dr. Winnie's Foundation — corporate sponsorship, school partnerships, in-kind donations, and community collaborations in Ghana.",
 };
 
 const partnershipTypes = [
@@ -65,15 +65,15 @@ export default function PartnerPage() {
               return (
                 <li
                   key={type.title}
-                  className="rounded-2xl border border-[#5B2C83]/10 bg-white p-6 text-center shadow-sm"
+                  className="rounded-2xl border border-[#46A0DC]/10 bg-white p-6 text-center shadow-sm"
                 >
-                  <div className="mx-auto flex h-14 w-14 items-center justify-center rounded-full bg-[#218C83]/10 text-[#218C83]">
+                  <div className="mx-auto flex h-14 w-14 items-center justify-center rounded-full bg-[#782882]/10 text-[#782882]">
                     <Icon className="h-7 w-7" aria-hidden="true" />
                   </div>
-                  <h3 className="mt-4 font-serif text-lg font-semibold text-[#252525]">
+                  <h3 className="mt-4 font-serif text-lg font-semibold text-[#1E1E1E]">
                     {type.title}
                   </h3>
-                  <p className="mt-2 text-sm leading-relaxed text-[#252525]/70">
+                  <p className="mt-2 text-sm leading-relaxed text-[#1E1E1E]/70">
                     {type.description}
                   </p>
                 </li>
@@ -83,7 +83,7 @@ export default function PartnerPage() {
         </Container>
       </section>
 
-      <section className="bg-[#FFF9F7] py-16 sm:py-20">
+      <section className="bg-[#F5FAFE] py-16 sm:py-20">
         <Container>
           <div className="grid gap-12 lg:grid-cols-5">
             <div className="lg:col-span-2">

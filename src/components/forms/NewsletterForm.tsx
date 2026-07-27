@@ -13,7 +13,7 @@ interface NewsletterFormProps {
 type FormStatus = "idle" | "loading" | "success" | "error";
 
 const inputClass =
-  "w-full rounded-xl border border-[#5B2C83]/20 bg-white px-4 py-2.5 text-sm text-[#252525] placeholder:text-[#252525]/40 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#5B2C83] focus-visible:ring-offset-2";
+  "w-full rounded-xl border border-[#46A0DC]/20 bg-white px-4 py-2.5 text-sm text-[#1E1E1E] placeholder:text-[#1E1E1E]/40 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#46A0DC] focus-visible:ring-offset-2";
 
 export function NewsletterForm({
   className,
@@ -56,7 +56,7 @@ export function NewsletterForm({
           "rounded-xl p-4 text-sm",
           variant === "dark"
             ? "bg-white/10 text-white"
-            : "bg-[#218C83]/10 text-[#218C83]",
+            : "bg-[#782882]/10 text-[#782882]",
           className
         )}
         role="status"
@@ -96,7 +96,7 @@ export function NewsletterForm({
             id="newsletter-error"
             className={cn(
               "mt-1.5 text-xs",
-              variant === "dark" ? "text-[#D94F70]" : "text-[#D94F70]"
+              variant === "dark" ? "text-[#E85A28]" : "text-[#E85A28]"
             )}
             role="alert"
           >

@@ -1,7 +1,7 @@
 import type { DonationRequest, PaymentIntent, PaymentStatus } from "@/types";
 
 /**
- * Mock payment service layer for Dr. Wynnie's Foundation.
+ * Mock payment service layer for Dr. Winnie's Foundation.
  *
  * IMPORTANT: This module NEVER confirms real payments.
  * All responses return pending or mock statuses for development and UI testing only.
@@ -85,4 +85,4 @@ export function isMockPaymentMode(): boolean {
 
 /** Human-readable disclaimer for donation UI. */
 export const PAYMENT_DISCLAIMER =
-  "Donations on this site are currently in demonstration mode. No real payments are processed. Contact info@drwynniesfoundation.org to donate directly until online payments are live.";
+  "Donations on this site are currently in demonstration mode. No real payments are processed. Contact info@drwinniesfoundation.org to donate directly until online payments are live.";

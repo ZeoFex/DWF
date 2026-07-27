@@ -30,7 +30,7 @@ export function TestimonialsSection({
     setActiveIndex((i) => (i === testimonials.length - 1 ? 0 : i + 1));
 
   return (
-    <section className={cn("bg-[#FFF9F7] py-16 sm:py-20", className)}>
+    <section className={cn("bg-[#F5FAFE] py-16 sm:py-20", className)}>
       <Container>
         <SectionHeading
           title={title}
@@ -52,18 +52,18 @@ export function TestimonialsSection({
               <button
                 type="button"
                 onClick={goPrev}
-                className="flex h-10 w-10 items-center justify-center rounded-full bg-white shadow-sm transition-shadow hover:shadow-md focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#5B2C83] focus-visible:ring-offset-2"
+                className="flex h-10 w-10 items-center justify-center rounded-full bg-white shadow-sm transition-shadow hover:shadow-md focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#46A0DC] focus-visible:ring-offset-2"
                 aria-label="Previous testimonial"
               >
                 <ChevronLeft className="h-5 w-5" />
               </button>
-              <span className="text-sm text-[#252525]/60">
+              <span className="text-sm text-[#1E1E1E]/60">
                 {activeIndex + 1} of {testimonials.length}
               </span>
               <button
                 type="button"
                 onClick={goNext}
-                className="flex h-10 w-10 items-center justify-center rounded-full bg-white shadow-sm transition-shadow hover:shadow-md focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#5B2C83] focus-visible:ring-offset-2"
+                className="flex h-10 w-10 items-center justify-center rounded-full bg-white shadow-sm transition-shadow hover:shadow-md focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#46A0DC] focus-visible:ring-offset-2"
                 aria-label="Next testimonial"
               >
                 <ChevronRight className="h-5 w-5" />

@@ -16,7 +16,7 @@ export function CtaSection({
   return (
     <section
       className={cn(
-        "relative overflow-hidden bg-[#5B2C83] py-16 sm:py-20",
+        "relative overflow-hidden bg-[#46A0DC] py-16 sm:py-20",
         className
       )}
     >
@@ -25,7 +25,7 @@ export function CtaSection({
         aria-hidden="true"
         style={{
           backgroundImage:
-            "radial-gradient(circle at 20% 50%, #F4B942 0%, transparent 50%), radial-gradient(circle at 80% 50%, #218C83 0%, transparent 50%)",
+            "radial-gradient(circle at 20% 50%, #F0A070 0%, transparent 50%), radial-gradient(circle at 80% 50%, #782882 0%, transparent 50%)",
         }}
       />
       <Container className="relative text-center">

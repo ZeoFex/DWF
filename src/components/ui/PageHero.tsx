@@ -21,7 +21,7 @@ export function PageHero({
   return (
     <section
       className={cn(
-        "relative overflow-hidden bg-[#5B2C83] text-white",
+        "relative overflow-hidden bg-[#46A0DC] text-white",
         className
       )}
     >
@@ -36,7 +36,7 @@ export function PageHero({
             sizes="100vw"
           />
           <div
-            className="absolute inset-0 bg-gradient-to-r from-[#5B2C83]/95 via-[#5B2C83]/85 to-[#5B2C83]/70"
+            className="absolute inset-0 bg-gradient-to-r from-[#46A0DC]/95 via-[#46A0DC]/85 to-[#46A0DC]/70"
             aria-hidden="true"
           />
         </>

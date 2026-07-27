@@ -62,11 +62,11 @@ export function EventsPageContent({ upcoming, past }: EventsPageContentProps) {
   return (
     <>
       {nextEvent && (
-        <section className="bg-[#5B2C83] text-white">
+        <section className="bg-[#46A0DC] text-white">
           <Container className="py-12 sm:py-16">
             <div className="grid gap-10 lg:grid-cols-2 lg:items-center">
               <div>
-                <p className="text-sm font-semibold uppercase tracking-wider text-[#F4B942]">
+                <p className="text-sm font-semibold uppercase tracking-wider text-[#F0A070]">
                   Next Event
                 </p>
                 <h2 className="mt-2 font-serif text-3xl font-bold sm:text-4xl">
@@ -97,10 +97,10 @@ export function EventsPageContent({ upcoming, past }: EventsPageContentProps) {
                 onClick={() => setCategory(value)}
                 aria-pressed={category === value}
                 className={cn(
-                  "rounded-full px-4 py-2 text-sm font-medium transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#5B2C83] focus-visible:ring-offset-2",
+                  "rounded-full px-4 py-2 text-sm font-medium transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#46A0DC] focus-visible:ring-offset-2",
                   category === value
-                    ? "bg-[#5B2C83] text-white"
-                    : "bg-[#5B2C83]/10 text-[#5B2C83] hover:bg-[#5B2C83]/20"
+                    ? "bg-[#46A0DC] text-white"
+                    : "bg-[#46A0DC]/10 text-[#46A0DC] hover:bg-[#46A0DC]/20"
                 )}
               >
                 {value === "all" ? "All Events" : categoryLabels[value]}
@@ -133,7 +133,7 @@ export function EventsPageContent({ upcoming, past }: EventsPageContentProps) {
       </section>
 
       {registrationEvent && registrationEvent.registrationRequired && (
-        <section className="bg-[#5B2C83]/5 py-12 sm:py-16">
+        <section className="bg-[#46A0DC]/5 py-12 sm:py-16">
           <Container>
             <div className="grid gap-10 lg:grid-cols-2 lg:items-start">
               <SectionHeading
@@ -153,7 +153,7 @@ export function EventsPageContent({ upcoming, past }: EventsPageContentProps) {
                     );
                     if (selected) setRegistrationEvent(selected);
                   }}
-                  className="mb-6 w-full rounded-xl border border-[#5B2C83]/20 bg-white px-4 py-2.5 text-sm text-[#252525] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#5B2C83] focus-visible:ring-offset-2"
+                  className="mb-6 w-full rounded-xl border border-[#46A0DC]/20 bg-white px-4 py-2.5 text-sm text-[#1E1E1E] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#46A0DC] focus-visible:ring-offset-2"
                 >
                   {upcoming
                     .filter((event) => event.registrationRequired)
@@ -188,7 +188,7 @@ export function EventsPageContent({ upcoming, past }: EventsPageContentProps) {
               {filteredPast.map((event) => (
                 <li
                   key={event.id}
-                  className="grid gap-8 rounded-2xl border border-[#5B2C83]/10 bg-white p-6 shadow-sm lg:grid-cols-3 lg:p-8"
+                  className="grid gap-8 rounded-2xl border border-[#46A0DC]/10 bg-white p-6 shadow-sm lg:grid-cols-3 lg:p-8"
                 >
                   <div className="lg:col-span-1">
                     <EventCard event={event} />
@@ -196,10 +196,10 @@ export function EventsPageContent({ upcoming, past }: EventsPageContentProps) {
                   {event.galleryImageUrls &&
                     event.galleryImageUrls.length > 0 && (
                       <div className="lg:col-span-2">
-                        <h3 className="font-serif text-lg font-semibold text-[#252525]">
+                        <h3 className="font-serif text-lg font-semibold text-[#1E1E1E]">
                           Event Gallery
                         </h3>
-                        <p className="mt-1 text-sm text-[#252525]/70">
+                        <p className="mt-1 text-sm text-[#1E1E1E]/70">
                           Photos from {event.title}. Browse our full gallery
                           for more moments from the field.
                         </p>
@@ -221,7 +221,7 @@ export function EventsPageContent({ upcoming, past }: EventsPageContentProps) {
                         </ul>
                         <Link
                           href="/gallery"
-                          className="mt-4 inline-flex items-center gap-2 text-sm font-semibold text-[#5B2C83] transition-colors hover:text-[#4a2470] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#5B2C83] focus-visible:ring-offset-2 rounded"
+                          className="mt-4 inline-flex items-center gap-2 text-sm font-semibold text-[#46A0DC] transition-colors hover:text-[#2E86C1] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#46A0DC] focus-visible:ring-offset-2 rounded"
                         >
                           <Images className="h-4 w-4" aria-hidden="true" />
                           View full photo gallery

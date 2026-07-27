@@ -1,5 +1,5 @@
 /**
- * Centralized image URLs for Dr. Wynnie's Foundation.
+ * Centralized image URLs for Dr. Winnie's Foundation.
  * REPLACE_ME: Swap these Unsplash URLs with foundation-owned photography before launch.
  */
 
@@ -95,6 +95,6 @@ export const images = {
 
   placeholders: {
     partnerLogo: (name: string) =>
-      `https://ui-avatars.com/api/?name=${encodeURIComponent(name)}&background=5B2C83&color=fff&size=128&bold=true`,
+      `https://ui-avatars.com/api/?name=${encodeURIComponent(name)}&background=46A0DC&color=fff&size=128&bold=true`,
   },
 } as const;

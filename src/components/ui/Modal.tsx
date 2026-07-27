@@ -89,7 +89,7 @@ export function Modal({
     >
       <button
         type="button"
-        className="absolute inset-0 bg-[#252525]/60 motion-safe:animate-in motion-safe:fade-in"
+        className="absolute inset-0 bg-[#1E1E1E]/60 motion-safe:animate-in motion-safe:fade-in"
         aria-label="Close dialog"
         onClick={onClose}
       />
@@ -105,13 +105,13 @@ export function Modal({
         )}
       >
         <div className="mb-4 flex items-start justify-between gap-4">
-          <h2 id={titleId} className="font-serif text-xl font-semibold text-[#252525]">
+          <h2 id={titleId} className="font-serif text-xl font-semibold text-[#1E1E1E]">
             {title}
           </h2>
           <button
             type="button"
             onClick={onClose}
-            className="rounded-lg p-1.5 text-[#252525]/60 transition-colors hover:bg-[#5B2C83]/10 hover:text-[#252525] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#5B2C83] focus-visible:ring-offset-2"
+            className="rounded-lg p-1.5 text-[#1E1E1E]/60 transition-colors hover:bg-[#46A0DC]/10 hover:text-[#1E1E1E] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#46A0DC] focus-visible:ring-offset-2"
             aria-label="Close"
           >
             <X className="h-5 w-5" />

@@ -36,11 +36,11 @@ function MobileNavItem({
         href={item.href}
         onClick={onClose}
         className={cn(
-          "block rounded-lg px-4 py-3 text-base font-medium transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#5B2C83] focus-visible:ring-offset-2",
+          "block rounded-lg px-4 py-3 text-base font-medium transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#46A0DC] focus-visible:ring-offset-2",
           depth > 0 && "pl-8 text-sm",
           isActive
-            ? "bg-[#5B2C83]/10 text-[#5B2C83]"
-            : "text-[#252525]/80 hover:bg-[#5B2C83]/5 hover:text-[#5B2C83]"
+            ? "bg-[#46A0DC]/10 text-[#46A0DC]"
+            : "text-[#1E1E1E]/80 hover:bg-[#46A0DC]/5 hover:text-[#46A0DC]"
         )}
         aria-current={isActive ? "page" : undefined}
       >
@@ -117,7 +117,7 @@ export function MobileMenu({ isOpen, onOpen, onClose }: MobileMenuProps) {
       <button
         ref={triggerRef}
         type="button"
-        className="rounded-lg p-2 text-[#252525] transition-colors hover:bg-[#5B2C83]/10 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#5B2C83] focus-visible:ring-offset-2 xl:hidden"
+        className="rounded-lg p-2 text-[#1E1E1E] transition-colors hover:bg-[#46A0DC]/10 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#46A0DC] focus-visible:ring-offset-2 xl:hidden"
         aria-expanded={isOpen}
         aria-controls="mobile-menu"
         aria-label={isOpen ? "Close menu" : "Open menu"}
@@ -134,26 +134,26 @@ export function MobileMenu({ isOpen, onOpen, onClose }: MobileMenuProps) {
         <>
           <button
             type="button"
-            className="fixed inset-0 z-40 bg-[#252525]/40 xl:hidden"
+            className="fixed inset-0 z-40 bg-[#1E1E1E]/40 xl:hidden"
             aria-label="Close menu overlay"
             onClick={onClose}
           />
           <div
             id="mobile-menu"
             ref={panelRef}
-            className="fixed inset-y-0 right-0 z-50 flex w-full max-w-sm flex-col bg-[#FFF9F7] shadow-xl motion-safe:animate-in motion-safe:slide-in-from-right xl:hidden"
+            className="fixed inset-y-0 right-0 z-50 flex w-full max-w-sm flex-col bg-[#F5FAFE] shadow-xl motion-safe:animate-in motion-safe:slide-in-from-right xl:hidden"
             role="dialog"
             aria-modal="true"
             aria-label="Mobile navigation"
           >
-            <div className="flex items-center justify-between border-b border-[#5B2C83]/10 px-4 py-4">
-              <span className="font-serif text-lg font-bold text-[#5B2C83]">
+            <div className="flex items-center justify-between border-b border-[#46A0DC]/10 px-4 py-4">
+              <span className="font-serif text-lg font-bold text-[#46A0DC]">
                 Menu
               </span>
               <button
                 type="button"
                 onClick={onClose}
-                className="rounded-lg p-2 hover:bg-[#5B2C83]/10 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#5B2C83] focus-visible:ring-offset-2"
+                className="rounded-lg p-2 hover:bg-[#46A0DC]/10 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#46A0DC] focus-visible:ring-offset-2"
                 aria-label="Close menu"
               >
                 <X className="h-5 w-5" />
@@ -172,7 +172,7 @@ export function MobileMenu({ isOpen, onOpen, onClose }: MobileMenuProps) {
               </ul>
             </nav>
 
-            <div className="border-t border-[#5B2C83]/10 p-4">
+            <div className="border-t border-[#46A0DC]/10 p-4">
               <Button
                 href="/donate"
                 variant="coral"

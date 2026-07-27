@@ -12,6 +12,7 @@ import {
 } from "lucide-react";
 import { navigation, programs, siteConfig } from "@/content";
 import { cn } from "@/lib/utils";
+import { BrandLogo } from "@/components/layout/BrandLogo";
 import { Button } from "@/components/ui/Button";
 import { Container } from "@/components/ui/Container";
 import { NewsletterForm } from "@/components/forms/NewsletterForm";
@@ -43,7 +44,7 @@ function FooterLinkGroup({
           <li key={link.href}>
             <Link
               href={link.href}
-              className="text-sm text-white/70 transition-colors hover:text-white focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-offset-2 focus-visible:ring-offset-[#252525] rounded"
+              className="text-sm text-white/70 transition-colors hover:text-white focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-offset-2 focus-visible:ring-offset-[#1E1E1E] rounded"
             >
               {link.label}
             </Link>
@@ -89,21 +90,14 @@ export function Footer() {
     .join(", ");
 
   return (
-    <footer className="bg-[#252525] text-white" role="contentinfo">
+    <footer className="bg-[#1E1E1E] text-white" role="contentinfo">
       <Container className="py-16">
         <div className="grid gap-12 lg:grid-cols-12">
           <div className="lg:col-span-4">
-            <Link
-              href="/"
-              className="inline-flex items-center gap-2.5 rounded-lg focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-offset-2 focus-visible:ring-offset-[#252525]"
-            >
-              <span className="flex h-10 w-10 items-center justify-center rounded-full bg-[#5B2C83]">
-                <Heart className="h-5 w-5" aria-hidden="true" />
-              </span>
-              <span className="font-serif text-xl font-bold">
-                {siteConfig.name}
-              </span>
-            </Link>
+            <BrandLogo
+              variant="dark"
+              className="focus-visible:ring-white focus-visible:ring-offset-[#1E1E1E]"
+            />
             <p className="mt-4 text-sm leading-relaxed text-white/70">
               {siteConfig.description}
             </p>
@@ -165,7 +159,7 @@ export function Footer() {
                     aria-label={link.label}
                     className={cn(
                       "flex h-10 w-10 items-center justify-center rounded-full bg-white/10",
-                      "transition-colors hover:bg-[#5B2C83] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-offset-2 focus-visible:ring-offset-[#252525]"
+                      "transition-colors hover:bg-[#46A0DC] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-offset-2 focus-visible:ring-offset-[#1E1E1E]"
                     )}
                   >
                     <Icon className="h-4 w-4" aria-hidden="true" />

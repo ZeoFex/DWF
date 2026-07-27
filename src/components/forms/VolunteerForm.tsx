@@ -12,9 +12,9 @@ interface VolunteerFormProps {
 type FormStatus = "idle" | "loading" | "success" | "error";
 
 const inputClass =
-  "w-full rounded-xl border border-[#5B2C83]/20 bg-white px-4 py-2.5 text-sm text-[#252525] placeholder:text-[#252525]/40 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#5B2C83] focus-visible:ring-offset-2";
+  "w-full rounded-xl border border-[#46A0DC]/20 bg-white px-4 py-2.5 text-sm text-[#1E1E1E] placeholder:text-[#1E1E1E]/40 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#46A0DC] focus-visible:ring-offset-2";
 
-const labelClass = "mb-1.5 block text-sm font-medium text-[#252525]";
+const labelClass = "mb-1.5 block text-sm font-medium text-[#1E1E1E]";
 
 const interestOptions = [
   "Menstrual Health Programs",
@@ -87,15 +87,15 @@ export function VolunteerForm({ className }: VolunteerFormProps) {
     return (
       <div
         className={cn(
-          "rounded-2xl bg-[#218C83]/10 p-6 text-center",
+          "rounded-2xl bg-[#782882]/10 p-6 text-center",
           className
         )}
         role="status"
       >
-        <p className="font-semibold text-[#218C83]">
+        <p className="font-semibold text-[#782882]">
           Thank you, we received your message.
         </p>
-        <p className="mt-2 text-sm text-[#252525]/70">
+        <p className="mt-2 text-sm text-[#1E1E1E]/70">
           Our volunteer coordinator will contact you within 5 business days.
         </p>
       </div>
@@ -107,7 +107,7 @@ export function VolunteerForm({ className }: VolunteerFormProps) {
       <div className="grid gap-5 sm:grid-cols-2">
         <div>
           <label htmlFor="fullName" className={labelClass}>
-            Full name <span className="text-[#D94F70]">*</span>
+            Full name <span className="text-[#E85A28]">*</span>
           </label>
           <input
             id="fullName"
@@ -119,12 +119,12 @@ export function VolunteerForm({ className }: VolunteerFormProps) {
             aria-invalid={errors.fullName ? "true" : undefined}
           />
           {errors.fullName && (
-            <p className="mt-1 text-xs text-[#D94F70]" role="alert">{errors.fullName}</p>
+            <p className="mt-1 text-xs text-[#E85A28]" role="alert">{errors.fullName}</p>
           )}
         </div>
         <div>
           <label htmlFor="email" className={labelClass}>
-            Email <span className="text-[#D94F70]">*</span>
+            Email <span className="text-[#E85A28]">*</span>
           </label>
           <input
             id="email"
@@ -136,7 +136,7 @@ export function VolunteerForm({ className }: VolunteerFormProps) {
             aria-invalid={errors.email ? "true" : undefined}
           />
           {errors.email && (
-            <p className="mt-1 text-xs text-[#D94F70]" role="alert">{errors.email}</p>
+            <p className="mt-1 text-xs text-[#E85A28]" role="alert">{errors.email}</p>
           )}
         </div>
       </div>
@@ -144,7 +144,7 @@ export function VolunteerForm({ className }: VolunteerFormProps) {
       <div className="grid gap-5 sm:grid-cols-2">
         <div>
           <label htmlFor="phone" className={labelClass}>
-            Phone <span className="text-[#D94F70]">*</span>
+            Phone <span className="text-[#E85A28]">*</span>
           </label>
           <input
             id="phone"
@@ -156,12 +156,12 @@ export function VolunteerForm({ className }: VolunteerFormProps) {
             aria-invalid={errors.phone ? "true" : undefined}
           />
           {errors.phone && (
-            <p className="mt-1 text-xs text-[#D94F70]" role="alert">{errors.phone}</p>
+            <p className="mt-1 text-xs text-[#E85A28]" role="alert">{errors.phone}</p>
           )}
         </div>
         <div>
           <label htmlFor="location" className={labelClass}>
-            Location <span className="text-[#D94F70]">*</span>
+            Location <span className="text-[#E85A28]">*</span>
           </label>
           <input
             id="location"
@@ -174,7 +174,7 @@ export function VolunteerForm({ className }: VolunteerFormProps) {
             aria-invalid={errors.location ? "true" : undefined}
           />
           {errors.location && (
-            <p className="mt-1 text-xs text-[#D94F70]" role="alert">{errors.location}</p>
+            <p className="mt-1 text-xs text-[#E85A28]" role="alert">{errors.location}</p>
           )}
         </div>
       </div>
@@ -182,7 +182,7 @@ export function VolunteerForm({ className }: VolunteerFormProps) {
       <div className="grid gap-5 sm:grid-cols-2">
         <div>
           <label htmlFor="ageRange" className={labelClass}>
-            Age range <span className="text-[#D94F70]">*</span>
+            Age range <span className="text-[#E85A28]">*</span>
           </label>
           <select
             id="ageRange"
@@ -198,12 +198,12 @@ export function VolunteerForm({ className }: VolunteerFormProps) {
             ))}
           </select>
           {errors.ageRange && (
-            <p className="mt-1 text-xs text-[#D94F70]" role="alert">{errors.ageRange}</p>
+            <p className="mt-1 text-xs text-[#E85A28]" role="alert">{errors.ageRange}</p>
           )}
         </div>
         <div>
           <label htmlFor="areaOfInterest" className={labelClass}>
-            Area of interest <span className="text-[#D94F70]">*</span>
+            Area of interest <span className="text-[#E85A28]">*</span>
           </label>
           <select
             id="areaOfInterest"
@@ -219,14 +219,14 @@ export function VolunteerForm({ className }: VolunteerFormProps) {
             ))}
           </select>
           {errors.areaOfInterest && (
-            <p className="mt-1 text-xs text-[#D94F70]" role="alert">{errors.areaOfInterest}</p>
+            <p className="mt-1 text-xs text-[#E85A28]" role="alert">{errors.areaOfInterest}</p>
           )}
         </div>
       </div>
 
       <div>
         <label htmlFor="availability" className={labelClass}>
-          Availability <span className="text-[#D94F70]">*</span>
+          Availability <span className="text-[#E85A28]">*</span>
         </label>
         <select
           id="availability"
@@ -242,7 +242,7 @@ export function VolunteerForm({ className }: VolunteerFormProps) {
           ))}
         </select>
         {errors.availability && (
-          <p className="mt-1 text-xs text-[#D94F70]" role="alert">{errors.availability}</p>
+          <p className="mt-1 text-xs text-[#E85A28]" role="alert">{errors.availability}</p>
         )}
       </div>
 
@@ -263,7 +263,7 @@ export function VolunteerForm({ className }: VolunteerFormProps) {
 
       <div>
         <label htmlFor="motivation" className={labelClass}>
-          Why do you want to volunteer? <span className="text-[#D94F70]">*</span>
+          Why do you want to volunteer? <span className="text-[#E85A28]">*</span>
         </label>
         <textarea
           id="motivation"
@@ -275,7 +275,7 @@ export function VolunteerForm({ className }: VolunteerFormProps) {
           aria-invalid={errors.motivation ? "true" : undefined}
         />
         {errors.motivation && (
-          <p className="mt-1 text-xs text-[#D94F70]" role="alert">{errors.motivation}</p>
+          <p className="mt-1 text-xs text-[#E85A28]" role="alert">{errors.motivation}</p>
         )}
       </div>
 
@@ -285,21 +285,21 @@ export function VolunteerForm({ className }: VolunteerFormProps) {
           type="checkbox"
           checked={consent}
           onChange={(e) => setConsent(e.target.checked)}
-          className="mt-1 h-4 w-4 rounded border-[#5B2C83]/30 text-[#5B2C83] focus-visible:ring-2 focus-visible:ring-[#5B2C83]"
+          className="mt-1 h-4 w-4 rounded border-[#46A0DC]/30 text-[#46A0DC] focus-visible:ring-2 focus-visible:ring-[#46A0DC]"
           disabled={status === "loading"}
           aria-invalid={errors.consent ? "true" : undefined}
         />
-        <label htmlFor="consent" className="text-sm text-[#252525]/80">
+        <label htmlFor="consent" className="text-sm text-[#1E1E1E]/80">
           I agree to the foundation&apos;s volunteer policies and consent to being
-          contacted about volunteer opportunities. <span className="text-[#D94F70]">*</span>
+          contacted about volunteer opportunities. <span className="text-[#E85A28]">*</span>
         </label>
       </div>
       {errors.consent && (
-        <p className="text-xs text-[#D94F70]" role="alert">{errors.consent}</p>
+        <p className="text-xs text-[#E85A28]" role="alert">{errors.consent}</p>
       )}
 
       {status === "error" && (
-        <p className="text-sm text-[#D94F70]" role="alert">
+        <p className="text-sm text-[#E85A28]" role="alert">
           Something went wrong. Please try again.
         </p>
       )}

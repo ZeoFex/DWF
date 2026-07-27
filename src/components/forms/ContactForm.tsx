@@ -12,9 +12,9 @@ interface ContactFormProps {
 type FormStatus = "idle" | "loading" | "success" | "error";
 
 const inputClass =
-  "w-full rounded-xl border border-[#5B2C83]/20 bg-white px-4 py-2.5 text-sm text-[#252525] placeholder:text-[#252525]/40 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#5B2C83] focus-visible:ring-offset-2";
+  "w-full rounded-xl border border-[#46A0DC]/20 bg-white px-4 py-2.5 text-sm text-[#1E1E1E] placeholder:text-[#1E1E1E]/40 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#46A0DC] focus-visible:ring-offset-2";
 
-const labelClass = "mb-1.5 block text-sm font-medium text-[#252525]";
+const labelClass = "mb-1.5 block text-sm font-medium text-[#1E1E1E]";
 
 export function ContactForm({ className }: ContactFormProps) {
   const [status, setStatus] = useState<FormStatus>("idle");
@@ -57,15 +57,15 @@ export function ContactForm({ className }: ContactFormProps) {
     return (
       <div
         className={cn(
-          "rounded-2xl bg-[#218C83]/10 p-6 text-center",
+          "rounded-2xl bg-[#782882]/10 p-6 text-center",
           className
         )}
         role="status"
       >
-        <p className="font-semibold text-[#218C83]">
+        <p className="font-semibold text-[#782882]">
           Thank you, we received your message.
         </p>
-        <p className="mt-2 text-sm text-[#252525]/70">
+        <p className="mt-2 text-sm text-[#1E1E1E]/70">
           Our team will respond within 2 business days.
         </p>
         <Button
@@ -88,7 +88,7 @@ export function ContactForm({ className }: ContactFormProps) {
     <div>
       <label htmlFor={id} className={labelClass}>
         {label}
-        {required && <span className="text-[#D94F70]"> *</span>}
+        {required && <span className="text-[#E85A28]"> *</span>}
       </label>
       {id === "message" ? (
         <textarea
@@ -114,7 +114,7 @@ export function ContactForm({ className }: ContactFormProps) {
         />
       )}
       {errors[id] && (
-        <p id={`${id}-error`} className="mt-1 text-xs text-[#D94F70]" role="alert">
+        <p id={`${id}-error`} className="mt-1 text-xs text-[#E85A28]" role="alert">
           {errors[id]}
         </p>
       )}
@@ -134,7 +134,7 @@ export function ContactForm({ className }: ContactFormProps) {
       {field("message", "Message", "textarea", true)}
 
       {status === "error" && (
-        <p className="text-sm text-[#D94F70]" role="alert">
+        <p className="text-sm text-[#E85A28]" role="alert">
           Something went wrong. Please try again.
         </p>
       )}

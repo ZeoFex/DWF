@@ -14,9 +14,9 @@ const past = getPastEvents();
 export const metadata: Metadata = {
   title: "Events",
   description:
-    "Discover upcoming workshops, fundraisers, outreach days, and community events hosted by Dr. Wynnie's Foundation across Greater Accra, Ghana.",
+    "Discover upcoming workshops, fundraisers, outreach days, and community events hosted by Dr. Winnie's Foundation across Greater Accra, Ghana.",
   openGraph: {
-    title: "Events | Dr. Wynnie's Foundation",
+    title: "Events | Dr. Winnie's Foundation",
     description:
       "Join us at foundation events — register for workshops, galas, volunteer orientations, and community outreach days.",
     url: `${siteUrl}/events`,

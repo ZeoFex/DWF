@@ -19,7 +19,7 @@ import { images } from "@/content";
 export const metadata: Metadata = {
   title: "Get Involved",
   description:
-    "Join Dr. Wynnie's Foundation — volunteer your time, partner with us, donate to our campaigns, or sponsor a girl's journey.",
+    "Join Dr. Winnie's Foundation — volunteer your time, partner with us, donate to our campaigns, or sponsor a girl's journey.",
 };
 
 const participationOptions = [
@@ -107,15 +107,15 @@ export default function GetInvolvedPage() {
               return (
                 <li
                   key={option.title}
-                  className="flex flex-col rounded-2xl border border-[#5B2C83]/10 bg-white p-8 shadow-sm"
+                  className="flex flex-col rounded-2xl border border-[#46A0DC]/10 bg-white p-8 shadow-sm"
                 >
-                  <div className="flex h-14 w-14 items-center justify-center rounded-full bg-[#5B2C83]/10 text-[#5B2C83]">
+                  <div className="flex h-14 w-14 items-center justify-center rounded-full bg-[#46A0DC]/10 text-[#46A0DC]">
                     <Icon className="h-7 w-7" aria-hidden="true" />
                   </div>
-                  <h3 className="mt-5 font-serif text-xl font-semibold text-[#252525]">
+                  <h3 className="mt-5 font-serif text-xl font-semibold text-[#1E1E1E]">
                     {option.title}
                   </h3>
-                  <p className="mt-3 flex-1 text-sm leading-relaxed text-[#252525]/70">
+                  <p className="mt-3 flex-1 text-sm leading-relaxed text-[#1E1E1E]/70">
                     {option.description}
                   </p>
                   <Button
@@ -133,7 +133,7 @@ export default function GetInvolvedPage() {
         </Container>
       </section>
 
-      <section className="bg-[#FFF9F7] py-16 sm:py-20">
+      <section className="bg-[#F5FAFE] py-16 sm:py-20">
         <Container>
           <SectionHeading
             eyebrow="Sponsorship Opportunities"
@@ -150,18 +150,18 @@ export default function GetInvolvedPage() {
                   key={option.title}
                   className="rounded-2xl bg-white p-8 shadow-sm"
                 >
-                  <div className="flex h-12 w-12 items-center justify-center rounded-full bg-[#218C83]/10 text-[#218C83]">
+                  <div className="flex h-12 w-12 items-center justify-center rounded-full bg-[#782882]/10 text-[#782882]">
                     <Icon className="h-6 w-6" aria-hidden="true" />
                   </div>
-                  <h3 className="mt-4 font-serif text-lg font-semibold text-[#252525]">
+                  <h3 className="mt-4 font-serif text-lg font-semibold text-[#1E1E1E]">
                     {option.title}
                   </h3>
-                  <p className="mt-2 text-sm leading-relaxed text-[#252525]/70">
+                  <p className="mt-2 text-sm leading-relaxed text-[#1E1E1E]/70">
                     {option.description}
                   </p>
                   <Link
                     href={option.href}
-                    className="mt-4 inline-flex items-center gap-1.5 text-sm font-semibold text-[#5B2C83] hover:text-[#4a2470] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#5B2C83] focus-visible:ring-offset-2 rounded"
+                    className="mt-4 inline-flex items-center gap-1.5 text-sm font-semibold text-[#46A0DC] hover:text-[#2E86C1] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#46A0DC] focus-visible:ring-offset-2 rounded"
                   >
                     {option.cta}
                     <ArrowRight className="h-4 w-4" aria-hidden="true" />

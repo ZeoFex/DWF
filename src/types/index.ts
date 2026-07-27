@@ -1,4 +1,4 @@
-/** Shared TypeScript types for Dr. Wynnie's Foundation website content. */
+/** Shared TypeScript types for Dr. Winnie's Foundation website content. */
 
 export type SocialPlatform =
   | "facebook"

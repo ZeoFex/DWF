@@ -65,7 +65,7 @@ export function Lightbox({
       role="dialog"
       aria-modal="true"
       aria-label={`Image ${currentIndex + 1} of ${images.length}: ${current.alt}`}
-      className="fixed inset-0 z-50 flex flex-col bg-[#252525]/95"
+      className="fixed inset-0 z-50 flex flex-col bg-[#1E1E1E]/95"
     >
       <div className="flex items-center justify-between px-4 py-3 text-white">
         <p className="text-sm">
@@ -74,7 +74,7 @@ export function Lightbox({
         <button
           type="button"
           onClick={onClose}
-          className="rounded-lg p-2 transition-colors hover:bg-white/10 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-offset-2 focus-visible:ring-offset-[#252525]"
+          className="rounded-lg p-2 transition-colors hover:bg-white/10 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-offset-2 focus-visible:ring-offset-[#1E1E1E]"
           aria-label="Close lightbox"
         >
           <X className="h-6 w-6" />

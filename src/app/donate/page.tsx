@@ -13,7 +13,7 @@ import { PAYMENT_DISCLAIMER } from "@/lib/payments";
 export const metadata: Metadata = {
   title: "Donate",
   description:
-    "Support Dr. Wynnie's Foundation — donate to fund dignity kits, wellness programs, mentorship, and career development for girls in Ghana.",
+    "Support Dr. Winnie's Foundation — donate to fund dignity kits, wellness programs, mentorship, and career development for girls in Ghana.",
 };
 
 interface DonatePageProps {
@@ -49,44 +49,44 @@ export default async function DonatePage({ searchParams }: DonatePageProps) {
 
             <aside className="space-y-8 lg:col-span-2">
               {/* How donations are used */}
-              <div className="rounded-2xl bg-[#FFF9F7] p-6">
-                <h2 className="font-serif text-xl font-semibold text-[#252525]">
+              <div className="rounded-2xl bg-[#F5FAFE] p-6">
+                <h2 className="font-serif text-xl font-semibold text-[#1E1E1E]">
                   How Your Donation Helps
                 </h2>
                 <ul className="mt-4 space-y-4">
                   {impactData.donationUsage.map((item) => (
                     <li key={item.category}>
                       <div className="flex items-center justify-between gap-2">
-                        <span className="text-sm font-medium text-[#252525]">
+                        <span className="text-sm font-medium text-[#1E1E1E]">
                           {item.category}
                         </span>
-                        <span className="text-sm font-semibold text-[#5B2C83]">
+                        <span className="text-sm font-semibold text-[#46A0DC]">
                           {item.percentage}%
                         </span>
                       </div>
-                      <p className="mt-1 text-xs text-[#252525]/60">
+                      <p className="mt-1 text-xs text-[#1E1E1E]/60">
                         {item.description}
                       </p>
                     </li>
                   ))}
                 </ul>
-                <p className="mt-4 text-xs text-[#252525]/50">
+                <p className="mt-4 text-xs text-[#1E1E1E]/50">
                   Allocation percentages are illustrative for website development.
                 </p>
               </div>
 
               {/* Security messaging */}
-              <div className="rounded-2xl border border-[#218C83]/20 bg-white p-6">
+              <div className="rounded-2xl border border-[#782882]/20 bg-white p-6">
                 <div className="flex items-start gap-3">
                   <Shield
-                    className="h-6 w-6 shrink-0 text-[#218C83]"
+                    className="h-6 w-6 shrink-0 text-[#782882]"
                     aria-hidden="true"
                   />
                   <div>
-                    <h2 className="font-serif text-lg font-semibold text-[#252525]">
+                    <h2 className="font-serif text-lg font-semibold text-[#1E1E1E]">
                       Secure & Transparent
                     </h2>
-                    <ul className="mt-3 space-y-2 text-sm text-[#252525]/70">
+                    <ul className="mt-3 space-y-2 text-sm text-[#1E1E1E]/70">
                       <li className="flex items-start gap-2">
                         <Lock className="mt-0.5 h-4 w-4 shrink-0" aria-hidden="true" />
                         Donor information is kept confidential and never sold.
@@ -106,7 +106,7 @@ export default async function DonatePage({ searchParams }: DonatePageProps) {
 
               {/* Demo disclaimer */}
               <div
-                className="flex items-start gap-3 rounded-2xl border border-[#F4B942]/50 bg-[#F4B942]/10 p-5"
+                className="flex items-start gap-3 rounded-2xl border border-[#F0A070]/50 bg-[#F0A070]/10 p-5"
                 role="note"
               >
                 <AlertTriangle
@@ -114,10 +114,10 @@ export default async function DonatePage({ searchParams }: DonatePageProps) {
                   aria-hidden="true"
                 />
                 <div>
-                  <p className="text-sm font-semibold text-[#252525]">
+                  <p className="text-sm font-semibold text-[#1E1E1E]">
                     Demo Mode
                   </p>
-                  <p className="mt-1 text-sm text-[#252525]/70">
+                  <p className="mt-1 text-sm text-[#1E1E1E]/70">
                     {PAYMENT_DISCLAIMER}
                   </p>
                 </div>

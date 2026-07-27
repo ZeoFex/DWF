@@ -12,11 +12,11 @@ const lastUpdated = "July 20, 2026";
 export const metadata: Metadata = {
   title: "Terms & Conditions",
   description:
-    "Terms and Conditions for using the Dr. Wynnie's Foundation website — donations, volunteering, content use, and legal terms governed by the laws of Ghana.",
+    "Terms and Conditions for using the Dr. Winnie's Foundation website — donations, volunteering, content use, and legal terms governed by the laws of Ghana.",
   openGraph: {
-    title: "Terms & Conditions | Dr. Wynnie's Foundation",
+    title: "Terms & Conditions | Dr. Winnie's Foundation",
     description:
-      "Read the terms governing use of the Dr. Wynnie's Foundation website and online services.",
+      "Read the terms governing use of the Dr. Winnie's Foundation website and online services.",
     url: `${siteUrl}/terms`,
   },
   alternates: {
@@ -37,8 +37,8 @@ function TermsSection({
 }) {
   return (
     <section className="scroll-mt-24">
-      <h2 className="font-serif text-2xl font-bold text-[#252525]">{title}</h2>
-      <div className="mt-4 space-y-4 text-base leading-relaxed text-[#252525]/80">
+      <h2 className="font-serif text-2xl font-bold text-[#1E1E1E]">{title}</h2>
+      <div className="mt-4 space-y-4 text-base leading-relaxed text-[#1E1E1E]/80">
         {children}
       </div>
     </section>
@@ -62,13 +62,13 @@ export default function TermsPage() {
       <div className="py-12 sm:py-16">
         <Container>
           <div className="mx-auto max-w-3xl">
-            <p className="rounded-xl bg-[#F4B942]/15 px-4 py-3 text-sm text-[#252525]/80">
+            <p className="rounded-xl bg-[#F0A070]/15 px-4 py-3 text-sm text-[#1E1E1E]/80">
               <strong>Note:</strong> Contact details referenced in these terms are
               illustrative placeholders for website development. Replace with
               verified foundation information before public launch.
             </p>
 
-            <p className="mt-8 text-sm text-[#252525]/60">
+            <p className="mt-8 text-sm text-[#1E1E1E]/60">
               Last updated: {lastUpdated}
             </p>
 
@@ -76,14 +76,14 @@ export default function TermsPage() {
               <TermsSection title="1. Acceptance of Terms">
                 <p>
                   These Terms and Conditions (&quot;Terms&quot;) govern your access
-                  to and use of the website operated by Dr. Wynnie&apos;s
+                  to and use of the website operated by Dr. Winnie&apos;s
                   Foundation (&quot;Foundation,&quot; &quot;we,&quot; &quot;us,&quot;
                   or &quot;our&quot;), located at {contact.address.city},{" "}
                   {contact.address.country}. By accessing or using our website, you
                   agree to be bound by these Terms and our{" "}
                   <Link
                     href="/privacy"
-                    className="font-medium text-[#5B2C83] underline-offset-2 hover:underline"
+                    className="font-medium text-[#46A0DC] underline-offset-2 hover:underline"
                   >
                     Privacy Policy
                   </Link>
@@ -93,7 +93,7 @@ export default function TermsPage() {
 
               <TermsSection title="2. About the Foundation">
                 <p>
-                  Dr. Wynnie&apos;s Foundation is a nonprofit organization supporting
+                  Dr. Winnie&apos;s Foundation is a nonprofit organization supporting
                   young women and girls in Ghana through menstrual health
                   education, mental wellness programs, and career development
                   initiatives. Content on this website — including impact figures,
@@ -180,7 +180,7 @@ export default function TermsPage() {
                 <p>
                   All content on this website — including text, graphics, logos,
                   photographs, videos, and design elements — is owned by or licensed
-                  to Dr. Wynnie&apos;s Foundation and protected by copyright and
+                  to Dr. Winnie&apos;s Foundation and protected by copyright and
                   other intellectual property laws.
                 </p>
                 <p>
@@ -220,7 +220,7 @@ export default function TermsPage() {
               <TermsSection title="9. Limitation of Liability">
                 <p>
                   To the fullest extent permitted by the laws of Ghana, Dr.
-                  Wynnie&apos;s Foundation and its directors, staff, volunteers, and
+                  Winnie&apos;s Foundation and its directors, staff, volunteers, and
                   agents shall not be liable for any indirect, incidental, special,
                   consequential, or punitive damages arising from your use of this
                   website, including loss of data, profits, or goodwill.
@@ -235,7 +235,7 @@ export default function TermsPage() {
 
               <TermsSection title="10. Indemnification">
                 <p>
-                  You agree to indemnify and hold harmless Dr. Wynnie&apos;s
+                  You agree to indemnify and hold harmless Dr. Winnie&apos;s
                   Foundation from any claims, damages, losses, or expenses
                   (including reasonable legal fees) arising from your violation of
                   these Terms or misuse of the website.
@@ -284,7 +284,7 @@ export default function TermsPage() {
                   Email:{" "}
                   <a
                     href={`mailto:${contact.email}`}
-                    className="text-[#5B2C83] underline-offset-2 hover:underline"
+                    className="text-[#46A0DC] underline-offset-2 hover:underline"
                   >
                     {contact.email}
                   </a>
@@ -295,7 +295,7 @@ export default function TermsPage() {
                   Or visit our{" "}
                   <Link
                     href="/contact"
-                    className="font-medium text-[#5B2C83] underline-offset-2 hover:underline"
+                    className="font-medium text-[#46A0DC] underline-offset-2 hover:underline"
                   >
                     contact page
                   </Link>

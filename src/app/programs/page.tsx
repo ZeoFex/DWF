@@ -11,7 +11,7 @@ import { images, programs } from "@/content";
 export const metadata: Metadata = {
   title: "Programs",
   description:
-    "Explore Dr. Wynnie's Foundation programs in menstrual health, mental wellness, and career development — empowering girls across Ghana.",
+    "Explore Dr. Winnie's Foundation programs in menstrual health, mental wellness, and career development — empowering girls across Ghana.",
 };
 
 export default function ProgramsPage() {

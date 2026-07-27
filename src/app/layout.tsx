@@ -33,6 +33,10 @@ export const metadata: Metadata = {
     template: `%s | ${siteConfig.name}`,
   },
   description: siteConfig.description,
+  icons: {
+    icon: "/icon.png",
+    apple: "/icon-180.png",
+  },
   openGraph: {
     type: "website",
     locale: "en_GH",
@@ -53,7 +57,7 @@ export const metadata: Metadata = {
 };
 
 export const viewport: Viewport = {
-  themeColor: "#5B2C83",
+  themeColor: "#46A0DC",
   width: "device-width",
   initialScale: 1,
 };

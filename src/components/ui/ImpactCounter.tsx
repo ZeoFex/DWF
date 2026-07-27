@@ -67,14 +67,14 @@ export function ImpactCounter({
 
   return (
     <div ref={ref} className={cn("text-center", className)}>
-      <p className="font-serif text-4xl font-bold text-[#5B2C83] sm:text-5xl">
+      <p className="font-serif text-4xl font-bold text-[#46A0DC] sm:text-5xl">
         {stat.prefix}
         {formatted}
         {stat.suffix}
       </p>
-      <p className="mt-2 text-sm font-medium text-[#252525]/80">{stat.label}</p>
+      <p className="mt-2 text-sm font-medium text-[#1E1E1E]/80">{stat.label}</p>
       {stat.note && (
-        <p className="mt-1 text-xs text-[#252525]/50">{stat.note}</p>
+        <p className="mt-1 text-xs text-[#1E1E1E]/50">{stat.note}</p>
       )}
     </div>
   );

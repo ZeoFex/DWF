@@ -4,15 +4,15 @@ import type { ButtonHTMLAttributes, ReactNode } from "react";
 
 const variantStyles = {
   primary:
-    "bg-[#5B2C83] text-white hover:bg-[#4a2470] active:bg-[#3d1d5c]",
+    "bg-[#46A0DC] text-white hover:bg-[#2E86C1] active:bg-[#2471A3]",
   secondary:
-    "bg-[#218C83] text-white hover:bg-[#1a736c] active:bg-[#155e58]",
+    "bg-[#782882] text-white hover:bg-[#5F1F68] active:bg-[#4A1852]",
   outline:
-    "border-2 border-[#5B2C83] text-[#5B2C83] bg-transparent hover:bg-[#5B2C83]/5",
+    "border-2 border-[#46A0DC] text-[#46A0DC] bg-transparent hover:bg-[#46A0DC]/5",
   coral:
-    "bg-[#D94F70] text-white hover:bg-[#c44362] active:bg-[#b03a56]",
+    "bg-[#E85A28] text-white hover:bg-[#D14A1F] active:bg-[#B83F1A]",
   ghost:
-    "bg-transparent text-[#5B2C83] hover:bg-[#5B2C83]/10",
+    "bg-transparent text-[#46A0DC] hover:bg-[#46A0DC]/10",
 } as const;
 
 const sizeStyles = {
@@ -43,7 +43,7 @@ export type ButtonProps = SharedButtonProps &
   );
 
 const baseStyles =
-  "inline-flex items-center justify-center gap-2 rounded-xl font-medium transition-colors motion-safe:duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#5B2C83] focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50";
+  "inline-flex items-center justify-center gap-2 rounded-xl font-medium transition-colors motion-safe:duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#46A0DC] focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50";
 
 export function Button(props: ButtonProps) {
   const {

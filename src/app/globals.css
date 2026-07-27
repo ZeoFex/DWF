@@ -1,12 +1,16 @@
 @import "tailwindcss";
 
+/* Brand palette derived from Dr. Winnie's Foundation logo:
+   Blue #46A0DC · Orange #E85A28 · Purple accent #782882 · White #FFFFFF */
 @theme {
-  --color-primary: #5b2c83;
-  --color-coral: #d94f70;
-  --color-teal: #218c83;
-  --color-gold: #f4b942;
-  --color-offwhite: #fff9f7;
-  --color-charcoal: #252525;
+  --color-primary: #46a0dc;
+  --color-orange: #e85a28;
+  --color-coral: #e85a28;
+  --color-purple: #782882;
+  --color-teal: #782882;
+  --color-gold: #f0a070;
+  --color-offwhite: #f5fafe;
+  --color-charcoal: #1e1e1e;
   --font-sans: var(--font-manrope), ui-sans-serif, system-ui, sans-serif;
   --font-serif: var(--font-lora), ui-serif, Georgia, serif;
 }
@@ -31,7 +35,7 @@
   }
 
   body {
-    @apply bg-[#FFF9F7] text-[#252525] antialiased;
+    @apply bg-[#F5FAFE] text-[#1E1E1E] antialiased;
     font-family: var(--font-sans);
   }
 
@@ -40,7 +44,7 @@
   h3,
   h4 {
     font-family: var(--font-serif);
-    @apply text-[#252525] tracking-tight;
+    @apply text-[#1E1E1E] tracking-tight;
   }
 
   a {
@@ -48,7 +52,7 @@
   }
 
   :focus-visible {
-    @apply outline-none ring-2 ring-[#5B2C83] ring-offset-2;
+    @apply outline-none ring-2 ring-[#46A0DC] ring-offset-2;
   }
 }
 
@@ -60,9 +64,9 @@
   .gradient-hero {
     background: linear-gradient(
       135deg,
-      rgba(91, 44, 131, 0.88) 0%,
-      rgba(33, 140, 131, 0.72) 55%,
-      rgba(217, 79, 112, 0.65) 100%
+      rgba(70, 160, 220, 0.92) 0%,
+      rgba(120, 40, 130, 0.78) 50%,
+      rgba(232, 90, 40, 0.82) 100%
     );
   }
 

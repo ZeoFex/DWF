@@ -2,10 +2,11 @@
 
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { ChevronDown, Heart, Search } from "lucide-react";
+import { ChevronDown, Search } from "lucide-react";
 import { useCallback, useEffect, useRef, useState } from "react";
-import { navigation, siteConfig } from "@/content";
+import { navigation } from "@/content";
 import { cn } from "@/lib/utils";
+import { BrandLogo } from "@/components/layout/BrandLogo";
 import { Button } from "@/components/ui/Button";
 import { Container } from "@/components/ui/Container";
 import { MobileMenu } from "@/components/layout/MobileMenu";
@@ -33,10 +34,10 @@ function NavDropdown({ item }: { item: NavItem }) {
       <button
         type="button"
         className={cn(
-          "flex items-center gap-1 rounded-lg px-3 py-2 text-sm font-medium transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#5B2C83] focus-visible:ring-offset-2",
+          "flex items-center gap-1 rounded-lg px-3 py-2 text-sm font-medium transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#46A0DC] focus-visible:ring-offset-2",
           isActive
-            ? "text-[#5B2C83]"
-            : "text-[#252525]/80 hover:text-[#5B2C83]"
+            ? "text-[#46A0DC]"
+            : "text-[#1E1E1E]/80 hover:text-[#46A0DC]"
         )}
         aria-expanded={open}
         aria-haspopup="true"
@@ -53,7 +54,7 @@ function NavDropdown({ item }: { item: NavItem }) {
       </button>
       {open && item.children && (
         <ul
-          className="absolute left-0 top-full z-50 mt-1 min-w-[220px] rounded-xl border border-[#5B2C83]/10 bg-white py-2 shadow-lg"
+          className="absolute left-0 top-full z-50 mt-1 min-w-[220px] rounded-xl border border-[#46A0DC]/10 bg-white py-2 shadow-lg"
           role="menu"
         >
           {item.children.map((child) => (
@@ -61,7 +62,7 @@ function NavDropdown({ item }: { item: NavItem }) {
               <Link
                 href={child.href}
                 role="menuitem"
-                className="block px-4 py-2.5 text-sm text-[#252525]/80 transition-colors hover:bg-[#5B2C83]/5 hover:text-[#5B2C83] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-inset focus-visible:ring-[#5B2C83]"
+                className="block px-4 py-2.5 text-sm text-[#1E1E1E]/80 transition-colors hover:bg-[#46A0DC]/5 hover:text-[#46A0DC] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-inset focus-visible:ring-[#46A0DC]"
                 onClick={() => setOpen(false)}
               >
                 {child.label}
@@ -86,10 +87,10 @@ function NavLink({ item }: { item: NavItem }) {
       <Link
         href={item.href}
         className={cn(
-          "rounded-lg px-3 py-2 text-sm font-medium transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#5B2C83] focus-visible:ring-offset-2",
+          "rounded-lg px-3 py-2 text-sm font-medium transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#46A0DC] focus-visible:ring-offset-2",
           isActive
-            ? "text-[#5B2C83]"
-            : "text-[#252525]/80 hover:text-[#5B2C83]"
+            ? "text-[#46A0DC]"
+            : "text-[#1E1E1E]/80 hover:text-[#46A0DC]"
         )}
         aria-current={isActive ? "page" : undefined}
       >
@@ -118,24 +119,13 @@ export function Header() {
         className={cn(
           "sticky top-0 z-40 w-full border-b transition-shadow motion-safe:duration-200",
           scrolled
-            ? "border-[#5B2C83]/10 bg-[#FFF9F7]/95 shadow-sm backdrop-blur-md"
-            : "border-transparent bg-[#FFF9F7]"
+            ? "border-[#46A0DC]/10 bg-white/95 shadow-sm backdrop-blur-md"
+            : "border-transparent bg-white"
         )}
       >
         <Container>
-          <div className="flex h-16 items-center justify-between gap-4 lg:h-18">
-            <Link
-              href="/"
-              className="flex items-center gap-2.5 rounded-lg focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#5B2C83] focus-visible:ring-offset-2"
-              aria-label={`${siteConfig.name} — Home`}
-            >
-              <span className="flex h-9 w-9 items-center justify-center rounded-full bg-[#5B2C83] text-white">
-                <Heart className="h-5 w-5" aria-hidden="true" />
-              </span>
-              <span className="hidden font-serif text-lg font-bold text-[#5B2C83] sm:block">
-                {siteConfig.shortName}
-              </span>
-            </Link>
+          <div className="flex h-16 items-center justify-between gap-4 lg:h-[4.5rem]">
+            <BrandLogo variant="light" priority />
 
             <nav
               className="hidden items-center gap-1 xl:flex"
@@ -155,7 +145,7 @@ export function Header() {
             <div className="flex items-center gap-2">
               <Link
                 href="/resources?focus=search"
-                className="hidden rounded-lg p-2 text-[#252525]/70 transition-colors hover:bg-[#5B2C83]/10 hover:text-[#5B2C83] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#5B2C83] focus-visible:ring-offset-2 sm:flex"
+                className="hidden rounded-lg p-2 text-[#1E1E1E]/70 transition-colors hover:bg-[#46A0DC]/10 hover:text-[#46A0DC] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#46A0DC] focus-visible:ring-offset-2 sm:flex"
                 aria-label="Search resources and blog"
               >
                 <Search className="h-5 w-5" />

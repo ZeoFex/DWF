@@ -83,7 +83,7 @@ export default async function ProjectDetailPage({
         <Container>
           <div className="grid gap-10 lg:grid-cols-3">
             <div className="lg:col-span-2">
-              <span className="inline-block rounded-full bg-[#218C83]/15 px-3 py-1 text-xs font-semibold text-[#218C83]">
+              <span className="inline-block rounded-full bg-[#782882]/15 px-3 py-1 text-xs font-semibold text-[#782882]">
                 {statusLabels[project.status]}
               </span>
               <SectionHeading
@@ -92,16 +92,16 @@ export default async function ProjectDetailPage({
               />
               <dl className="mt-6 grid gap-4 sm:grid-cols-2">
                 <div>
-                  <dt className="text-sm font-medium text-[#252525]/60">
+                  <dt className="text-sm font-medium text-[#1E1E1E]/60">
                     Location
                   </dt>
-                  <dd className="mt-1 text-[#252525]">{project.location}</dd>
+                  <dd className="mt-1 text-[#1E1E1E]">{project.location}</dd>
                 </div>
                 <div>
-                  <dt className="text-sm font-medium text-[#252525]/60">
+                  <dt className="text-sm font-medium text-[#1E1E1E]/60">
                     Timeline
                   </dt>
-                  <dd className="mt-1 text-[#252525]">
+                  <dd className="mt-1 text-[#1E1E1E]">
                     {formatDate(project.timeline.start)}
                     {project.timeline.end &&
                       ` — ${formatDate(project.timeline.end)}`}
@@ -109,10 +109,10 @@ export default async function ProjectDetailPage({
                 </div>
                 {project.girlsSupported != null && (
                   <div>
-                    <dt className="text-sm font-medium text-[#252525]/60">
+                    <dt className="text-sm font-medium text-[#1E1E1E]/60">
                       Girls Supported
                     </dt>
-                    <dd className="mt-1 text-[#252525]">
+                    <dd className="mt-1 text-[#1E1E1E]">
                       {project.girlsSupported.toLocaleString()} (illustrative)
                     </dd>
                   </div>
@@ -121,8 +121,8 @@ export default async function ProjectDetailPage({
             </div>
 
             {isFundraising && (
-              <aside className="rounded-2xl bg-[#FFF9F7] p-6 shadow-sm">
-                <h2 className="font-serif text-xl font-semibold text-[#252525]">
+              <aside className="rounded-2xl bg-[#F5FAFE] p-6 shadow-sm">
+                <h2 className="font-serif text-xl font-semibold text-[#1E1E1E]">
                   Support This Campaign
                 </h2>
                 <div className="mt-4">
@@ -151,7 +151,7 @@ export default async function ProjectDetailPage({
       </section>
 
       {/* Activities */}
-      <section className="bg-[#FFF9F7] py-16 sm:py-20">
+      <section className="bg-[#F5FAFE] py-16 sm:py-20">
         <Container>
           <div className="grid gap-12 lg:grid-cols-2">
             <div>
@@ -160,10 +160,10 @@ export default async function ProjectDetailPage({
                 {project.activities.map((activity) => (
                   <li
                     key={activity}
-                    className="flex gap-3 text-[#252525]/80 leading-relaxed"
+                    className="flex gap-3 text-[#1E1E1E]/80 leading-relaxed"
                   >
                     <span
-                      className="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-[#5B2C83]"
+                      className="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-[#46A0DC]"
                       aria-hidden="true"
                     />
                     {activity}
@@ -177,10 +177,10 @@ export default async function ProjectDetailPage({
                 {project.impact.map((item) => (
                   <li
                     key={item}
-                    className="flex gap-3 text-[#252525]/80 leading-relaxed"
+                    className="flex gap-3 text-[#1E1E1E]/80 leading-relaxed"
                   >
                     <span
-                      className="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-[#218C83]"
+                      className="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-[#782882]"
                       aria-hidden="true"
                     />
                     {item}
@@ -196,20 +196,20 @@ export default async function ProjectDetailPage({
       <section className="py-16 sm:py-20">
         <Container>
           <SectionHeading title="Project Milestones" className="mb-10" />
-          <ol className="relative space-y-6 border-l-2 border-[#5B2C83]/20 pl-8">
+          <ol className="relative space-y-6 border-l-2 border-[#46A0DC]/20 pl-8">
             {project.timeline.milestones.map((milestone) => (
               <li key={milestone.date} className="relative">
                 <span
-                  className="absolute -left-[2.125rem] top-1 h-3 w-3 rounded-full border-2 border-[#5B2C83] bg-white"
+                  className="absolute -left-[2.125rem] top-1 h-3 w-3 rounded-full border-2 border-[#46A0DC] bg-white"
                   aria-hidden="true"
                 />
                 <time
                   dateTime={milestone.date}
-                  className="text-sm font-semibold text-[#218C83]"
+                  className="text-sm font-semibold text-[#782882]"
                 >
                   {formatDate(milestone.date)}
                 </time>
-                <p className="mt-1 font-medium text-[#252525]">
+                <p className="mt-1 font-medium text-[#1E1E1E]">
                   {milestone.label}
                 </p>
               </li>
@@ -220,7 +220,7 @@ export default async function ProjectDetailPage({
 
       {/* Updates */}
       {project.updates.length > 0 && (
-        <section className="bg-[#5B2C83]/5 py-16 sm:py-20">
+        <section className="bg-[#46A0DC]/5 py-16 sm:py-20">
           <Container>
             <SectionHeading title="Project Updates" className="mb-10" />
             <ul className="space-y-6">
@@ -231,14 +231,14 @@ export default async function ProjectDetailPage({
                 >
                   <time
                     dateTime={update.date}
-                    className="text-sm font-semibold text-[#218C83]"
+                    className="text-sm font-semibold text-[#782882]"
                   >
                     {formatDate(update.date)}
                   </time>
-                  <h3 className="mt-1 font-serif text-lg font-semibold text-[#252525]">
+                  <h3 className="mt-1 font-serif text-lg font-semibold text-[#1E1E1E]">
                     {update.title}
                   </h3>
-                  <p className="mt-2 text-[#252525]/75 leading-relaxed">
+                  <p className="mt-2 text-[#1E1E1E]/75 leading-relaxed">
                     {update.summary}
                   </p>
                 </li>
@@ -278,7 +278,7 @@ export default async function ProjectDetailPage({
       )}
 
       {/* Gallery */}
-      <section className="bg-[#FFF9F7] py-16 sm:py-20">
+      <section className="bg-[#F5FAFE] py-16 sm:py-20">
         <Container>
           <SectionHeading title="Project Gallery" className="mb-10" />
           <ul className="grid grid-cols-2 gap-3 sm:grid-cols-3 lg:gap-4">

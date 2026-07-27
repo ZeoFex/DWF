@@ -23,13 +23,13 @@ export function Breadcrumbs({ items, className }: BreadcrumbsProps) {
             <li key={item.label} className="flex items-center gap-1.5">
               {index > 0 && (
                 <ChevronRight
-                  className="h-4 w-4 shrink-0 text-[#252525]/40"
+                  className="h-4 w-4 shrink-0 text-[#1E1E1E]/40"
                   aria-hidden="true"
                 />
               )}
               {isLast || !item.href ? (
                 <span
-                  className="font-medium text-[#252525]"
+                  className="font-medium text-[#1E1E1E]"
                   aria-current={isLast ? "page" : undefined}
                 >
                   {item.label}
@@ -37,7 +37,7 @@ export function Breadcrumbs({ items, className }: BreadcrumbsProps) {
               ) : (
                 <Link
                   href={item.href}
-                  className="text-[#252525]/70 transition-colors hover:text-[#5B2C83] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#5B2C83] focus-visible:ring-offset-2 rounded"
+                  className="text-[#1E1E1E]/70 transition-colors hover:text-[#46A0DC] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#46A0DC] focus-visible:ring-offset-2 rounded"
                 >
                   {item.label}
                 </Link>

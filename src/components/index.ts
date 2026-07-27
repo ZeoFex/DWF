@@ -1,5 +1,6 @@
 // Layout
 export { Header } from "@/components/layout/Header";
+export { BrandLogo } from "@/components/layout/BrandLogo";
 export { MobileMenu } from "@/components/layout/MobileMenu";
 export { Footer } from "@/components/layout/Footer";
 export { AnnouncementBar } from "@/components/layout/AnnouncementBar";

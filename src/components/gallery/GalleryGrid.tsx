@@ -60,10 +60,10 @@ export function GalleryGrid({ className }: GalleryGridProps) {
             onClick={() => setFilter(f.value)}
             aria-pressed={filter === f.value}
             className={cn(
-              "rounded-full px-4 py-2 text-sm font-medium transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#5B2C83] focus-visible:ring-offset-2",
+              "rounded-full px-4 py-2 text-sm font-medium transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#46A0DC] focus-visible:ring-offset-2",
               filter === f.value
-                ? "bg-[#5B2C83] text-white"
-                : "bg-[#5B2C83]/10 text-[#5B2C83] hover:bg-[#5B2C83]/20"
+                ? "bg-[#46A0DC] text-white"
+                : "bg-[#46A0DC]/10 text-[#46A0DC] hover:bg-[#46A0DC]/20"
             )}
           >
             {f.label}
@@ -72,7 +72,7 @@ export function GalleryGrid({ className }: GalleryGridProps) {
       </div>
 
       {filteredImages.length === 0 ? (
-        <p className="py-12 text-center text-[#252525]/60">
+        <p className="py-12 text-center text-[#1E1E1E]/60">
           No images found for this album.
         </p>
       ) : (
@@ -82,7 +82,7 @@ export function GalleryGrid({ className }: GalleryGridProps) {
               <button
                 type="button"
                 onClick={() => openLightbox(index)}
-                className="group relative aspect-square w-full overflow-hidden rounded-2xl focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#5B2C83] focus-visible:ring-offset-2"
+                className="group relative aspect-square w-full overflow-hidden rounded-2xl focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#46A0DC] focus-visible:ring-offset-2"
                 aria-label={`View image: ${image.alt}`}
               >
                 <Image
@@ -93,7 +93,7 @@ export function GalleryGrid({ className }: GalleryGridProps) {
                   sizes="(max-width: 768px) 50vw, 25vw"
                 />
                 <div
-                  className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-[#252525]/70 to-transparent p-3 opacity-0 motion-safe:transition-opacity motion-safe:group-hover:opacity-100"
+                  className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-[#1E1E1E]/70 to-transparent p-3 opacity-0 motion-safe:transition-opacity motion-safe:group-hover:opacity-100"
                   aria-hidden="true"
                 >
                   <p className="truncate text-xs text-white">{image.caption}</p>

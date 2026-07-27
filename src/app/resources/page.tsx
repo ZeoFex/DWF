@@ -6,7 +6,7 @@ import { ResourcesExplorer } from "./ResourcesExplorer";
 export const metadata: Metadata = {
   title: "Resources",
   description:
-    "Browse educational resources from Dr. Wynnie's Foundation — guides, articles, videos, and FAQs on menstrual health, mental wellness, and career development.",
+    "Browse educational resources from Dr. Winnie's Foundation — guides, articles, videos, and FAQs on menstrual health, mental wellness, and career development.",
 };
 
 export default function ResourcesPage() {
@@ -30,7 +30,7 @@ export default function ResourcesPage() {
             className="mb-10"
           />
           <ResourcesExplorer resources={resources} />
-          <p className="mt-10 text-center text-xs text-[#252525]/50">
+          <p className="mt-10 text-center text-xs text-[#1E1E1E]/50">
             Resources are illustrative placeholders for website development.
             Verified materials will be published before launch.
           </p>

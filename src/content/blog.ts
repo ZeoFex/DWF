@@ -47,7 +47,7 @@ export const blogPosts: BlogPost[] = [
     excerpt:
       "Daniel has volunteered with the foundation for two years, sorting kits and facilitating workshops. He shares why he keeps coming back.",
     content: [
-      "Daniel Kwarteng first heard about Dr. Wynnie's Foundation through a colleague at his accounting firm. 'I wanted to do something beyond writing a cheque,' he says. 'I wanted to see the impact with my own eyes.'",
+      "Daniel Kwarteng first heard about Dr. Winnie's Foundation through a colleague at his accounting firm. 'I wanted to do something beyond writing a cheque,' he says. 'I wanted to see the impact with my own eyes.'",
       "Since joining as a volunteer in 2023 (illustrative timeline), Daniel has participated in over 30 kit assembly days and co-facilitated five career workshops for secondary school girls. 'The workshops are my favorite,' he notes. 'These girls are sharp. They just need someone to tell them they belong in any room.'",
       "Daniel emphasizes that the foundation treats volunteers as partners, not free labor. 'There's real training, clear expectations, and you always know how your time connects to the bigger mission. That's rare.'",
       "Interested in volunteering? Our next orientation is scheduled for March 2026. Visit our Get Involved page to register.",
@@ -67,7 +67,7 @@ export const blogPosts: BlogPost[] = [
       "Youth-friendly mental health support is scarce. Our wellness circles offer a bridge between silence and professional care.",
     content: [
       "Adolescent mental health is among the most under-resourced areas of youth development in Ghana. Stigma, cost, and a shortage of youth-friendly counselors leave many girls struggling without support.",
-      "Dr. Wynnie's Foundation wellness circles are structured, voluntary group sessions facilitated by trained counselors and peer mentors. They are not therapy — they are safe spaces for sharing, learning coping strategies, and building peer connections.",
+      "Dr. Winnie's Foundation wellness circles are structured, voluntary group sessions facilitated by trained counselors and peer mentors. They are not therapy — they are safe spaces for sharing, learning coping strategies, and building peer connections.",
       "In illustrative 2025 data, 580 girls participated in wellness circles across eight partner sites. Of those surveyed (placeholder sample), 62% reported knowing at least one trusted person to talk to about emotional struggles — up from 22% before enrollment.",
       "When a girl needs clinical support, our referral network connects her with licensed psychologists and social workers. We follow up to ensure appointments are kept and barriers are addressed.",
       "Mental health is health. We're committed to making that truth feel safe for every girl we serve.",
@@ -145,7 +145,7 @@ export const blogPosts: BlogPost[] = [
     excerpt:
       "Three distinguished professionals join our advisory board to guide strategic growth and program quality.",
     content: [
-      "Dr. Wynnie's Foundation is pleased to announce the addition of three advisory board members who will provide strategic guidance on program expansion, governance, and fundraising. (Illustrative announcement.)",
+      "Dr. Winnie's Foundation is pleased to announce the addition of three advisory board members who will provide strategic guidance on program expansion, governance, and fundraising. (Illustrative announcement.)",
       "The new advisors bring expertise in public health policy, nonprofit governance, and corporate social responsibility. They will meet quarterly to review program outcomes and advise on organizational growth.",
       "Founder Dr. Wynette Mensah welcomed the advisors: 'Their experience and commitment to girls' empowerment will strengthen our ability to serve more communities responsibly.'",
       "Advisory board profiles will be published on our About page following onboarding. (Placeholder announcement for website development.)",

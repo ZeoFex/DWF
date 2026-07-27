@@ -14,9 +14,9 @@ interface EventRegistrationFormProps {
 type FormStatus = "idle" | "loading" | "success" | "error";
 
 const inputClass =
-  "w-full rounded-xl border border-[#5B2C83]/20 bg-white px-4 py-2.5 text-sm text-[#252525] placeholder:text-[#252525]/40 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#5B2C83] focus-visible:ring-offset-2";
+  "w-full rounded-xl border border-[#46A0DC]/20 bg-white px-4 py-2.5 text-sm text-[#1E1E1E] placeholder:text-[#1E1E1E]/40 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#46A0DC] focus-visible:ring-offset-2";
 
-const labelClass = "mb-1.5 block text-sm font-medium text-[#252525]";
+const labelClass = "mb-1.5 block text-sm font-medium text-[#1E1E1E]";
 
 export function EventRegistrationForm({
   event,
@@ -65,15 +65,15 @@ export function EventRegistrationForm({
     return (
       <div
         className={cn(
-          "rounded-2xl bg-[#218C83]/10 p-6 text-center",
+          "rounded-2xl bg-[#782882]/10 p-6 text-center",
           className
         )}
         role="status"
       >
-        <p className="font-semibold text-[#218C83]">
+        <p className="font-semibold text-[#782882]">
           Thank you, we received your message.
         </p>
-        <p className="mt-2 text-sm text-[#252525]/70">
+        <p className="mt-2 text-sm text-[#1E1E1E]/70">
           You&apos;re registered for <strong>{event.title}</strong>. A
           confirmation email will be sent shortly.
         </p>
@@ -83,7 +83,7 @@ export function EventRegistrationForm({
 
   return (
     <form onSubmit={handleSubmit} className={cn("space-y-5", className)} noValidate>
-      <p className="text-sm text-[#252525]/70">
+      <p className="text-sm text-[#1E1E1E]/70">
         Register for <strong>{event.title}</strong> on{" "}
         {new Date(event.date).toLocaleDateString("en-GH", {
           weekday: "long",
@@ -97,7 +97,7 @@ export function EventRegistrationForm({
       <div className="grid gap-5 sm:grid-cols-2">
         <div>
           <label htmlFor="reg-fullName" className={labelClass}>
-            Full name <span className="text-[#D94F70]">*</span>
+            Full name <span className="text-[#E85A28]">*</span>
           </label>
           <input
             id="reg-fullName"
@@ -111,14 +111,14 @@ export function EventRegistrationForm({
             aria-invalid={errors.fullName ? "true" : undefined}
           />
           {errors.fullName && (
-            <p className="mt-1 text-xs text-[#D94F70]" role="alert">
+            <p className="mt-1 text-xs text-[#E85A28]" role="alert">
               {errors.fullName}
             </p>
           )}
         </div>
         <div>
           <label htmlFor="reg-email" className={labelClass}>
-            Email <span className="text-[#D94F70]">*</span>
+            Email <span className="text-[#E85A28]">*</span>
           </label>
           <input
             id="reg-email"
@@ -130,7 +130,7 @@ export function EventRegistrationForm({
             aria-invalid={errors.email ? "true" : undefined}
           />
           {errors.email && (
-            <p className="mt-1 text-xs text-[#D94F70]" role="alert">
+            <p className="mt-1 text-xs text-[#E85A28]" role="alert">
               {errors.email}
             </p>
           )}
@@ -140,7 +140,7 @@ export function EventRegistrationForm({
       <div className="grid gap-5 sm:grid-cols-2">
         <div>
           <label htmlFor="reg-phone" className={labelClass}>
-            Phone <span className="text-[#D94F70]">*</span>
+            Phone <span className="text-[#E85A28]">*</span>
           </label>
           <input
             id="reg-phone"
@@ -152,14 +152,14 @@ export function EventRegistrationForm({
             aria-invalid={errors.phone ? "true" : undefined}
           />
           {errors.phone && (
-            <p className="mt-1 text-xs text-[#D94F70]" role="alert">
+            <p className="mt-1 text-xs text-[#E85A28]" role="alert">
               {errors.phone}
             </p>
           )}
         </div>
         <div>
           <label htmlFor="reg-guests" className={labelClass}>
-            Number of guests <span className="text-[#D94F70]">*</span>
+            Number of guests <span className="text-[#E85A28]">*</span>
           </label>
           <input
             id="reg-guests"
@@ -173,7 +173,7 @@ export function EventRegistrationForm({
             aria-invalid={errors.guests ? "true" : undefined}
           />
           {errors.guests && (
-            <p className="mt-1 text-xs text-[#D94F70]" role="alert">
+            <p className="mt-1 text-xs text-[#E85A28]" role="alert">
               {errors.guests}
             </p>
           )}
@@ -220,24 +220,24 @@ export function EventRegistrationForm({
           type="checkbox"
           checked={consent}
           onChange={(e) => setConsent(e.target.checked)}
-          className="mt-1 h-4 w-4 rounded border-[#5B2C83]/30 text-[#5B2C83] focus-visible:ring-2 focus-visible:ring-[#5B2C83]"
+          className="mt-1 h-4 w-4 rounded border-[#46A0DC]/30 text-[#46A0DC] focus-visible:ring-2 focus-visible:ring-[#46A0DC]"
           disabled={status === "loading"}
           aria-invalid={errors.consent ? "true" : undefined}
         />
-        <label htmlFor="reg-consent" className="text-sm text-[#252525]/80">
+        <label htmlFor="reg-consent" className="text-sm text-[#1E1E1E]/80">
           I agree to receive event-related communications and consent to the
           foundation&apos;s privacy policy.{" "}
-          <span className="text-[#D94F70]">*</span>
+          <span className="text-[#E85A28]">*</span>
         </label>
       </div>
       {errors.consent && (
-        <p className="text-xs text-[#D94F70]" role="alert">
+        <p className="text-xs text-[#E85A28]" role="alert">
           {errors.consent}
         </p>
       )}
 
       {status === "error" && (
-        <p className="text-sm text-[#D94F70]" role="alert">
+        <p className="text-sm text-[#E85A28]" role="alert">
           Something went wrong. Please try again.
         </p>
       )}

@@ -12,9 +12,9 @@ const siteUrl = getSiteUrl();
 export const metadata: Metadata = {
   title: "Photo Gallery",
   description:
-    "Browse photos from Dr. Wynnie's Foundation community outreach, school visits, workshops, events, and volunteer activities across Ghana.",
+    "Browse photos from Dr. Winnie's Foundation community outreach, school visits, workshops, events, and volunteer activities across Ghana.",
   openGraph: {
-    title: "Photo Gallery | Dr. Wynnie's Foundation",
+    title: "Photo Gallery | Dr. Winnie's Foundation",
     description:
       "Explore moments from our programs — community outreach, school visits, workshops, and volunteer activities.",
     url: `${siteUrl}/gallery`,

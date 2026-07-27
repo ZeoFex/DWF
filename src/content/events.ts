@@ -26,7 +26,7 @@ export const events: Event[] = [
     category: "training",
     date: "2026-03-08",
     time: "10:00 AM – 1:00 PM",
-    location: "Dr. Wynnie's Foundation Office, East Legon, Accra",
+    location: "Dr. Winnie's Foundation Office, East Legon, Accra",
     description:
       "New and returning volunteers are invited to our quarterly orientation. Learn about program updates, safeguarding policies, and sign up for upcoming workshop and outreach opportunities. Light refreshments provided. (Illustrative event.)",
     registrationRequired: true,
@@ -113,7 +113,7 @@ export const events: Event[] = [
     category: "community",
     date: "2025-02-15",
     time: "9:00 AM – 12:00 PM",
-    location: "Dr. Wynnie's Foundation Office, East Legon, Accra",
+    location: "Dr. Winnie's Foundation Office, East Legon, Accra",
     description:
       "Seventy-eight girls met their mentors for the first time at our annual matching event. Icebreakers, goal-setting sessions, and a shared lunch kicked off the Mentor Circle 2025 program. (Illustrative past event.)",
     registrationRequired: true,

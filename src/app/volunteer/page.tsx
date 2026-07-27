@@ -12,7 +12,7 @@ import { images } from "@/content";
 export const metadata: Metadata = {
   title: "Volunteer",
   description:
-    "Apply to volunteer with Dr. Wynnie's Foundation — support menstrual health workshops, mentorship, kit assembly, and community outreach in Ghana.",
+    "Apply to volunteer with Dr. Winnie's Foundation — support menstrual health workshops, mentorship, kit assembly, and community outreach in Ghana.",
 };
 
 const volunteerHighlights = [
@@ -63,14 +63,14 @@ export default function VolunteerPage() {
                   const Icon = item.icon;
                   return (
                     <li key={item.title} className="flex gap-4">
-                      <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-[#5B2C83]/10 text-[#5B2C83]">
+                      <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-[#46A0DC]/10 text-[#46A0DC]">
                         <Icon className="h-5 w-5" aria-hidden="true" />
                       </div>
                       <div>
-                        <h3 className="font-semibold text-[#252525]">
+                        <h3 className="font-semibold text-[#1E1E1E]">
                           {item.title}
                         </h3>
-                        <p className="mt-1 text-sm text-[#252525]/70">
+                        <p className="mt-1 text-sm text-[#1E1E1E]/70">
                           {item.description}
                         </p>
                       </div>
@@ -81,11 +81,11 @@ export default function VolunteerPage() {
             </div>
 
             <div className="lg:col-span-3">
-              <div className="rounded-2xl bg-[#FFF9F7] p-6 sm:p-8">
-                <h2 className="font-serif text-2xl font-bold text-[#252525]">
+              <div className="rounded-2xl bg-[#F5FAFE] p-6 sm:p-8">
+                <h2 className="font-serif text-2xl font-bold text-[#1E1E1E]">
                   Volunteer Application
                 </h2>
-                <p className="mt-2 text-sm text-[#252525]/70">
+                <p className="mt-2 text-sm text-[#1E1E1E]/70">
                   Fill out the form below and our volunteer coordinator will
                   contact you within 5 business days.
                 </p>
