@@ -1,53 +1,80 @@
 # Dr. Winnie's Foundation Website
 
-Production-ready marketing site for **Dr. Winnie's Foundation** — menstrual health education, mental health awareness, career development, and community outreach in Ghana.
+Marketing site + CMS admin for **Dr. Winnie's Foundation** — menstrual health education, mental health awareness, career development, and community outreach in Ghana.
 
 ## Stack
 
-- Next.js 15 (App Router)
-- TypeScript
-- Tailwind CSS v4
-- Lucide React
-- Mock content architecture ready for a future CMS
+- Next.js 15 (App Router) + TypeScript + Tailwind CSS v4
+- Prisma ORM 7 + PostgreSQL (Neon)
+- Cloudinary (images, files, videos)
+- Mock payment gateway (no live charges)
+- JWT cookie admin auth
 
 ## Getting started
 
 ```bash
 cp .env.example .env.local
+# fill DATABASE_URL, ADMIN_*, CLOUDINARY_*
 npm install
+npm run db:push
+npm run db:seed
 npm run dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000).
+- Public site: [http://localhost:3000](http://localhost:3000)
+- Admin CMS: [http://localhost:3000/admin/login](http://localhost:3000/admin/login)
+
+### Seeded admin credentials
+
+Configured via `.env.local`:
+
+- `ADMIN_SEED_EMAIL`
+- `ADMIN_SEED_PASSWORD`
+
+Default seed values (override in env):
+
+- Email: `wdf@gmail.com`
+- Password: `SugarBoo`
 
 ## Scripts
 
 | Command | Description |
 |---|---|
 | `npm run dev` | Development server |
-| `npm run build` | Production build |
+| `npm run build` | Generate Prisma client + production build |
 | `npm run start` | Serve production build |
-| `npm run lint` | ESLint |
-| `npm run typecheck` | TypeScript check |
+| `npm run lint` / `typecheck` | Quality checks |
+| `npm run db:push` | Sync Prisma schema to Postgres |
+| `npm run db:seed` | Seed admin + starter content |
+| `npm run db:studio` | Prisma Studio |
+
+## Admin CMS
+
+Professional blue / blue-black / black / white dashboard at `/admin`:
+
+- Auth: login + register (`ADMIN_OPEN_REGISTRATION`)
+- Media library (Cloudinary upload)
+- Blog, programs, projects, events, gallery, resources
+- Team, testimonials, partners, impact stats
+- Donations (mock payments), contact/volunteer/partner messages
+- Site settings
 
 ## Content
 
-All copy, stats, team, events, blog posts, and contact details live under `src/content/`. Impact figures and partner names are **illustrative placeholders** (`isIllustrative` / `isPlaceholder`) — replace before public launch.
+- Static fallback content remains in `src/content/`
+- Live CMS content is stored in PostgreSQL via Prisma
+- Public blog prefers DB posts, falls back to static content
+- Forms POST to `/api/*` and persist in the database
 
-Images are centralized in `src/content/images.ts` (Unsplash placeholders marked `REPLACE_ME`).
+## Payments
 
-## Donations
-
-The donation UI is complete, but payments use a **mock service** in `src/lib/payments.ts`. No live charges are processed. Wire a provider (Paystack, Flutterwave, Stripe, etc.) behind that layer before going live.
+Donations use `src/lib/payments.ts` mock gateway and store records with status `MOCK_SUCCESS`. No real charges are made.
 
 ## Environment
 
-See `.env.example`:
+See `.env.example` for:
 
-- `NEXT_PUBLIC_SITE_URL` — canonical URL for SEO/sitemap
-- `NEXT_PUBLIC_GOOGLE_MAPS_EMBED_URL` — optional contact-page map embed
-
-## Routes
-
-Home, About, Programs (+ 3 detail pages), Projects (+ campaign pages), Impact, Resources, Get Involved, Volunteer, Partner, Donate, Events, Gallery, Blog (+ posts), Contact, Privacy, Terms.
-# DWF
+- `DATABASE_URL`
+- `ADMIN_JWT_SECRET`, `ADMIN_SEED_*`
+- `CLOUDINARY_CLOUD_NAME`, `CLOUDINARY_API_KEY`, `CLOUDINARY_API_SECRET`
+- `NEXT_PUBLIC_SITE_URL`

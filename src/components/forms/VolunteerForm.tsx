@@ -76,7 +76,22 @@ export function VolunteerForm({ className }: VolunteerFormProps) {
 
     setStatus("loading");
     try {
-      await new Promise((resolve) => setTimeout(resolve, 800));
+      const response = await fetch("/api/volunteer", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          fullName: form.fullName,
+          email: form.email,
+          phone: form.phone,
+          location: form.location,
+          ageRange: form.ageRange,
+          areaOfInterest: form.areaOfInterest,
+          availability: form.availability,
+          relevantExperience: form.experience || undefined,
+          motivation: form.motivation,
+        }),
+      });
+      if (!response.ok) throw new Error("Failed");
       setStatus("success");
     } catch {
       setStatus("error");

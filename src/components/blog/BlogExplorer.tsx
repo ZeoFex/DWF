@@ -4,13 +4,13 @@ import Image from "next/image";
 import Link from "next/link";
 import { useMemo, useState } from "react";
 import { ArrowRight, Search } from "lucide-react";
-import { blogPosts } from "@/content";
+import { blogPosts as staticBlogPosts } from "@/content";
 import { BlogCard } from "@/components/cards/BlogCard";
 import { Container } from "@/components/ui/Container";
 import { EmptyState } from "@/components/ui/EmptyState";
 import { SectionHeading } from "@/components/ui/SectionHeading";
 import { cn } from "@/lib/utils";
-import type { BlogCategory } from "@/types";
+import type { BlogCategory, BlogPost } from "@/types";
 
 const categoryLabels: Record<BlogCategory, string> = {
   news: "News",
@@ -30,7 +30,12 @@ function formatDate(dateStr: string): string {
   });
 }
 
-export function BlogExplorer() {
+interface BlogExplorerProps {
+  posts?: BlogPost[];
+}
+
+export function BlogExplorer({ posts }: BlogExplorerProps) {
+  const blogPosts = posts && posts.length > 0 ? posts : staticBlogPosts;
   const [search, setSearch] = useState("");
   const [category, setCategory] = useState<FilterOption>("all");
 
@@ -39,7 +44,7 @@ export function BlogExplorer() {
     return featuredPosts.sort((a, b) =>
       b.publishedAt.localeCompare(a.publishedAt)
     )[0];
-  }, []);
+  }, [blogPosts]);
 
   const filteredPosts = useMemo(() => {
     const query = search.trim().toLowerCase();
@@ -56,7 +61,7 @@ export function BlogExplorer() {
         );
       })
       .sort((a, b) => b.publishedAt.localeCompare(a.publishedAt));
-  }, [category, featured?.slug, search]);
+  }, [blogPosts, category, featured?.slug, search]);
 
   const categories: FilterOption[] = [
     "all",

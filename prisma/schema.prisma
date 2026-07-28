@@ -1,0 +1,449 @@
+generator client {
+  provider = "prisma-client-js"
+  output   = "../src/generated/prisma"
+}
+
+datasource db {
+  provider = "postgresql"
+}
+
+enum AdminRole {
+  SUPER_ADMIN
+  EDITOR
+}
+
+enum MediaType {
+  IMAGE
+  VIDEO
+  FILE
+}
+
+enum PublishStatus {
+  DRAFT
+  PUBLISHED
+  ARCHIVED
+}
+
+enum ProjectStatus {
+  ACTIVE
+  UPCOMING
+  COMPLETED
+}
+
+enum DonationType {
+  ONE_TIME
+  MONTHLY
+  CORPORATE
+  SPONSOR_GIRL
+  SPONSOR_OUTREACH
+}
+
+enum PaymentStatus {
+  PENDING
+  MOCK_SUCCESS
+  FAILED
+  CANCELLED
+}
+
+enum InquiryStatus {
+  NEW
+  REVIEWED
+  CLOSED
+}
+
+model AdminUser {
+  id           String    @id @default(cuid())
+  email        String    @unique
+  name         String
+  passwordHash String
+  role         AdminRole @default(EDITOR)
+  isActive     Boolean   @default(true)
+  lastLoginAt  DateTime?
+  createdAt    DateTime  @default(now())
+  updatedAt    DateTime  @updatedAt
+
+  mediaAssets MediaAsset[]
+  blogPosts   BlogPost[]
+
+  @@index([email])
+}
+
+model MediaAsset {
+  id           String    @id @default(cuid())
+  publicId     String    @unique
+  url          String
+  secureUrl    String
+  resourceType MediaType
+  format       String?
+  width        Int?
+  height       Int?
+  bytes        Int?
+  duration     Float?
+  folder       String?
+  alt          String?
+  caption      String?
+  uploadedById String?
+  uploadedBy   AdminUser? @relation(fields: [uploadedById], references: [id], onDelete: SetNull)
+  createdAt    DateTime  @default(now())
+  updatedAt    DateTime  @updatedAt
+
+  @@index([resourceType])
+  @@index([createdAt])
+}
+
+model SiteSettings {
+  id                 String   @id @default("default")
+  siteName           String
+  tagline            String
+  description        String   @db.Text
+  email              String
+  phone              String
+  whatsapp           String
+  whatsappLink       String
+  addressLine1       String
+  addressLine2       String?
+  city               String
+  region             String
+  country            String
+  hoursWeekdays      String
+  hoursSaturday      String?
+  hoursSunday        String?
+  hoursNote          String?  @db.Text
+  announcementText   String?  @db.Text
+  announcementHref   String?
+  announcementActive Boolean  @default(true)
+  socialLinks        Json
+  heroHeadline       String?  @db.Text
+  heroSupporting     String?  @db.Text
+  heroImageUrl       String?
+  aboutPreview       String?  @db.Text
+  aboutImageUrl      String?
+  updatedAt          DateTime @updatedAt
+  createdAt          DateTime @default(now())
+}
+
+model Program {
+  id               String        @id @default(cuid())
+  slug             String        @unique
+  title            String
+  shortDescription String        @db.Text
+  intro            String        @db.Text
+  problem          String        @db.Text
+  activities       String[]
+  beneficiaries    String        @db.Text
+  approach         String        @db.Text
+  stats            Json
+  heroImageUrl     String?
+  galleryUrls      String[]
+  icon             String
+  status           PublishStatus @default(PUBLISHED)
+  sortOrder        Int           @default(0)
+  createdAt        DateTime      @default(now())
+  updatedAt        DateTime      @updatedAt
+
+  @@index([status, sortOrder])
+}
+
+model Project {
+  id               String        @id @default(cuid())
+  slug             String        @unique
+  title            String
+  shortDescription String        @db.Text
+  status           ProjectStatus @default(ACTIVE)
+  featured         Boolean       @default(false)
+  goal             Float?
+  raised           Float?
+  currency         String        @default("GHS")
+  girlsSupported   Int?
+  timelineStart    DateTime?
+  timelineEnd      DateTime?
+  milestones       Json?
+  location         String?
+  activities       String[]
+  impact           String[]
+  sponsors         Json?
+  updates          Json?
+  galleryUrls      String[]
+  heroImageUrl     String?
+  videoUrl         String?
+  publishStatus    PublishStatus @default(PUBLISHED)
+  createdAt        DateTime      @default(now())
+  updatedAt        DateTime      @updatedAt
+
+  donations Donation[]
+
+  @@index([status])
+  @@index([featured])
+  @@index([publishStatus])
+}
+
+model BlogPost {
+  id          String        @id @default(cuid())
+  slug        String        @unique
+  title       String
+  excerpt     String        @db.Text
+  content     String        @db.Text
+  category    String
+  author      String
+  imageUrl    String?
+  videoUrl    String?
+  featured    Boolean       @default(false)
+  status      PublishStatus @default(DRAFT)
+  publishedAt DateTime?
+  authorId    String?
+  createdBy   AdminUser?    @relation(fields: [authorId], references: [id], onDelete: SetNull)
+  createdAt   DateTime      @default(now())
+  updatedAt   DateTime      @updatedAt
+
+  @@index([status, publishedAt])
+  @@index([category])
+  @@index([featured])
+}
+
+model Event {
+  id                  String        @id @default(cuid())
+  slug                String        @unique
+  title               String
+  description         String        @db.Text
+  category            String
+  startsAt            DateTime
+  endsAt              DateTime?
+  location            String
+  imageUrl            String?
+  registrationRequired Boolean      @default(false)
+  isPast              Boolean       @default(false)
+  galleryUrls         String[]
+  status              PublishStatus @default(PUBLISHED)
+  createdAt           DateTime      @default(now())
+  updatedAt           DateTime      @updatedAt
+
+  registrations EventRegistration[]
+
+  @@index([startsAt])
+  @@index([isPast])
+  @@index([status])
+}
+
+model EventRegistration {
+  id        String   @id @default(cuid())
+  eventId   String
+  event     Event    @relation(fields: [eventId], references: [id], onDelete: Cascade)
+  fullName  String
+  email     String
+  phone     String?
+  message   String?  @db.Text
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  @@index([eventId])
+  @@index([email])
+}
+
+model Resource {
+  id          String        @id @default(cuid())
+  slug        String        @unique
+  title       String
+  description String        @db.Text
+  category    String
+  format      String
+  topic       String?
+  fileUrl     String?
+  externalUrl String?
+  imageUrl    String?
+  status      PublishStatus @default(PUBLISHED)
+  createdAt   DateTime      @default(now())
+  updatedAt   DateTime      @updatedAt
+
+  @@index([category])
+  @@index([status])
+}
+
+model GalleryAlbum {
+  id          String        @id @default(cuid())
+  slug        String        @unique
+  title       String
+  description String?       @db.Text
+  coverUrl    String?
+  status      PublishStatus @default(PUBLISHED)
+  sortOrder   Int           @default(0)
+  createdAt   DateTime      @default(now())
+  updatedAt   DateTime      @updatedAt
+
+  items GalleryItem[]
+
+  @@index([status, sortOrder])
+}
+
+model GalleryItem {
+  id        String       @id @default(cuid())
+  albumId   String
+  album     GalleryAlbum @relation(fields: [albumId], references: [id], onDelete: Cascade)
+  url       String
+  mediaType MediaType    @default(IMAGE)
+  alt       String?
+  caption   String?
+  sortOrder Int          @default(0)
+  createdAt DateTime     @default(now())
+  updatedAt DateTime     @updatedAt
+
+  @@index([albumId, sortOrder])
+}
+
+model TeamMember {
+  id        String        @id @default(cuid())
+  name      String
+  role      String
+  bio       String        @db.Text
+  imageUrl  String?
+  email     String?
+  isFounder Boolean       @default(false)
+  sortOrder Int           @default(0)
+  status    PublishStatus @default(PUBLISHED)
+  createdAt DateTime      @default(now())
+  updatedAt DateTime      @updatedAt
+
+  @@index([status, sortOrder])
+}
+
+model Testimonial {
+  id           String        @id @default(cuid())
+  quote        String        @db.Text
+  author       String
+  role         String
+  organization String?
+  imageUrl     String?
+  programSlug  String?
+  featured     Boolean       @default(false)
+  status       PublishStatus @default(PUBLISHED)
+  sortOrder    Int           @default(0)
+  createdAt    DateTime      @default(now())
+  updatedAt    DateTime      @updatedAt
+
+  @@index([status, featured])
+}
+
+model Partner {
+  id          String        @id @default(cuid())
+  name        String
+  logoUrl     String?
+  websiteUrl  String?
+  description String?       @db.Text
+  featured    Boolean       @default(false)
+  sortOrder   Int           @default(0)
+  status      PublishStatus @default(PUBLISHED)
+  createdAt   DateTime      @default(now())
+  updatedAt   DateTime      @updatedAt
+
+  @@index([status, sortOrder])
+}
+
+model ImpactStat {
+  id        String   @id @default(cuid())
+  label     String
+  value     Float
+  suffix    String?
+  prefix    String?
+  note      String?
+  sortOrder Int      @default(0)
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  @@index([sortOrder])
+}
+
+model SuccessStory {
+  id        String        @id @default(cuid())
+  title     String
+  summary   String        @db.Text
+  quote     String?       @db.Text
+  imageUrl  String?
+  href      String?
+  featured  Boolean       @default(false)
+  status    PublishStatus @default(PUBLISHED)
+  createdAt DateTime      @default(now())
+  updatedAt DateTime      @updatedAt
+}
+
+model Donation {
+  id              String        @id @default(cuid())
+  reference       String        @unique
+  amount          Float
+  currency        String        @default("GHS")
+  donationType    DonationType
+  paymentMethod   String
+  status          PaymentStatus @default(PENDING)
+  isAnonymous     Boolean       @default(false)
+  donorName       String?
+  donorEmail      String?
+  donorPhone      String?
+  message         String?       @db.Text
+  projectId       String?
+  project         Project?      @relation(fields: [projectId], references: [id], onDelete: SetNull)
+  mockProviderRef String?
+  metadata        Json?
+  createdAt       DateTime      @default(now())
+  updatedAt       DateTime      @updatedAt
+
+  @@index([status])
+  @@index([createdAt])
+  @@index([donorEmail])
+}
+
+model ContactMessage {
+  id        String        @id @default(cuid())
+  fullName  String
+  email     String
+  phone     String?
+  subject   String
+  message   String        @db.Text
+  status    InquiryStatus @default(NEW)
+  createdAt DateTime      @default(now())
+  updatedAt DateTime      @updatedAt
+
+  @@index([status])
+  @@index([createdAt])
+}
+
+model VolunteerApplication {
+  id                 String        @id @default(cuid())
+  fullName           String
+  email              String
+  phone              String
+  location           String
+  ageRange           String
+  areaOfInterest     String
+  availability       String
+  relevantExperience String?       @db.Text
+  motivation         String        @db.Text
+  status             InquiryStatus @default(NEW)
+  createdAt          DateTime      @default(now())
+  updatedAt          DateTime      @updatedAt
+
+  @@index([status])
+}
+
+model PartnerInquiry {
+  id               String        @id @default(cuid())
+  organizationName String
+  contactPerson    String
+  email            String
+  phone            String
+  partnershipType  String
+  proposedSupport  String        @db.Text
+  message          String?       @db.Text
+  status           InquiryStatus @default(NEW)
+  createdAt        DateTime      @default(now())
+  updatedAt        DateTime      @updatedAt
+
+  @@index([status])
+}
+
+model NewsletterSubscriber {
+  id           String    @id @default(cuid())
+  email        String    @unique
+  isActive     Boolean   @default(true)
+  subscribedAt DateTime  @default(now())
+  updatedAt    DateTime  @updatedAt
+
+  @@index([isActive])
+}

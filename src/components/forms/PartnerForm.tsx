@@ -66,7 +66,20 @@ export function PartnerForm({ className }: PartnerFormProps) {
 
     setStatus("loading");
     try {
-      await new Promise((resolve) => setTimeout(resolve, 800));
+      const response = await fetch("/api/partner", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          organizationName: form.organizationName,
+          contactPerson: form.contactPerson,
+          email: form.email,
+          phone: form.phone,
+          partnershipType: form.partnershipType,
+          proposedSupport: form.proposedSupport,
+          message: form.message || undefined,
+        }),
+      });
+      if (!response.ok) throw new Error("Failed");
       setStatus("success");
     } catch {
       setStatus("error");

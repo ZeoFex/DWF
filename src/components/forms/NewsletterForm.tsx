@@ -40,7 +40,12 @@ export function NewsletterForm({
     setStatus("loading");
 
     try {
-      await new Promise((resolve) => setTimeout(resolve, 800));
+      const response = await fetch("/api/newsletter", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ email }),
+      });
+      if (!response.ok) throw new Error("Failed");
       setStatus("success");
       setEmail("");
     } catch {

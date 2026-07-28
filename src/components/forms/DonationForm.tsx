@@ -160,6 +160,9 @@ export function DonationForm({
         donorEmail: form.anonymous ? undefined : form.donorEmail,
         projectSlug: projectSlug || undefined,
         message: form.message || undefined,
+        donationType,
+        paymentMethod,
+        isAnonymous: form.anonymous,
       });
 
       const confirmed = await confirmMockPayment(intent.id);

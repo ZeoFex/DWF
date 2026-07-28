@@ -45,7 +45,20 @@ export function ContactForm({ className }: ContactFormProps) {
 
     setStatus("loading");
     try {
-      await new Promise((resolve) => setTimeout(resolve, 800));
+      const response = await fetch("/api/contact", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          fullName: form.name,
+          email: form.email,
+          phone: form.phone || undefined,
+          subject: form.subject,
+          message: form.message,
+        }),
+      });
+      if (!response.ok) {
+        throw new Error("Failed to send message");
+      }
       setStatus("success");
       setForm({ name: "", email: "", phone: "", subject: "", message: "" });
     } catch {
