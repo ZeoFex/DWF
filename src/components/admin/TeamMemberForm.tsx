@@ -10,6 +10,7 @@ import {
   AdminSelect,
   AdminTextarea,
   ConfirmButton,
+  MediaDropField,
 } from "@/components/admin";
 import type { TeamMember } from "@/generated/prisma";
 
@@ -68,7 +69,7 @@ export function TeamMemberForm({ member, isNew = !member }: TeamMemberFormProps)
   }
 
   return (
-    <div className="max-w-2xl rounded-lg border border-gray-200 bg-white p-6">
+    <div className="max-w-2xl rounded-lg border border-white/10 bg-[#1A2438] p-6">
       <AdminForm onSubmit={handleSubmit} loading={loading} error={error} success={success}>
         <AdminField label="Name" required>
           <AdminInput name="name" defaultValue={member?.name} required />
@@ -79,8 +80,13 @@ export function TeamMemberForm({ member, isNew = !member }: TeamMemberFormProps)
         <AdminField label="Bio" required>
           <AdminTextarea name="bio" defaultValue={member?.bio} required rows={4} />
         </AdminField>
-        <AdminField label="Image URL">
-          <AdminInput name="imageUrl" type="url" defaultValue={member?.imageUrl ?? ""} />
+        <AdminField label="Photo">
+          <MediaDropField
+            name="imageUrl"
+            defaultValue={member?.imageUrl}
+            folder="team"
+            hint="Square or portrait crops work best."
+          />
         </AdminField>
         <AdminField label="Email">
           <AdminInput name="email" type="email" defaultValue={member?.email ?? ""} />
@@ -98,7 +104,7 @@ export function TeamMemberForm({ member, isNew = !member }: TeamMemberFormProps)
         </AdminField>
       </AdminForm>
       {!isNew && member ? (
-        <div className="mt-4 border-t border-gray-200 pt-4">
+        <div className="mt-4 border-t border-white/10 pt-4">
           <ConfirmButton onConfirm={handleDelete} redirectTo="/admin/team" />
         </div>
       ) : null}

@@ -1,6 +1,5 @@
-import Link from "next/link";
 import { format } from "date-fns";
-import { DataTable, PageHeader, StatusBadge, publishStatusVariant } from "@/components/admin";
+import { AdminEditLink, DataTable, PageHeader, StatusBadge, publishStatusVariant } from "@/components/admin";
 import { prisma } from "@/lib/db";
 
 export default async function AdminEventsPage() {
@@ -16,11 +15,7 @@ export default async function AdminEventsPage() {
           {
             key: "title",
             header: "Title",
-            cell: (e) => (
-              <Link href={`/admin/events/${e.id}`} className="font-medium text-[#2563EB] hover:underline">
-                {e.title}
-              </Link>
-            ),
+            cell: (e) => <span className="font-medium text-white">{e.title}</span>,
           },
           { key: "category", header: "Category", cell: (e) => e.category },
           {
@@ -32,6 +27,12 @@ export default async function AdminEventsPage() {
             key: "status",
             header: "Status",
             cell: (e) => <StatusBadge label={e.status} variant={publishStatusVariant(e.status)} />,
+          },
+          {
+            key: "actions",
+            header: "",
+            className: "text-right",
+            cell: (e) => <AdminEditLink href={`/admin/events/${e.id}`} />,
           },
         ]}
       />

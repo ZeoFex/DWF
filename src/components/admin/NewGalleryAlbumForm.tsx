@@ -40,8 +40,8 @@ export function NewGalleryAlbumForm() {
   }
 
   return (
-    <div className="max-w-lg rounded-lg border border-gray-200 bg-white p-6">
-      <h2 className="text-sm font-semibold text-[#111827]">Create album</h2>
+    <div className="max-w-lg rounded-lg border border-white/10 bg-[#1A2438] p-6">
+      <h2 className="text-sm font-semibold text-white">Create album</h2>
       <AdminForm onSubmit={handleSubmit} loading={loading} error={error} className="mt-4">
         <AdminField label="Title" required>
           <AdminInput name="title" required />

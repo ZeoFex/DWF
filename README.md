@@ -33,7 +33,7 @@ Configured via `.env.local`:
 
 Default seed values (override in env):
 
-- Email: `wdf@gmail.com`
+- Email: `dwf@zf.com`
 - Password: `SugarBoo`
 
 ## Scripts

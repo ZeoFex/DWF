@@ -6,7 +6,7 @@ export default async function AdminResourcesPage() {
   const resources = await prisma.resource.findMany({ orderBy: { updatedAt: "desc" } });
 
   return (
-    <Suspense fallback={<div className="text-sm text-gray-500">Loading...</div>}>
+    <Suspense fallback={<div className="text-sm text-white/50">Loading...</div>}>
       <ResourcesAdminClient resources={resources} />
     </Suspense>
   );

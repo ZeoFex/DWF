@@ -13,20 +13,20 @@ export function StatCard({ label, value, icon: Icon, hint, className }: StatCard
   return (
     <div
       className={cn(
-        "rounded-lg border border-gray-200 bg-white p-4 shadow-sm",
+        "rounded-lg border border-white/10 bg-[#1A2438] p-4 shadow-sm",
         className
       )}
     >
       <div className="flex items-start justify-between gap-3">
         <div>
-          <p className="text-xs font-medium uppercase tracking-wide text-gray-500">
+          <p className="text-xs font-medium uppercase tracking-wide text-white/50">
             {label}
           </p>
-          <p className="mt-1 text-2xl font-semibold text-[#111827]">{value}</p>
-          {hint ? <p className="mt-1 text-xs text-gray-500">{hint}</p> : null}
+          <p className="mt-1 text-2xl font-semibold text-white">{value}</p>
+          {hint ? <p className="mt-1 text-xs text-white/45">{hint}</p> : null}
         </div>
         {Icon ? (
-          <div className="rounded-md bg-[#2563EB]/10 p-2 text-[#2563EB]">
+          <div className="rounded-md bg-[#2563EB]/20 p-2 text-[#60A5FA]">
             <Icon className="h-5 w-5" aria-hidden />
           </div>
         ) : null}

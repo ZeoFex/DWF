@@ -1,18 +1,18 @@
 import { cn } from "@/lib/utils";
 
 const VARIANTS = {
-  default: "bg-gray-100 text-gray-700",
-  success: "bg-emerald-50 text-emerald-700",
-  warning: "bg-amber-50 text-amber-700",
-  danger: "bg-red-50 text-red-700",
-  info: "bg-blue-50 text-[#1D4ED8]",
-  draft: "bg-gray-100 text-gray-600",
-  published: "bg-emerald-50 text-emerald-700",
-  archived: "bg-amber-50 text-amber-700",
-  pending: "bg-amber-50 text-amber-700",
-  new: "bg-[#2563EB]/10 text-[#1D4ED8]",
-  reviewed: "bg-gray-100 text-gray-600",
-  closed: "bg-gray-100 text-gray-500",
+  default: "bg-white/10 text-white/80",
+  success: "bg-emerald-500/15 text-emerald-300",
+  warning: "bg-amber-500/15 text-amber-300",
+  danger: "bg-red-500/15 text-red-300",
+  info: "bg-blue-500/15 text-[#60A5FA]",
+  draft: "bg-white/10 text-white/60",
+  published: "bg-emerald-500/15 text-emerald-300",
+  archived: "bg-amber-500/15 text-amber-300",
+  pending: "bg-amber-500/15 text-amber-300",
+  new: "bg-[#2563EB]/25 text-[#93C5FD]",
+  reviewed: "bg-white/10 text-white/60",
+  closed: "bg-white/5 text-white/45",
 } as const;
 
 type StatusBadgeProps = {

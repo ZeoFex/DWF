@@ -10,6 +10,7 @@ import {
   AdminSelect,
   AdminTextarea,
   ConfirmButton,
+  MediaDropField,
 } from "@/components/admin";
 import type { Testimonial } from "@/generated/prisma";
 
@@ -69,7 +70,7 @@ export function TestimonialForm({ testimonial, isNew = !testimonial }: Testimoni
   }
 
   return (
-    <div className="max-w-2xl rounded-lg border border-gray-200 bg-white p-6">
+    <div className="max-w-2xl rounded-lg border border-white/10 bg-[#1A2438] p-6">
       <AdminForm onSubmit={handleSubmit} loading={loading} error={error} success={success}>
         <AdminField label="Quote" required>
           <AdminTextarea name="quote" defaultValue={testimonial?.quote} required rows={4} />
@@ -85,8 +86,13 @@ export function TestimonialForm({ testimonial, isNew = !testimonial }: Testimoni
         <AdminField label="Organization">
           <AdminInput name="organization" defaultValue={testimonial?.organization ?? ""} />
         </AdminField>
-        <AdminField label="Image URL">
-          <AdminInput name="imageUrl" type="url" defaultValue={testimonial?.imageUrl ?? ""} />
+        <AdminField label="Photo">
+          <MediaDropField
+            name="imageUrl"
+            defaultValue={testimonial?.imageUrl}
+            folder="general"
+            hint="Square or portrait crops work best."
+          />
         </AdminField>
         <AdminField label="Program slug">
           <AdminInput name="programSlug" defaultValue={testimonial?.programSlug ?? ""} />
@@ -104,7 +110,7 @@ export function TestimonialForm({ testimonial, isNew = !testimonial }: Testimoni
         </AdminField>
       </AdminForm>
       {!isNew && testimonial ? (
-        <div className="mt-4 border-t border-gray-200 pt-4">
+        <div className="mt-4 border-t border-white/10 pt-4">
           <ConfirmButton onConfirm={handleDelete} redirectTo="/admin/testimonials" />
         </div>
       ) : null}

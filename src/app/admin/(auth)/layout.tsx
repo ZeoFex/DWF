@@ -14,7 +14,7 @@ export default function AdminAuthLayout({
             Dr. Winnie&apos;s Foundation CMS
           </p>
         </div>
-        <div className="rounded-lg border border-white/10 bg-white p-6 shadow-xl">
+        <div className="rounded-lg border border-white/10 bg-[#1A2438] p-6 shadow-xl">
           {children}
         </div>
       </div>

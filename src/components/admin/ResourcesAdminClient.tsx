@@ -1,7 +1,13 @@
 "use client";
 
 import { useRouter, useSearchParams } from "next/navigation";
-import { DataTable, PageHeader, StatusBadge, publishStatusVariant } from "@/components/admin";
+import {
+  AdminEditButton,
+  DataTable,
+  PageHeader,
+  StatusBadge,
+  publishStatusVariant,
+} from "@/components/admin";
 import { ResourceForm } from "@/components/admin/ResourceForm";
 import type { Resource } from "@/generated/prisma";
 
@@ -41,15 +47,7 @@ export function ResourcesAdminClient({ resources }: Props) {
           {
             key: "title",
             header: "Title",
-            cell: (r) => (
-              <button
-                type="button"
-                onClick={() => router.push(`/admin/resources?edit=${r.id}`)}
-                className="font-medium text-[#2563EB] hover:underline"
-              >
-                {r.title}
-              </button>
-            ),
+            cell: (r) => <span className="font-medium text-white">{r.title}</span>,
           },
           { key: "category", header: "Category", cell: (r) => r.category },
           { key: "format", header: "Format", cell: (r) => r.format },
@@ -58,11 +56,16 @@ export function ResourcesAdminClient({ resources }: Props) {
             header: "Status",
             cell: (r) => <StatusBadge label={r.status} variant={publishStatusVariant(r.status)} />,
           },
+          {
+            key: "actions",
+            header: "",
+            className: "text-right",
+            cell: (r) => (
+              <AdminEditButton onClick={() => router.push(`/admin/resources?edit=${r.id}`)} />
+            ),
+          },
         ]}
       />
-      {!isNew && !editing && resources.length > 0 ? (
-        <p className="mt-3 text-xs text-gray-500">Click a title to edit.</p>
-      ) : null}
     </div>
   );
 }

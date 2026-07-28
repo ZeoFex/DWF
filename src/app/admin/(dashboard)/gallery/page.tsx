@@ -1,5 +1,4 @@
-import Link from "next/link";
-import { DataTable, PageHeader, StatusBadge, publishStatusVariant } from "@/components/admin";
+import { AdminEditLink, DataTable, PageHeader, StatusBadge, publishStatusVariant } from "@/components/admin";
 import { NewGalleryAlbumForm } from "@/components/admin/NewGalleryAlbumForm";
 import { prisma } from "@/lib/db";
 
@@ -21,17 +20,19 @@ export default async function AdminGalleryPage() {
             {
               key: "title",
               header: "Album",
-              cell: (a) => (
-                <Link href={`/admin/gallery/${a.id}`} className="font-medium text-[#2563EB] hover:underline">
-                  {a.title}
-                </Link>
-              ),
+              cell: (a) => <span className="font-medium text-white">{a.title}</span>,
             },
             { key: "items", header: "Items", cell: (a) => a._count.items },
             {
               key: "status",
               header: "Status",
               cell: (a) => <StatusBadge label={a.status} variant={publishStatusVariant(a.status)} />,
+            },
+            {
+              key: "actions",
+              header: "",
+              className: "text-right",
+              cell: (a) => <AdminEditLink href={`/admin/gallery/${a.id}`} />,
             },
           ]}
         />

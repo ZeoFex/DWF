@@ -2,7 +2,13 @@
 
 import { useRouter, useSearchParams } from "next/navigation";
 import { Suspense } from "react";
-import { DataTable, PageHeader, StatusBadge, publishStatusVariant } from "@/components/admin";
+import {
+  AdminEditButton,
+  DataTable,
+  PageHeader,
+  StatusBadge,
+  publishStatusVariant,
+} from "@/components/admin";
 import { PartnerForm } from "@/components/admin/PartnerForm";
 import type { Partner } from "@/generated/prisma";
 
@@ -40,21 +46,21 @@ function PartnersAdminInner({ partners }: { partners: Partner[] }) {
           {
             key: "name",
             header: "Name",
-            cell: (p) => (
-              <button
-                type="button"
-                onClick={() => router.push(`/admin/partners?edit=${p.id}`)}
-                className="font-medium text-[#2563EB] hover:underline"
-              >
-                {p.name}
-              </button>
-            ),
+            cell: (p) => <span className="font-medium text-white">{p.name}</span>,
           },
           { key: "featured", header: "Featured", cell: (p) => (p.featured ? "Yes" : "—") },
           {
             key: "status",
             header: "Status",
             cell: (p) => <StatusBadge label={p.status} variant={publishStatusVariant(p.status)} />,
+          },
+          {
+            key: "actions",
+            header: "",
+            className: "text-right",
+            cell: (p) => (
+              <AdminEditButton onClick={() => router.push(`/admin/partners?edit=${p.id}`)} />
+            ),
           },
         ]}
       />
@@ -64,7 +70,7 @@ function PartnersAdminInner({ partners }: { partners: Partner[] }) {
 
 export function PartnersAdminClient({ partners }: { partners: Partner[] }) {
   return (
-    <Suspense fallback={<div className="text-sm text-gray-500">Loading...</div>}>
+    <Suspense fallback={<div className="text-sm text-white/50">Loading...</div>}>
       <PartnersAdminInner partners={partners} />
     </Suspense>
   );

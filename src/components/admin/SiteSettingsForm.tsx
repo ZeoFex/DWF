@@ -8,6 +8,7 @@ import {
   AdminForm,
   AdminInput,
   AdminTextarea,
+  MediaDropField,
 } from "@/components/admin";
 import type { SiteSettings } from "@/generated/prisma";
 
@@ -88,9 +89,9 @@ export function SiteSettingsForm({ settings }: SiteSettingsFormProps) {
   }
 
   return (
-    <div className="max-w-3xl rounded-lg border border-gray-200 bg-white p-6">
+    <div className="max-w-3xl rounded-lg border border-white/10 bg-[#1A2438] p-6">
       <AdminForm onSubmit={handleSubmit} loading={loading} error={error} success={success}>
-        <h2 className="text-sm font-semibold text-[#111827]">General</h2>
+        <h2 className="text-sm font-semibold text-white">General</h2>
         <AdminField label="Site name" required>
           <AdminInput name="siteName" defaultValue={settings.siteName} required />
         </AdminField>
@@ -101,7 +102,7 @@ export function SiteSettingsForm({ settings }: SiteSettingsFormProps) {
           <AdminTextarea name="description" defaultValue={settings.description} required rows={3} />
         </AdminField>
 
-        <h2 className="pt-2 text-sm font-semibold text-[#111827]">Contact</h2>
+        <h2 className="pt-2 text-sm font-semibold text-white">Contact</h2>
         <div className="grid gap-4 sm:grid-cols-2">
           <AdminField label="Email" required>
             <AdminInput name="email" type="email" defaultValue={settings.email} required />
@@ -119,7 +120,7 @@ export function SiteSettingsForm({ settings }: SiteSettingsFormProps) {
           </AdminField>
         </div>
 
-        <h2 className="pt-2 text-sm font-semibold text-[#111827]">Address</h2>
+        <h2 className="pt-2 text-sm font-semibold text-white">Address</h2>
         <AdminField label="Address line 1" required>
           <AdminInput name="addressLine1" defaultValue={settings.addressLine1} required />
         </AdminField>
@@ -138,7 +139,7 @@ export function SiteSettingsForm({ settings }: SiteSettingsFormProps) {
           </AdminField>
         </div>
 
-        <h2 className="pt-2 text-sm font-semibold text-[#111827]">Hours</h2>
+        <h2 className="pt-2 text-sm font-semibold text-white">Hours</h2>
         <AdminField label="Weekdays" required>
           <AdminInput name="hoursWeekdays" defaultValue={settings.hoursWeekdays} required />
         </AdminField>
@@ -154,7 +155,7 @@ export function SiteSettingsForm({ settings }: SiteSettingsFormProps) {
           <AdminTextarea name="hoursNote" defaultValue={settings.hoursNote ?? ""} />
         </AdminField>
 
-        <h2 className="pt-2 text-sm font-semibold text-[#111827]">Announcement bar</h2>
+        <h2 className="pt-2 text-sm font-semibold text-white">Announcement bar</h2>
         <AdminCheckbox
           name="announcementActive"
           label="Show announcement"
@@ -167,24 +168,34 @@ export function SiteSettingsForm({ settings }: SiteSettingsFormProps) {
           <AdminInput name="announcementHref" type="url" defaultValue={settings.announcementHref ?? ""} />
         </AdminField>
 
-        <h2 className="pt-2 text-sm font-semibold text-[#111827]">Homepage</h2>
+        <h2 className="pt-2 text-sm font-semibold text-white">Homepage</h2>
         <AdminField label="Hero headline">
           <AdminTextarea name="heroHeadline" defaultValue={settings.heroHeadline ?? ""} />
         </AdminField>
         <AdminField label="Hero supporting text">
           <AdminTextarea name="heroSupporting" defaultValue={settings.heroSupporting ?? ""} />
         </AdminField>
-        <AdminField label="Hero image URL">
-          <AdminInput name="heroImageUrl" type="url" defaultValue={settings.heroImageUrl ?? ""} />
+        <AdminField label="Hero image">
+          <MediaDropField
+            name="heroImageUrl"
+            defaultValue={settings.heroImageUrl}
+            folder="general"
+            hint="Landscape orientation works best."
+          />
         </AdminField>
         <AdminField label="About preview">
           <AdminTextarea name="aboutPreview" defaultValue={settings.aboutPreview ?? ""} />
         </AdminField>
-        <AdminField label="About image URL">
-          <AdminInput name="aboutImageUrl" type="url" defaultValue={settings.aboutImageUrl ?? ""} />
+        <AdminField label="About image">
+          <MediaDropField
+            name="aboutImageUrl"
+            defaultValue={settings.aboutImageUrl}
+            folder="general"
+            hint="Landscape orientation works best."
+          />
         </AdminField>
 
-        <h2 className="pt-2 text-sm font-semibold text-[#111827]">Social links</h2>
+        <h2 className="pt-2 text-sm font-semibold text-white">Social links</h2>
         <div className="grid gap-4 sm:grid-cols-2">
           <AdminField label="Facebook">
             <AdminInput name="socialFacebook" type="url" defaultValue={socialLinks.facebook ?? ""} />

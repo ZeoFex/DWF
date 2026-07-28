@@ -2,7 +2,7 @@
 
 import { useRouter, useSearchParams } from "next/navigation";
 import { Suspense } from "react";
-import { DataTable, PageHeader } from "@/components/admin";
+import { AdminEditButton, DataTable, PageHeader } from "@/components/admin";
 import { ImpactStatForm } from "@/components/admin/ImpactStatForm";
 import type { ImpactStat } from "@/generated/prisma";
 
@@ -40,15 +40,7 @@ function ImpactAdminInner({ stats }: { stats: ImpactStat[] }) {
           {
             key: "label",
             header: "Label",
-            cell: (s) => (
-              <button
-                type="button"
-                onClick={() => router.push(`/admin/impact?edit=${s.id}`)}
-                className="font-medium text-[#2563EB] hover:underline"
-              >
-                {s.label}
-              </button>
-            ),
+            cell: (s) => <span className="font-medium text-white">{s.label}</span>,
           },
           {
             key: "value",
@@ -56,6 +48,14 @@ function ImpactAdminInner({ stats }: { stats: ImpactStat[] }) {
             cell: (s) => `${s.prefix ?? ""}${s.value}${s.suffix ?? ""}`,
           },
           { key: "order", header: "Order", cell: (s) => s.sortOrder },
+          {
+            key: "actions",
+            header: "",
+            className: "text-right",
+            cell: (s) => (
+              <AdminEditButton onClick={() => router.push(`/admin/impact?edit=${s.id}`)} />
+            ),
+          },
         ]}
       />
     </div>
@@ -64,7 +64,7 @@ function ImpactAdminInner({ stats }: { stats: ImpactStat[] }) {
 
 export function ImpactAdminClient({ stats }: { stats: ImpactStat[] }) {
   return (
-    <Suspense fallback={<div className="text-sm text-gray-500">Loading...</div>}>
+    <Suspense fallback={<div className="text-sm text-white/50">Loading...</div>}>
       <ImpactAdminInner stats={stats} />
     </Suspense>
   );

@@ -1,5 +1,4 @@
-import Link from "next/link";
-import { DataTable, PageHeader, StatusBadge, publishStatusVariant } from "@/components/admin";
+import { AdminEditLink, DataTable, PageHeader, StatusBadge, publishStatusVariant } from "@/components/admin";
 import { prisma } from "@/lib/db";
 
 export default async function AdminProgramsPage() {
@@ -22,11 +21,7 @@ export default async function AdminProgramsPage() {
           {
             key: "title",
             header: "Title",
-            cell: (p) => (
-              <Link href={`/admin/programs/${p.id}`} className="font-medium text-[#2563EB] hover:underline">
-                {p.title}
-              </Link>
-            ),
+            cell: (p) => <span className="font-medium text-white">{p.title}</span>,
           },
           { key: "slug", header: "Slug", cell: (p) => p.slug },
           {
@@ -35,6 +30,12 @@ export default async function AdminProgramsPage() {
             cell: (p) => <StatusBadge label={p.status} variant={publishStatusVariant(p.status)} />,
           },
           { key: "sort", header: "Order", cell: (p) => p.sortOrder },
+          {
+            key: "actions",
+            header: "",
+            className: "text-right",
+            cell: (p) => <AdminEditLink href={`/admin/programs/${p.id}`} />,
+          },
         ]}
       />
     </div>

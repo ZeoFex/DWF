@@ -1,6 +1,6 @@
-import Link from "next/link";
 import { format } from "date-fns";
 import {
+  AdminEditLink,
   DataTable,
   PageHeader,
   StatusBadge,
@@ -36,11 +36,7 @@ export default async function AdminBlogListPage() {
           {
             key: "title",
             header: "Title",
-            cell: (p) => (
-              <Link href={`/admin/blog/${p.id}`} className="font-medium text-[#2563EB] hover:underline">
-                {p.title}
-              </Link>
-            ),
+            cell: (p) => <span className="font-medium text-white">{p.title}</span>,
           },
           { key: "category", header: "Category", cell: (p) => p.category },
           {
@@ -59,6 +55,12 @@ export default async function AdminBlogListPage() {
             key: "updated",
             header: "Updated",
             cell: (p) => format(p.updatedAt, "MMM d, yyyy"),
+          },
+          {
+            key: "actions",
+            header: "",
+            className: "text-right",
+            cell: (p) => <AdminEditLink href={`/admin/blog/${p.id}`} />,
           },
         ]}
       />

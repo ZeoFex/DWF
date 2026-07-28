@@ -10,6 +10,7 @@ import {
   AdminSelect,
   AdminTextarea,
   ConfirmButton,
+  MediaDropField,
 } from "@/components/admin";
 import type { BlogPost } from "@/generated/prisma";
 
@@ -80,7 +81,7 @@ export function BlogPostForm({ post }: BlogPostFormProps) {
   }
 
   return (
-    <div className="max-w-3xl rounded-lg border border-gray-200 bg-white p-6">
+    <div className="max-w-3xl rounded-lg border border-white/10 bg-[#1A2438] p-6">
       <AdminForm onSubmit={handleSubmit} loading={loading} error={error} success={success}>
         <AdminField label="Title" required>
           <AdminInput name="title" defaultValue={post?.title} required />
@@ -103,11 +104,21 @@ export function BlogPostForm({ post }: BlogPostFormProps) {
           </AdminField>
         </div>
         <div className="grid gap-4 sm:grid-cols-2">
-          <AdminField label="Image URL">
-            <AdminInput name="imageUrl" type="url" defaultValue={post?.imageUrl ?? ""} />
+          <AdminField label="Image">
+            <MediaDropField
+              name="imageUrl"
+              defaultValue={post?.imageUrl}
+              folder="blog"
+              hint="Landscape orientation works best."
+            />
           </AdminField>
-          <AdminField label="Video URL">
-            <AdminInput name="videoUrl" type="url" defaultValue={post?.videoUrl ?? ""} />
+          <AdminField label="Video">
+            <MediaDropField
+              name="videoUrl"
+              defaultValue={post?.videoUrl}
+              kind="video"
+              folder="blog"
+            />
           </AdminField>
         </div>
         <div className="grid gap-4 sm:grid-cols-2">
@@ -124,7 +135,7 @@ export function BlogPostForm({ post }: BlogPostFormProps) {
         </div>
       </AdminForm>
       {!isNew ? (
-        <div className="mt-4 border-t border-gray-200 pt-4">
+        <div className="mt-4 border-t border-white/10 pt-4">
           <ConfirmButton
             onConfirm={handleDelete}
             redirectTo="/admin/blog"

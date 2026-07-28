@@ -2,7 +2,13 @@
 
 import { useRouter, useSearchParams } from "next/navigation";
 import { Suspense } from "react";
-import { DataTable, PageHeader, StatusBadge, publishStatusVariant } from "@/components/admin";
+import {
+  AdminEditButton,
+  DataTable,
+  PageHeader,
+  StatusBadge,
+  publishStatusVariant,
+} from "@/components/admin";
 import { TeamMemberForm } from "@/components/admin/TeamMemberForm";
 import type { TeamMember } from "@/generated/prisma";
 
@@ -40,15 +46,7 @@ function TeamAdminInner({ members }: { members: TeamMember[] }) {
           {
             key: "name",
             header: "Name",
-            cell: (m) => (
-              <button
-                type="button"
-                onClick={() => router.push(`/admin/team?edit=${m.id}`)}
-                className="font-medium text-[#2563EB] hover:underline"
-              >
-                {m.name}
-              </button>
-            ),
+            cell: (m) => <span className="font-medium text-white">{m.name}</span>,
           },
           { key: "role", header: "Role", cell: (m) => m.role },
           { key: "founder", header: "Founder", cell: (m) => (m.isFounder ? "Yes" : "—") },
@@ -56,6 +54,14 @@ function TeamAdminInner({ members }: { members: TeamMember[] }) {
             key: "status",
             header: "Status",
             cell: (m) => <StatusBadge label={m.status} variant={publishStatusVariant(m.status)} />,
+          },
+          {
+            key: "actions",
+            header: "",
+            className: "text-right",
+            cell: (m) => (
+              <AdminEditButton onClick={() => router.push(`/admin/team?edit=${m.id}`)} />
+            ),
           },
         ]}
       />
@@ -65,7 +71,7 @@ function TeamAdminInner({ members }: { members: TeamMember[] }) {
 
 export function TeamAdminClient({ members }: { members: TeamMember[] }) {
   return (
-    <Suspense fallback={<div className="text-sm text-gray-500">Loading...</div>}>
+    <Suspense fallback={<div className="text-sm text-white/50">Loading...</div>}>
       <TeamAdminInner members={members} />
     </Suspense>
   );

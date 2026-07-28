@@ -67,12 +67,12 @@ function MessagesAdminInner({ contact, volunteer, partner }: MessagesAdminProps)
     <div>
       <PageHeader title="Messages" description="Review inquiries and applications" />
       {error ? (
-        <div className="mb-4 rounded-md border border-red-200 bg-red-50 px-3 py-2 text-sm text-red-700">
+        <div className="mb-4 rounded-md border border-red-400/30 bg-red-500/10 px-3 py-2 text-sm text-red-200">
           {error}
         </div>
       ) : null}
 
-      <div className="mb-4 flex gap-1 border-b border-gray-200">
+      <div className="mb-4 flex gap-1 border-b border-white/10">
         {tabs.map((t) => (
           <button
             key={t.id}
@@ -82,7 +82,7 @@ function MessagesAdminInner({ contact, volunteer, partner }: MessagesAdminProps)
               "px-4 py-2 text-sm font-medium",
               tab === t.id
                 ? "border-b-2 border-[#2563EB] text-[#2563EB]"
-                : "text-gray-500 hover:text-gray-700"
+                : "text-white/50 hover:text-white/80"
             )}
           >
             {t.label} ({t.count})
@@ -213,7 +213,7 @@ function MessagesAdminInner({ contact, volunteer, partner }: MessagesAdminProps)
 
 export function MessagesAdminClient(props: MessagesAdminProps) {
   return (
-    <Suspense fallback={<div className="text-sm text-gray-500">Loading...</div>}>
+    <Suspense fallback={<div className="text-sm text-white/50">Loading...</div>}>
       <MessagesAdminInner {...props} />
     </Suspense>
   );

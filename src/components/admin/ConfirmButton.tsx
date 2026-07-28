@@ -44,8 +44,8 @@ export function ConfirmButton({
         onClick={() => setConfirming(true)}
         className={
           variant === "danger"
-            ? `inline-flex items-center gap-1.5 rounded-md border border-red-200 bg-white px-3 py-1.5 text-sm text-red-600 hover:bg-red-50 ${className}`
-            : `inline-flex items-center gap-1.5 rounded-md border border-gray-300 bg-white px-3 py-1.5 text-sm text-gray-700 hover:bg-gray-50 ${className}`
+            ? `inline-flex items-center gap-1.5 rounded-md border border-red-400/30 bg-red-500/10 px-3 py-1.5 text-sm text-red-300 hover:bg-red-500/20 ${className}`
+            : `inline-flex items-center gap-1.5 rounded-md border border-white/15 bg-white/5 px-3 py-1.5 text-sm text-white/80 hover:bg-white/10 ${className}`
         }
       >
         <Trash2 className="h-3.5 w-3.5" aria-hidden />
@@ -69,7 +69,7 @@ export function ConfirmButton({
         type="button"
         disabled={loading}
         onClick={() => setConfirming(false)}
-        className="rounded-md px-3 py-1.5 text-sm text-gray-600 hover:text-gray-900"
+        className="rounded-md px-3 py-1.5 text-sm text-white/55 hover:text-white"
       >
         Cancel
       </button>

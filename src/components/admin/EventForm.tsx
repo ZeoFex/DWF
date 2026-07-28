@@ -10,6 +10,7 @@ import {
   AdminSelect,
   AdminTextarea,
   ConfirmButton,
+  MediaDropField,
 } from "@/components/admin";
 import { joinJsonArray, parseJsonArray } from "@/lib/admin-utils";
 import type { Event } from "@/generated/prisma";
@@ -83,7 +84,7 @@ export function EventForm({ event }: EventFormProps) {
   }
 
   return (
-    <div className="max-w-3xl rounded-lg border border-gray-200 bg-white p-6">
+    <div className="max-w-3xl rounded-lg border border-white/10 bg-[#1A2438] p-6">
       <AdminForm onSubmit={handleSubmit} loading={loading} error={error} success={success}>
         <AdminField label="Title" required>
           <AdminInput name="title" defaultValue={event?.title} required />
@@ -108,8 +109,13 @@ export function EventForm({ event }: EventFormProps) {
         <AdminField label="Location" required>
           <AdminInput name="location" defaultValue={event?.location} required />
         </AdminField>
-        <AdminField label="Image URL">
-          <AdminInput name="imageUrl" type="url" defaultValue={event?.imageUrl ?? ""} />
+        <AdminField label="Image">
+          <MediaDropField
+            name="imageUrl"
+            defaultValue={event?.imageUrl}
+            folder="events"
+            hint="Landscape orientation works best."
+          />
         </AdminField>
         <AdminField label="Gallery URLs" hint="One per line">
           <AdminTextarea name="galleryUrls" defaultValue={joinJsonArray(event?.galleryUrls ?? [])} rows={3} />
@@ -127,7 +133,7 @@ export function EventForm({ event }: EventFormProps) {
         </AdminField>
       </AdminForm>
       {!isNew ? (
-        <div className="mt-4 border-t border-gray-200 pt-4">
+        <div className="mt-4 border-t border-white/10 pt-4">
           <ConfirmButton onConfirm={handleDelete} redirectTo="/admin/events" />
         </div>
       ) : null}

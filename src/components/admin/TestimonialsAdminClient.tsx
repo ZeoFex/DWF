@@ -2,7 +2,13 @@
 
 import { useRouter, useSearchParams } from "next/navigation";
 import { Suspense } from "react";
-import { DataTable, PageHeader, StatusBadge, publishStatusVariant } from "@/components/admin";
+import {
+  AdminEditButton,
+  DataTable,
+  PageHeader,
+  StatusBadge,
+  publishStatusVariant,
+} from "@/components/admin";
 import { TestimonialForm } from "@/components/admin/TestimonialForm";
 import type { Testimonial } from "@/generated/prisma";
 
@@ -40,15 +46,7 @@ function TestimonialsAdminInner({ testimonials }: { testimonials: Testimonial[] 
           {
             key: "author",
             header: "Author",
-            cell: (t) => (
-              <button
-                type="button"
-                onClick={() => router.push(`/admin/testimonials?edit=${t.id}`)}
-                className="font-medium text-[#2563EB] hover:underline"
-              >
-                {t.author}
-              </button>
-            ),
+            cell: (t) => <span className="font-medium text-white">{t.author}</span>,
           },
           { key: "role", header: "Role", cell: (t) => t.role },
           { key: "featured", header: "Featured", cell: (t) => (t.featured ? "Yes" : "—") },
@@ -56,6 +54,16 @@ function TestimonialsAdminInner({ testimonials }: { testimonials: Testimonial[] 
             key: "status",
             header: "Status",
             cell: (t) => <StatusBadge label={t.status} variant={publishStatusVariant(t.status)} />,
+          },
+          {
+            key: "actions",
+            header: "",
+            className: "text-right",
+            cell: (t) => (
+              <AdminEditButton
+                onClick={() => router.push(`/admin/testimonials?edit=${t.id}`)}
+              />
+            ),
           },
         ]}
       />
@@ -65,7 +73,7 @@ function TestimonialsAdminInner({ testimonials }: { testimonials: Testimonial[] 
 
 export function TestimonialsAdminClient({ testimonials }: { testimonials: Testimonial[] }) {
   return (
-    <Suspense fallback={<div className="text-sm text-gray-500">Loading...</div>}>
+    <Suspense fallback={<div className="text-sm text-white/50">Loading...</div>}>
       <TestimonialsAdminInner testimonials={testimonials} />
     </Suspense>
   );

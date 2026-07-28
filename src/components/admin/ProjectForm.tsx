@@ -10,6 +10,7 @@ import {
   AdminSelect,
   AdminTextarea,
   ConfirmButton,
+  MediaDropField,
 } from "@/components/admin";
 import { joinJsonArray, parseJsonArray } from "@/lib/admin-utils";
 import type { Project } from "@/generated/prisma";
@@ -78,7 +79,7 @@ export function ProjectForm({ project }: ProjectFormProps) {
   }
 
   return (
-    <div className="max-w-3xl rounded-lg border border-gray-200 bg-white p-6">
+    <div className="max-w-3xl rounded-lg border border-white/10 bg-[#1A2438] p-6">
       <AdminForm onSubmit={handleSubmit} loading={loading} error={error} success={success}>
         <AdminField label="Title" required>
           <AdminInput name="title" defaultValue={project?.title} required />
@@ -125,11 +126,21 @@ export function ProjectForm({ project }: ProjectFormProps) {
             <AdminInput name="location" defaultValue={project?.location ?? ""} />
           </AdminField>
         </div>
-        <AdminField label="Hero image URL">
-          <AdminInput name="heroImageUrl" type="url" defaultValue={project?.heroImageUrl ?? ""} />
+        <AdminField label="Hero image">
+          <MediaDropField
+            name="heroImageUrl"
+            defaultValue={project?.heroImageUrl}
+            folder="projects"
+            hint="Landscape orientation works best."
+          />
         </AdminField>
-        <AdminField label="Video URL">
-          <AdminInput name="videoUrl" type="url" defaultValue={project?.videoUrl ?? ""} />
+        <AdminField label="Video">
+          <MediaDropField
+            name="videoUrl"
+            defaultValue={project?.videoUrl}
+            kind="video"
+            folder="projects"
+          />
         </AdminField>
         <AdminField label="Activities" hint="One per line">
           <AdminTextarea name="activities" defaultValue={joinJsonArray(project?.activities ?? [])} rows={3} />
@@ -142,7 +153,7 @@ export function ProjectForm({ project }: ProjectFormProps) {
         </AdminField>
       </AdminForm>
       {!isNew ? (
-        <div className="mt-4 border-t border-gray-200 pt-4">
+        <div className="mt-4 border-t border-white/10 pt-4">
           <ConfirmButton onConfirm={handleDelete} redirectTo="/admin/projects" />
         </div>
       ) : null}

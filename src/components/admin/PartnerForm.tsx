@@ -10,6 +10,7 @@ import {
   AdminSelect,
   AdminTextarea,
   ConfirmButton,
+  MediaDropField,
 } from "@/components/admin";
 import type { Partner } from "@/generated/prisma";
 
@@ -67,13 +68,18 @@ export function PartnerForm({ partner, isNew = !partner }: PartnerFormProps) {
   }
 
   return (
-    <div className="max-w-2xl rounded-lg border border-gray-200 bg-white p-6">
+    <div className="max-w-2xl rounded-lg border border-white/10 bg-[#1A2438] p-6">
       <AdminForm onSubmit={handleSubmit} loading={loading} error={error} success={success}>
         <AdminField label="Name" required>
           <AdminInput name="name" defaultValue={partner?.name} required />
         </AdminField>
-        <AdminField label="Logo URL">
-          <AdminInput name="logoUrl" type="url" defaultValue={partner?.logoUrl ?? ""} />
+        <AdminField label="Logo">
+          <MediaDropField
+            name="logoUrl"
+            defaultValue={partner?.logoUrl}
+            folder="general"
+            hint="Transparent PNG or SVG-as-PNG works well."
+          />
         </AdminField>
         <AdminField label="Website URL">
           <AdminInput name="websiteUrl" type="url" defaultValue={partner?.websiteUrl ?? ""} />
@@ -94,7 +100,7 @@ export function PartnerForm({ partner, isNew = !partner }: PartnerFormProps) {
         </AdminField>
       </AdminForm>
       {!isNew && partner ? (
-        <div className="mt-4 border-t border-gray-200 pt-4">
+        <div className="mt-4 border-t border-white/10 pt-4">
           <ConfirmButton onConfirm={handleDelete} redirectTo="/admin/partners" />
         </div>
       ) : null}

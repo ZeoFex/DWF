@@ -9,6 +9,7 @@ import {
   AdminSelect,
   AdminTextarea,
   ConfirmButton,
+  MediaDropField,
 } from "@/components/admin";
 import type { GalleryAlbum, GalleryItem } from "@/generated/prisma";
 
@@ -102,7 +103,7 @@ export function GalleryAlbumDetail({ album, items }: GalleryAlbumFormProps) {
 
   return (
     <div className="space-y-6">
-      <div className="max-w-3xl rounded-lg border border-gray-200 bg-white p-6">
+      <div className="max-w-3xl rounded-lg border border-white/10 bg-[#1A2438] p-6">
         <AdminForm onSubmit={handleAlbumSubmit} loading={loading} error={error} success={success}>
           <AdminField label="Title" required>
             <AdminInput name="title" defaultValue={album.title} required />
@@ -113,8 +114,13 @@ export function GalleryAlbumDetail({ album, items }: GalleryAlbumFormProps) {
           <AdminField label="Description">
             <AdminTextarea name="description" defaultValue={album.description ?? ""} />
           </AdminField>
-          <AdminField label="Cover URL">
-            <AdminInput name="coverUrl" type="url" defaultValue={album.coverUrl ?? ""} />
+          <AdminField label="Cover image">
+            <MediaDropField
+              name="coverUrl"
+              defaultValue={album.coverUrl}
+              folder="gallery"
+              hint="Landscape orientation works best."
+            />
           </AdminField>
           <div className="grid gap-4 sm:grid-cols-2">
             <AdminField label="Status">
@@ -129,17 +135,17 @@ export function GalleryAlbumDetail({ album, items }: GalleryAlbumFormProps) {
             </AdminField>
           </div>
         </AdminForm>
-        <div className="mt-4 border-t border-gray-200 pt-4">
+        <div className="mt-4 border-t border-white/10 pt-4">
           <ConfirmButton onConfirm={handleDeleteAlbum} redirectTo="/admin/gallery" />
         </div>
       </div>
 
-      <div className="rounded-lg border border-gray-200 bg-white p-6">
-        <h2 className="text-sm font-semibold text-[#111827]">Gallery items ({items.length})</h2>
+      <div className="rounded-lg border border-white/10 bg-[#1A2438] p-6">
+        <h2 className="text-sm font-semibold text-white">Gallery items ({items.length})</h2>
         <AdminForm onSubmit={handleAddItem} loading={itemLoading} className="mt-4">
           <div className="grid gap-4 sm:grid-cols-2">
-            <AdminField label="Image URL" required>
-              <AdminInput name="url" type="url" required />
+            <AdminField label="Image" required>
+              <MediaDropField name="url" folder="gallery" required />
             </AdminField>
             <AdminField label="Sort order">
               <AdminInput name="sortOrder" type="number" defaultValue={items.length} />
@@ -153,12 +159,12 @@ export function GalleryAlbumDetail({ album, items }: GalleryAlbumFormProps) {
           </AdminField>
         </AdminForm>
 
-        <ul className="mt-4 divide-y divide-gray-100">
+        <ul className="mt-4 divide-y divide-white/5">
           {items.map((item) => (
             <li key={item.id} className="flex items-center justify-between gap-3 py-3">
               <div className="min-w-0">
-                <p className="truncate text-sm text-[#111827]">{item.url}</p>
-                <p className="text-xs text-gray-500">{item.alt ?? item.caption ?? "—"}</p>
+                <p className="truncate text-sm text-white">{item.url}</p>
+                <p className="text-xs text-white/50">{item.alt ?? item.caption ?? "—"}</p>
               </div>
               <ConfirmButton label="Remove" onConfirm={() => handleDeleteItem(item.id)} />
             </li>
