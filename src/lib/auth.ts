@@ -17,7 +17,9 @@ export type AdminSession = {
 function getJwtSecret() {
   const secret = process.env.ADMIN_JWT_SECRET || process.env.JWT_SECRET;
   if (!secret || secret.trim().length < 16) {
-    throw new Error("ADMIN_JWT_SECRET is missing or too short");
+    throw new Error(
+      "ADMIN_JWT_SECRET is missing or too short. Set it in Vercel environment variables."
+    );
   }
   return new TextEncoder().encode(secret);
 }

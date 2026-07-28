@@ -1,6 +1,8 @@
 import { config } from "dotenv";
+
 config({ path: ".env.local" });
 config();
+
 import { defineConfig } from "prisma/config";
 
 export default defineConfig({
@@ -10,6 +12,9 @@ export default defineConfig({
     seed: "tsx prisma/seed.ts",
   },
   datasource: {
-    url: process.env.DATABASE_URL!,
+    // Dummy URL allows `prisma generate` on CI when DATABASE_URL is not injected yet
+    url:
+      process.env.DATABASE_URL ??
+      "postgresql://postgres:postgres@localhost:5432/dwf?schema=public",
   },
 });

@@ -1,11 +1,6 @@
 import type { Metadata, Viewport } from "next";
 import { Lora, Manrope } from "next/font/google";
-import {
-  AnnouncementBar,
-  Footer,
-  Header,
-  WhatsAppButton,
-} from "@/components";
+import { SiteChrome } from "@/components/layout/SiteChrome";
 import { JsonLd } from "@/components/seo/JsonLd";
 import { siteConfig } from "@/content";
 import { getOrganizationSchema } from "@/lib/seo-schemas";
@@ -69,21 +64,9 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className={`${manrope.variable} ${lora.variable}`}>
-      <body className="min-h-screen flex flex-col">
+      <body className="flex min-h-screen flex-col">
         <JsonLd data={getOrganizationSchema()} />
-        <a
-          href="#main-content"
-          className="sr-only focus:not-sr-only focus:absolute focus:left-4 focus:top-4 focus:z-[100] focus:rounded-lg focus:bg-white focus:px-4 focus:py-2 focus:shadow-lg"
-        >
-          Skip to main content
-        </a>
-        <AnnouncementBar />
-        <Header />
-        <main id="main-content" className="flex-1">
-          {children}
-        </main>
-        <Footer />
-        <WhatsAppButton />
+        <SiteChrome>{children}</SiteChrome>
       </body>
     </html>
   );
