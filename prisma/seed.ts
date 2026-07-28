@@ -1,9 +1,12 @@
 import "dotenv/config";
 import bcrypt from "bcryptjs";
 import { PrismaClient, PublishStatus, ProjectStatus } from "../src/generated/prisma";
-import { PrismaPg } from "@prisma/adapter-pg";
+import { PrismaNeonHttp } from "@prisma/adapter-neon";
 
-const adapter = new PrismaPg({ connectionString: process.env.DATABASE_URL! });
+const adapter = new PrismaNeonHttp(process.env.DATABASE_URL!, {
+  arrayMode: false,
+  fullResults: true,
+});
 const prisma = new PrismaClient({ adapter });
 
 async function main() {

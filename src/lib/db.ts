@@ -1,5 +1,5 @@
+import { PrismaNeonHttp } from "@prisma/adapter-neon";
 import { PrismaClient } from "@/generated/prisma";
-import { PrismaPg } from "@prisma/adapter-pg";
 
 const globalForPrisma = globalThis as unknown as {
   prisma: PrismaClient | undefined;
@@ -12,22 +12,35 @@ function createPrismaClient() {
       "DATABASE_URL is not set. Add it in Vercel Project Settings → Environment Variables."
     );
   }
-  const adapter = new PrismaPg({ connectionString });
+
+  // HTTP adapter is the reliable choice for Vercel serverless + Neon
+  const adapter = new PrismaNeonHttp(connectionString, {
+    arrayMode: false,
+    fullResults: true,
+  });
+
   return new PrismaClient({
     adapter,
     log: process.env.NODE_ENV === "development" ? ["error", "warn"] : ["error"],
   });
 }
 
-/** Lazy singleton so importing this module during build does not require DATABASE_URL until first query. */
+function getClient() {
+  if (!globalForPrisma.prisma) {
+    globalForPrisma.prisma = createPrismaClient();
+  }
+  return globalForPrisma.prisma;
+}
+
+/**
+ * Lazy Prisma singleton.
+ * Avoids requiring DATABASE_URL at module-import/build time.
+ */
 export const prisma = new Proxy({} as PrismaClient, {
   get(_target, prop, receiver) {
-    const client = globalForPrisma.prisma ?? createPrismaClient();
-    if (process.env.NODE_ENV !== "production") {
-      globalForPrisma.prisma = client;
-    } else if (!globalForPrisma.prisma) {
-      globalForPrisma.prisma = client;
-    }
+    // Prevent treating the proxy as a Thenable/Promise
+    if (prop === "then") return undefined;
+    const client = getClient();
     const value = Reflect.get(client, prop, receiver);
     return typeof value === "function" ? value.bind(client) : value;
   },

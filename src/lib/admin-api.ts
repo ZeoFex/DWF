@@ -38,6 +38,23 @@ export function handleApiError(error: unknown) {
   if (error instanceof ZodError) {
     return jsonError("Validation failed", 422, error.flatten());
   }
+
   console.error("[api]", error);
-  return jsonError("Internal server error", 500);
+
+  const message = error instanceof Error ? error.message : "Internal server error";
+
+  // Surface actionable configuration issues instead of a blank 500
+  if (
+    message.includes("DATABASE_URL") ||
+    message.includes("ADMIN_JWT_SECRET") ||
+    message.includes("Cloudinary") ||
+    message.includes("JWT")
+  ) {
+    return jsonError(message, 500);
+  }
+
+  return jsonError(
+    process.env.NODE_ENV === "development" ? message : "Internal server error",
+    500
+  );
 }
