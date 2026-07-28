@@ -14,7 +14,7 @@ export default async function AdminProjectsPage() {
           {
             key: "title",
             header: "Title",
-            cell: (p) => <span className="font-medium text-white">{p.title}</span>,
+            cell: (p) => <span className="font-medium text-[#1E1E1E]">{p.title}</span>,
           },
           { key: "status", header: "Status", cell: (p) => p.status },
           {

@@ -44,8 +44,8 @@ export function ConfirmButton({
         onClick={() => setConfirming(true)}
         className={
           variant === "danger"
-            ? `inline-flex items-center gap-1.5 rounded-md border border-red-400/30 bg-red-500/10 px-3 py-1.5 text-sm text-red-300 hover:bg-red-500/20 ${className}`
-            : `inline-flex items-center gap-1.5 rounded-md border border-white/15 bg-white/5 px-3 py-1.5 text-sm text-white/80 hover:bg-white/10 ${className}`
+            ? `inline-flex items-center gap-1.5 rounded-md border border-red-200 bg-white px-3 py-1.5 text-sm text-red-600 hover:bg-red-50 ${className}`
+            : `inline-flex items-center gap-1.5 rounded-md border border-[#46A0DC]/25 bg-white px-3 py-1.5 text-sm text-[#1E1E1E]/80 hover:bg-[#F5FAFE] ${className}`
         }
       >
         <Trash2 className="h-3.5 w-3.5" aria-hidden />
@@ -60,7 +60,7 @@ export function ConfirmButton({
         type="button"
         disabled={loading}
         onClick={handleConfirm}
-        className="inline-flex items-center gap-1.5 rounded-md bg-red-600 px-3 py-1.5 text-sm font-medium text-white hover:bg-red-700 disabled:opacity-50"
+        className="inline-flex items-center gap-1.5 rounded-md bg-red-600 px-3 py-1.5 text-sm font-medium text-[#1E1E1E] hover:bg-red-700 disabled:opacity-50"
       >
         {loading ? <Loader2 className="h-3.5 w-3.5 animate-spin" aria-hidden /> : null}
         {confirmLabel}
@@ -69,7 +69,7 @@ export function ConfirmButton({
         type="button"
         disabled={loading}
         onClick={() => setConfirming(false)}
-        className="rounded-md px-3 py-1.5 text-sm text-white/55 hover:text-white"
+        className="rounded-md px-3 py-1.5 text-sm text-[#1E1E1E]/55 hover:text-[#1E1E1E]"
       >
         Cancel
       </button>

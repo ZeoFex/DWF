@@ -155,13 +155,13 @@ export function MediaDropField({
         }}
         className={cn(
           "flex cursor-pointer items-center gap-4 rounded-xl border border-dashed px-4 py-5 transition-colors",
-          "border-white/20 bg-[#0F1729]/80 hover:border-[#2563EB]/50 hover:bg-[#0F1729]",
-          dragging && "border-[#2563EB] bg-[#2563EB]/10",
+          "border-[#46A0DC]/35 bg-[#F5FAFE] hover:border-[#46A0DC] hover:bg-[#46A0DC]/5",
+          dragging && "border-[#E85A28] bg-[#E85A28]/5",
           loading && "pointer-events-none opacity-70"
         )}
       >
         <div className="flex min-w-0 flex-1 items-center gap-3">
-          <div className="flex h-10 w-10 shrink-0 items-center justify-center text-[#3B82F6]">
+          <div className="flex h-10 w-10 shrink-0 items-center justify-center text-[#46A0DC]">
             {loading ? (
               <Loader2 className="h-7 w-7 animate-spin" aria-hidden />
             ) : isVideo ? (
@@ -171,10 +171,10 @@ export function MediaDropField({
             )}
           </div>
           <div className="min-w-0">
-            <p className="text-sm font-medium text-white">
+            <p className="text-sm font-medium text-[#1E1E1E]">
               {loading ? "Uploading…" : prompt}
             </p>
-            <p className="mt-0.5 text-xs text-white/45">
+            <p className="mt-0.5 text-xs text-[#1E1E1E]/45">
               {formats} — max {maxLabel}
             </p>
           </div>
@@ -182,7 +182,7 @@ export function MediaDropField({
 
         {url ? (
           <div
-            className="relative h-16 w-24 shrink-0 overflow-hidden rounded-lg border border-white/10 bg-[#121A2B]"
+            className="relative h-16 w-24 shrink-0 overflow-hidden rounded-lg border border-[#46A0DC]/20 bg-white"
             onClick={(e) => e.stopPropagation()}
           >
             {isVideo ? (
@@ -208,7 +208,7 @@ export function MediaDropField({
                 e.stopPropagation();
                 clear();
               }}
-              className="absolute -right-1.5 -top-1.5 flex h-5 w-5 items-center justify-center rounded-full bg-[#0B1220] text-white shadow ring-1 ring-white/20 hover:bg-red-600"
+              className="absolute -right-1.5 -top-1.5 flex h-5 w-5 items-center justify-center rounded-full bg-white text-[#1E1E1E] shadow ring-1 ring-[#46A0DC]/25 hover:bg-[#E85A28] hover:text-white"
               aria-label="Remove upload"
             >
               <X className="h-3 w-3" aria-hidden />
@@ -217,8 +217,8 @@ export function MediaDropField({
         ) : null}
       </div>
 
-      {hint ? <p className="text-xs text-white/45">{hint}</p> : null}
-      {error ? <p className="text-xs text-red-300">{error}</p> : null}
+      {hint ? <p className="text-xs text-[#1E1E1E]/45">{hint}</p> : null}
+      {error ? <p className="text-xs text-red-600">{error}</p> : null}
     </div>
   );
 }

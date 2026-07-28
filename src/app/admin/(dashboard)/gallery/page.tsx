@@ -20,7 +20,7 @@ export default async function AdminGalleryPage() {
             {
               key: "title",
               header: "Album",
-              cell: (a) => <span className="font-medium text-white">{a.title}</span>,
+              cell: (a) => <span className="font-medium text-[#1E1E1E]">{a.title}</span>,
             },
             { key: "items", header: "Items", cell: (a) => a._count.items },
             {

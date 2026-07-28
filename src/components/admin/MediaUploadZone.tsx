@@ -90,28 +90,28 @@ export function MediaUploadZone() {
         }}
         className={cn(
           "flex cursor-pointer flex-col items-center justify-center gap-2 rounded-xl border border-dashed px-4 py-8 text-center transition-colors",
-          "border-white/20 bg-[#0F1729]/80 hover:border-[#2563EB]/50 hover:bg-[#0F1729]",
-          dragging && "border-[#2563EB] bg-[#2563EB]/10",
+          "border-[#46A0DC]/35 bg-white hover:border-[#46A0DC] hover:bg-[#46A0DC]/5",
+          dragging && "border-[#E85A28] bg-[#E85A28]/5",
           loading && "pointer-events-none opacity-70"
         )}
       >
-        <div className="text-[#3B82F6]">
+        <div className="text-[#46A0DC]">
           {loading ? (
             <Loader2 className="h-8 w-8 animate-spin" aria-hidden />
           ) : (
             <ImagePlus className="h-8 w-8" aria-hidden />
           )}
         </div>
-        <p className="text-sm font-medium text-white">
+        <p className="text-sm font-medium text-[#1E1E1E]">
           {loading ? "Uploading…" : "Click or drop an image"}
         </p>
-        <p className="text-xs text-white/45">
+        <p className="text-xs text-[#1E1E1E]/45">
           JPEG, PNG, WebP, GIF, or video — max 5MB images / 50MB video
         </p>
       </div>
-      {error ? <p className="text-center text-sm text-red-300">{error}</p> : null}
+      {error ? <p className="text-center text-sm text-red-600">{error}</p> : null}
       {success ? (
-        <p className="text-center text-sm text-emerald-300">{success}</p>
+        <p className="text-center text-sm text-emerald-600">{success}</p>
       ) : null}
     </div>
   );

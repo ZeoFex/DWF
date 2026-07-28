@@ -28,7 +28,7 @@ function TestimonialsAdminInner({ testimonials }: { testimonials: Testimonial[] 
           <button
             type="button"
             onClick={() => router.push("/admin/testimonials?new=1")}
-            className="inline-flex items-center rounded-md bg-[#2563EB] px-4 py-2 text-sm font-medium text-white hover:bg-[#1D4ED8]"
+            className="inline-flex items-center rounded-md bg-[#E85A28] px-4 py-2 text-sm font-medium text-white hover:bg-[#D14E20]"
           >
             New testimonial
           </button>
@@ -46,7 +46,7 @@ function TestimonialsAdminInner({ testimonials }: { testimonials: Testimonial[] 
           {
             key: "author",
             header: "Author",
-            cell: (t) => <span className="font-medium text-white">{t.author}</span>,
+            cell: (t) => <span className="font-medium text-[#1E1E1E]">{t.author}</span>,
           },
           { key: "role", header: "Role", cell: (t) => t.role },
           { key: "featured", header: "Featured", cell: (t) => (t.featured ? "Yes" : "—") },
@@ -73,7 +73,7 @@ function TestimonialsAdminInner({ testimonials }: { testimonials: Testimonial[] 
 
 export function TestimonialsAdminClient({ testimonials }: { testimonials: Testimonial[] }) {
   return (
-    <Suspense fallback={<div className="text-sm text-white/50">Loading...</div>}>
+    <Suspense fallback={<div className="text-sm text-[#1E1E1E]/50">Loading...</div>}>
       <TestimonialsAdminInner testimonials={testimonials} />
     </Suspense>
   );

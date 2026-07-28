@@ -3,7 +3,7 @@ import { Pencil } from "lucide-react";
 import { cn } from "@/lib/utils";
 
 const editButtonClass =
-  "inline-flex items-center gap-1.5 rounded-md border border-white/15 bg-white/5 px-2.5 py-1.5 text-xs font-medium text-white/85 hover:bg-white/10 hover:text-white";
+  "inline-flex items-center gap-1.5 rounded-md border border-[#46A0DC]/30 bg-white px-2.5 py-1.5 text-xs font-medium text-[#46A0DC] hover:border-[#E85A28]/40 hover:bg-[#E85A28]/5 hover:text-[#E85A28]";
 
 type AdminEditLinkProps = {
   href: string;

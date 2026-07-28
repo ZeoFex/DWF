@@ -89,9 +89,9 @@ export function SiteSettingsForm({ settings }: SiteSettingsFormProps) {
   }
 
   return (
-    <div className="max-w-3xl rounded-lg border border-white/10 bg-[#1A2438] p-6">
+    <div className="max-w-3xl rounded-lg border border-[#46A0DC]/15 bg-white p-6">
       <AdminForm onSubmit={handleSubmit} loading={loading} error={error} success={success}>
-        <h2 className="text-sm font-semibold text-white">General</h2>
+        <h2 className="text-sm font-semibold text-[#1E1E1E]">General</h2>
         <AdminField label="Site name" required>
           <AdminInput name="siteName" defaultValue={settings.siteName} required />
         </AdminField>
@@ -102,7 +102,7 @@ export function SiteSettingsForm({ settings }: SiteSettingsFormProps) {
           <AdminTextarea name="description" defaultValue={settings.description} required rows={3} />
         </AdminField>
 
-        <h2 className="pt-2 text-sm font-semibold text-white">Contact</h2>
+        <h2 className="pt-2 text-sm font-semibold text-[#1E1E1E]">Contact</h2>
         <div className="grid gap-4 sm:grid-cols-2">
           <AdminField label="Email" required>
             <AdminInput name="email" type="email" defaultValue={settings.email} required />
@@ -120,7 +120,7 @@ export function SiteSettingsForm({ settings }: SiteSettingsFormProps) {
           </AdminField>
         </div>
 
-        <h2 className="pt-2 text-sm font-semibold text-white">Address</h2>
+        <h2 className="pt-2 text-sm font-semibold text-[#1E1E1E]">Address</h2>
         <AdminField label="Address line 1" required>
           <AdminInput name="addressLine1" defaultValue={settings.addressLine1} required />
         </AdminField>
@@ -139,7 +139,7 @@ export function SiteSettingsForm({ settings }: SiteSettingsFormProps) {
           </AdminField>
         </div>
 
-        <h2 className="pt-2 text-sm font-semibold text-white">Hours</h2>
+        <h2 className="pt-2 text-sm font-semibold text-[#1E1E1E]">Hours</h2>
         <AdminField label="Weekdays" required>
           <AdminInput name="hoursWeekdays" defaultValue={settings.hoursWeekdays} required />
         </AdminField>
@@ -155,7 +155,7 @@ export function SiteSettingsForm({ settings }: SiteSettingsFormProps) {
           <AdminTextarea name="hoursNote" defaultValue={settings.hoursNote ?? ""} />
         </AdminField>
 
-        <h2 className="pt-2 text-sm font-semibold text-white">Announcement bar</h2>
+        <h2 className="pt-2 text-sm font-semibold text-[#1E1E1E]">Announcement bar</h2>
         <AdminCheckbox
           name="announcementActive"
           label="Show announcement"
@@ -168,7 +168,7 @@ export function SiteSettingsForm({ settings }: SiteSettingsFormProps) {
           <AdminInput name="announcementHref" type="url" defaultValue={settings.announcementHref ?? ""} />
         </AdminField>
 
-        <h2 className="pt-2 text-sm font-semibold text-white">Homepage</h2>
+        <h2 className="pt-2 text-sm font-semibold text-[#1E1E1E]">Homepage</h2>
         <AdminField label="Hero headline">
           <AdminTextarea name="heroHeadline" defaultValue={settings.heroHeadline ?? ""} />
         </AdminField>
@@ -195,7 +195,7 @@ export function SiteSettingsForm({ settings }: SiteSettingsFormProps) {
           />
         </AdminField>
 
-        <h2 className="pt-2 text-sm font-semibold text-white">Social links</h2>
+        <h2 className="pt-2 text-sm font-semibold text-[#1E1E1E]">Social links</h2>
         <div className="grid gap-4 sm:grid-cols-2">
           <AdminField label="Facebook">
             <AdminInput name="socialFacebook" type="url" defaultValue={socialLinks.facebook ?? ""} />

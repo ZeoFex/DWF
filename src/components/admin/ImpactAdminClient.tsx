@@ -22,7 +22,7 @@ function ImpactAdminInner({ stats }: { stats: ImpactStat[] }) {
           <button
             type="button"
             onClick={() => router.push("/admin/impact?new=1")}
-            className="inline-flex items-center rounded-md bg-[#2563EB] px-4 py-2 text-sm font-medium text-white hover:bg-[#1D4ED8]"
+            className="inline-flex items-center rounded-md bg-[#E85A28] px-4 py-2 text-sm font-medium text-white hover:bg-[#D14E20]"
           >
             New stat
           </button>
@@ -40,7 +40,7 @@ function ImpactAdminInner({ stats }: { stats: ImpactStat[] }) {
           {
             key: "label",
             header: "Label",
-            cell: (s) => <span className="font-medium text-white">{s.label}</span>,
+            cell: (s) => <span className="font-medium text-[#1E1E1E]">{s.label}</span>,
           },
           {
             key: "value",
@@ -64,7 +64,7 @@ function ImpactAdminInner({ stats }: { stats: ImpactStat[] }) {
 
 export function ImpactAdminClient({ stats }: { stats: ImpactStat[] }) {
   return (
-    <Suspense fallback={<div className="text-sm text-white/50">Loading...</div>}>
+    <Suspense fallback={<div className="text-sm text-[#1E1E1E]/50">Loading...</div>}>
       <ImpactAdminInner stats={stats} />
     </Suspense>
   );

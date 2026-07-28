@@ -40,8 +40,8 @@ export default function AdminLoginPage() {
 
   return (
     <div>
-      <h1 className="text-lg font-semibold text-white">Sign in</h1>
-      <p className="mt-1 text-sm text-white/50">Access the admin dashboard</p>
+      <h1 className="text-lg font-semibold text-[#1E1E1E]">Sign in</h1>
+      <p className="mt-1 text-sm text-[#1E1E1E]/50">Access the admin dashboard</p>
       <AdminForm
         onSubmit={handleSubmit}
         loading={loading}
@@ -51,7 +51,7 @@ export default function AdminLoginPage() {
           <button
             type="submit"
             disabled={loading}
-            className="w-full rounded-md bg-[#2563EB] px-4 py-2.5 text-sm font-medium text-white hover:bg-[#1D4ED8] disabled:opacity-50"
+            className="w-full rounded-md bg-[#E85A28] px-4 py-2.5 text-sm font-medium text-white hover:bg-[#D14E20] disabled:opacity-50"
           >
             Sign in
           </button>
@@ -69,9 +69,9 @@ export default function AdminLoginPage() {
           />
         </AdminField>
       </AdminForm>
-      <p className="mt-4 text-center text-sm text-white/50">
+      <p className="mt-4 text-center text-sm text-[#1E1E1E]/50">
         Need an account?{" "}
-        <Link href="/admin/register" className="text-[#2563EB] hover:underline">
+        <Link href="/admin/register" className="text-[#46A0DC] hover:underline">
           Register
         </Link>
       </p>

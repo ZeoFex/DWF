@@ -41,8 +41,8 @@ export default function AdminRegisterPage() {
 
   return (
     <div>
-      <h1 className="text-lg font-semibold text-white">Create account</h1>
-      <p className="mt-1 text-sm text-white/50">Register as an admin user</p>
+      <h1 className="text-lg font-semibold text-[#1E1E1E]">Create account</h1>
+      <p className="mt-1 text-sm text-[#1E1E1E]/50">Register as an admin user</p>
       <AdminForm
         onSubmit={handleSubmit}
         loading={loading}
@@ -52,7 +52,7 @@ export default function AdminRegisterPage() {
           <button
             type="submit"
             disabled={loading}
-            className="w-full rounded-md bg-[#2563EB] px-4 py-2.5 text-sm font-medium text-white hover:bg-[#1D4ED8] disabled:opacity-50"
+            className="w-full rounded-md bg-[#E85A28] px-4 py-2.5 text-sm font-medium text-white hover:bg-[#D14E20] disabled:opacity-50"
           >
             Create account
           </button>
@@ -74,9 +74,9 @@ export default function AdminRegisterPage() {
           />
         </AdminField>
       </AdminForm>
-      <p className="mt-4 text-center text-sm text-white/50">
+      <p className="mt-4 text-center text-sm text-[#1E1E1E]/50">
         Already have an account?{" "}
-        <Link href="/admin/login" className="text-[#2563EB] hover:underline">
+        <Link href="/admin/login" className="text-[#46A0DC] hover:underline">
           Sign in
         </Link>
       </p>

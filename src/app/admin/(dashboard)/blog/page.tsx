@@ -36,7 +36,7 @@ export default async function AdminBlogListPage() {
           {
             key: "title",
             header: "Title",
-            cell: (p) => <span className="font-medium text-white">{p.title}</span>,
+            cell: (p) => <span className="font-medium text-[#1E1E1E]">{p.title}</span>,
           },
           { key: "category", header: "Category", cell: (p) => p.category },
           {

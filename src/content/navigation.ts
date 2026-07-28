@@ -9,6 +9,16 @@ export const navigation: NavItem[] = [
   {
     label: "About Us",
     href: "/about",
+    children: [
+      {
+        label: "Our Story",
+        href: "/about",
+      },
+      {
+        label: "Our Team",
+        href: "/about#team",
+      },
+    ],
   },
   {
     label: "Our Programs",

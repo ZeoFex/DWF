@@ -28,7 +28,7 @@ function PartnersAdminInner({ partners }: { partners: Partner[] }) {
           <button
             type="button"
             onClick={() => router.push("/admin/partners?new=1")}
-            className="inline-flex items-center rounded-md bg-[#2563EB] px-4 py-2 text-sm font-medium text-white hover:bg-[#1D4ED8]"
+            className="inline-flex items-center rounded-md bg-[#E85A28] px-4 py-2 text-sm font-medium text-white hover:bg-[#D14E20]"
           >
             New partner
           </button>
@@ -46,7 +46,7 @@ function PartnersAdminInner({ partners }: { partners: Partner[] }) {
           {
             key: "name",
             header: "Name",
-            cell: (p) => <span className="font-medium text-white">{p.name}</span>,
+            cell: (p) => <span className="font-medium text-[#1E1E1E]">{p.name}</span>,
           },
           { key: "featured", header: "Featured", cell: (p) => (p.featured ? "Yes" : "—") },
           {
@@ -70,7 +70,7 @@ function PartnersAdminInner({ partners }: { partners: Partner[] }) {
 
 export function PartnersAdminClient({ partners }: { partners: Partner[] }) {
   return (
-    <Suspense fallback={<div className="text-sm text-white/50">Loading...</div>}>
+    <Suspense fallback={<div className="text-sm text-[#1E1E1E]/50">Loading...</div>}>
       <PartnersAdminInner partners={partners} />
     </Suspense>
   );

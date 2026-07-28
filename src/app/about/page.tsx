@@ -203,7 +203,7 @@ export default function AboutPage() {
       )}
 
       {/* Team */}
-      <section className="bg-[#F5FAFE] py-16 sm:py-20">
+      <section id="team" className="scroll-mt-28 bg-[#F5FAFE] py-16 sm:py-20">
         <Container>
           <SectionHeading
             eyebrow="Our Team"

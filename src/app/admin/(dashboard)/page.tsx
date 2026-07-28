@@ -58,30 +58,30 @@ export default async function AdminDashboardPage() {
       </div>
 
       <div className="mt-6 grid gap-6 lg:grid-cols-2">
-        <section className="rounded-lg border border-white/10 bg-[#1A2438]">
-          <div className="flex items-center justify-between border-b border-white/10 px-4 py-3">
-            <h2 className="text-sm font-semibold text-white">Recent donations</h2>
-            <Link href="/admin/donations" className="text-xs text-[#2563EB] hover:underline">
+        <section className="rounded-lg border border-[#46A0DC]/15 bg-white">
+          <div className="flex items-center justify-between border-b border-[#46A0DC]/15 px-4 py-3">
+            <h2 className="text-sm font-semibold text-[#1E1E1E]">Recent donations</h2>
+            <Link href="/admin/donations" className="text-xs text-[#46A0DC] hover:underline">
               View all
             </Link>
           </div>
-          <ul className="divide-y divide-white/5">
+          <ul className="divide-y divide-[#46A0DC]/10">
             {recentDonations.length === 0 ? (
-              <li className="px-4 py-6 text-sm text-white/50">No donations yet.</li>
+              <li className="px-4 py-6 text-sm text-[#1E1E1E]/50">No donations yet.</li>
             ) : (
               recentDonations.map((d) => (
                 <li key={d.id} className="flex items-center justify-between gap-3 px-4 py-3">
                   <div className="min-w-0">
-                    <p className="truncate text-sm font-medium text-white">
+                    <p className="truncate text-sm font-medium text-[#1E1E1E]">
                       {d.donorName ?? "Anonymous"}
                     </p>
-                    <p className="text-xs text-white/50">
+                    <p className="text-xs text-[#1E1E1E]/50">
                       {d.currency} {d.amount.toLocaleString()} · {d.reference}
                     </p>
                   </div>
                   <div className="shrink-0 text-right">
                     <StatusBadge label={d.status} variant={paymentStatusVariant(d.status)} />
-                    <p className="mt-1 text-xs text-white/40">
+                    <p className="mt-1 text-xs text-[#1E1E1E]/40">
                       {formatDistanceToNow(d.createdAt, { addSuffix: true })}
                     </p>
                   </div>
@@ -91,28 +91,28 @@ export default async function AdminDashboardPage() {
           </ul>
         </section>
 
-        <section className="rounded-lg border border-white/10 bg-[#1A2438]">
-          <div className="flex items-center justify-between border-b border-white/10 px-4 py-3">
-            <h2 className="text-sm font-semibold text-white">Recent messages</h2>
-            <Link href="/admin/messages" className="text-xs text-[#2563EB] hover:underline">
+        <section className="rounded-lg border border-[#46A0DC]/15 bg-white">
+          <div className="flex items-center justify-between border-b border-[#46A0DC]/15 px-4 py-3">
+            <h2 className="text-sm font-semibold text-[#1E1E1E]">Recent messages</h2>
+            <Link href="/admin/messages" className="text-xs text-[#46A0DC] hover:underline">
               View all
             </Link>
           </div>
-          <ul className="divide-y divide-white/5">
+          <ul className="divide-y divide-[#46A0DC]/10">
             {recentMessages.length === 0 ? (
-              <li className="px-4 py-6 text-sm text-white/50">No messages yet.</li>
+              <li className="px-4 py-6 text-sm text-[#1E1E1E]/50">No messages yet.</li>
             ) : (
               recentMessages.map((m) => (
                 <li key={m.id} className="flex items-center justify-between gap-3 px-4 py-3">
                   <div className="min-w-0">
-                    <p className="truncate text-sm font-medium text-white">
+                    <p className="truncate text-sm font-medium text-[#1E1E1E]">
                       {m.fullName}
                     </p>
-                    <p className="truncate text-xs text-white/50">{m.subject}</p>
+                    <p className="truncate text-xs text-[#1E1E1E]/50">{m.subject}</p>
                   </div>
                   <div className="shrink-0 text-right">
                     <StatusBadge label={m.status} variant={m.status === "NEW" ? "new" : "reviewed"} />
-                    <p className="mt-1 text-xs text-white/40">
+                    <p className="mt-1 text-xs text-[#1E1E1E]/40">
                       {formatDistanceToNow(m.createdAt, { addSuffix: true })}
                     </p>
                   </div>

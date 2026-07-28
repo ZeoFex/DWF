@@ -67,12 +67,12 @@ function MessagesAdminInner({ contact, volunteer, partner }: MessagesAdminProps)
     <div>
       <PageHeader title="Messages" description="Review inquiries and applications" />
       {error ? (
-        <div className="mb-4 rounded-md border border-red-400/30 bg-red-500/10 px-3 py-2 text-sm text-red-200">
+        <div className="mb-4 rounded-md border border-red-200 bg-red-50 px-3 py-2 text-sm text-red-700">
           {error}
         </div>
       ) : null}
 
-      <div className="mb-4 flex gap-1 border-b border-white/10">
+      <div className="mb-4 flex gap-1 border-b border-[#46A0DC]/15">
         {tabs.map((t) => (
           <button
             key={t.id}
@@ -81,8 +81,8 @@ function MessagesAdminInner({ contact, volunteer, partner }: MessagesAdminProps)
             className={cn(
               "px-4 py-2 text-sm font-medium",
               tab === t.id
-                ? "border-b-2 border-[#2563EB] text-[#2563EB]"
-                : "text-white/50 hover:text-white/80"
+                ? "border-b-2 border-[#46A0DC] text-[#46A0DC]"
+                : "text-[#1E1E1E]/50 hover:text-[#1E1E1E]/80"
             )}
           >
             {t.label} ({t.count})
@@ -119,7 +119,7 @@ function MessagesAdminInner({ contact, volunteer, partner }: MessagesAdminProps)
                     type="button"
                     disabled={loadingId === m.id}
                     onClick={() => markReviewed("contact", m.id)}
-                    className="text-xs text-[#2563EB] hover:underline disabled:opacity-50"
+                    className="text-xs text-[#46A0DC] hover:underline disabled:opacity-50"
                   >
                     Mark reviewed
                   </button>
@@ -158,7 +158,7 @@ function MessagesAdminInner({ contact, volunteer, partner }: MessagesAdminProps)
                     type="button"
                     disabled={loadingId === m.id}
                     onClick={() => markReviewed("volunteer", m.id)}
-                    className="text-xs text-[#2563EB] hover:underline disabled:opacity-50"
+                    className="text-xs text-[#46A0DC] hover:underline disabled:opacity-50"
                   >
                     Mark reviewed
                   </button>
@@ -198,7 +198,7 @@ function MessagesAdminInner({ contact, volunteer, partner }: MessagesAdminProps)
                     type="button"
                     disabled={loadingId === m.id}
                     onClick={() => markReviewed("partner", m.id)}
-                    className="text-xs text-[#2563EB] hover:underline disabled:opacity-50"
+                    className="text-xs text-[#46A0DC] hover:underline disabled:opacity-50"
                   >
                     Mark reviewed
                   </button>
@@ -213,7 +213,7 @@ function MessagesAdminInner({ contact, volunteer, partner }: MessagesAdminProps)
 
 export function MessagesAdminClient(props: MessagesAdminProps) {
   return (
-    <Suspense fallback={<div className="text-sm text-white/50">Loading...</div>}>
+    <Suspense fallback={<div className="text-sm text-[#1E1E1E]/50">Loading...</div>}>
       <MessagesAdminInner {...props} />
     </Suspense>
   );

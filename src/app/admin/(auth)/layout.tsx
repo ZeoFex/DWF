@@ -6,15 +6,15 @@ export default function AdminAuthLayout({
   children: React.ReactNode;
 }) {
   return (
-    <div className="flex min-h-screen items-center justify-center bg-[#0B1220] px-4 py-8">
+    <div className="flex min-h-screen items-center justify-center bg-[#46A0DC] px-4 py-8">
       <div className="w-full max-w-md">
         <div className="mb-6 text-center">
           <p className="text-lg font-semibold text-white">DWF Admin</p>
-          <p className="mt-1 text-sm text-white/60">
+          <p className="mt-1 text-sm text-white/85">
             Dr. Winnie&apos;s Foundation CMS
           </p>
         </div>
-        <div className="rounded-lg border border-white/10 bg-[#1A2438] p-6 shadow-xl">
+        <div className="rounded-lg border border-white/20 bg-white p-6 shadow-xl">
           {children}
         </div>
       </div>

@@ -70,7 +70,7 @@ export function TestimonialForm({ testimonial, isNew = !testimonial }: Testimoni
   }
 
   return (
-    <div className="max-w-2xl rounded-lg border border-white/10 bg-[#1A2438] p-6">
+    <div className="max-w-2xl rounded-lg border border-[#46A0DC]/15 bg-white p-6">
       <AdminForm onSubmit={handleSubmit} loading={loading} error={error} success={success}>
         <AdminField label="Quote" required>
           <AdminTextarea name="quote" defaultValue={testimonial?.quote} required rows={4} />
@@ -110,7 +110,7 @@ export function TestimonialForm({ testimonial, isNew = !testimonial }: Testimoni
         </AdminField>
       </AdminForm>
       {!isNew && testimonial ? (
-        <div className="mt-4 border-t border-white/10 pt-4">
+        <div className="mt-4 border-t border-[#46A0DC]/15 pt-4">
           <ConfirmButton onConfirm={handleDelete} redirectTo="/admin/testimonials" />
         </div>
       ) : null}

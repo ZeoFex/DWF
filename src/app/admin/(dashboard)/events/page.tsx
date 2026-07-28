@@ -15,7 +15,7 @@ export default async function AdminEventsPage() {
           {
             key: "title",
             header: "Title",
-            cell: (e) => <span className="font-medium text-white">{e.title}</span>,
+            cell: (e) => <span className="font-medium text-[#1E1E1E]">{e.title}</span>,
           },
           { key: "category", header: "Category", cell: (e) => e.category },
           {

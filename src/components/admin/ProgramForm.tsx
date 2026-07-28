@@ -81,7 +81,7 @@ export function ProgramForm({ program, isNew = !program }: ProgramFormProps) {
   }
 
   return (
-    <div className="max-w-3xl rounded-lg border border-white/10 bg-[#1A2438] p-6">
+    <div className="max-w-3xl rounded-lg border border-[#46A0DC]/15 bg-white p-6">
       <AdminForm onSubmit={handleSubmit} loading={loading} error={error} success={success}>
         <AdminField label="Title" required>
           <AdminInput name="title" defaultValue={program?.title} required />
@@ -135,7 +135,7 @@ export function ProgramForm({ program, isNew = !program }: ProgramFormProps) {
         </AdminField>
       </AdminForm>
       {!isNew && program ? (
-        <div className="mt-4 border-t border-white/10 pt-4">
+        <div className="mt-4 border-t border-[#46A0DC]/15 pt-4">
           <ConfirmButton onConfirm={handleDelete} redirectTo="/admin/programs" />
         </div>
       ) : null}

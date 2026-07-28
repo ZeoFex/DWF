@@ -29,7 +29,7 @@ export function ResourcesAdminClient({ resources }: Props) {
           <button
             type="button"
             onClick={() => router.push("/admin/resources?new=1")}
-            className="inline-flex items-center rounded-md bg-[#2563EB] px-4 py-2 text-sm font-medium text-white hover:bg-[#1D4ED8]"
+            className="inline-flex items-center rounded-md bg-[#E85A28] px-4 py-2 text-sm font-medium text-white hover:bg-[#D14E20]"
           >
             New resource
           </button>
@@ -47,7 +47,7 @@ export function ResourcesAdminClient({ resources }: Props) {
           {
             key: "title",
             header: "Title",
-            cell: (r) => <span className="font-medium text-white">{r.title}</span>,
+            cell: (r) => <span className="font-medium text-[#1E1E1E]">{r.title}</span>,
           },
           { key: "category", header: "Category", cell: (r) => r.category },
           { key: "format", header: "Format", cell: (r) => r.format },

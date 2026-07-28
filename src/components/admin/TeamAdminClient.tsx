@@ -28,7 +28,7 @@ function TeamAdminInner({ members }: { members: TeamMember[] }) {
           <button
             type="button"
             onClick={() => router.push("/admin/team?new=1")}
-            className="inline-flex items-center rounded-md bg-[#2563EB] px-4 py-2 text-sm font-medium text-white hover:bg-[#1D4ED8]"
+            className="inline-flex items-center rounded-md bg-[#E85A28] px-4 py-2 text-sm font-medium text-white hover:bg-[#D14E20]"
           >
             New member
           </button>
@@ -46,7 +46,7 @@ function TeamAdminInner({ members }: { members: TeamMember[] }) {
           {
             key: "name",
             header: "Name",
-            cell: (m) => <span className="font-medium text-white">{m.name}</span>,
+            cell: (m) => <span className="font-medium text-[#1E1E1E]">{m.name}</span>,
           },
           { key: "role", header: "Role", cell: (m) => m.role },
           { key: "founder", header: "Founder", cell: (m) => (m.isFounder ? "Yes" : "—") },
@@ -71,7 +71,7 @@ function TeamAdminInner({ members }: { members: TeamMember[] }) {
 
 export function TeamAdminClient({ members }: { members: TeamMember[] }) {
   return (
-    <Suspense fallback={<div className="text-sm text-white/50">Loading...</div>}>
+    <Suspense fallback={<div className="text-sm text-[#1E1E1E]/50">Loading...</div>}>
       <TeamAdminInner members={members} />
     </Suspense>
   );
