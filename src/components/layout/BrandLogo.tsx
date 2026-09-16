@@ -1,4 +1,3 @@
-import Image from "next/image";
 import Link from "next/link";
 import { siteConfig } from "@/content";
 import { cn } from "@/lib/utils";
@@ -13,10 +12,9 @@ interface BrandLogoProps {
 export function BrandLogo({
   variant = "light",
   className,
-  priority = false,
 }: BrandLogoProps) {
   const src =
-    variant === "dark" ? "/brand/logo-on-dark.png" : "/brand/logo.png";
+    variant === "dark" ? "/brand/logo-on-dark.svg" : "/brand/logo.svg";
 
   return (
     <Link
@@ -27,13 +25,13 @@ export function BrandLogo({
       )}
       aria-label={`${siteConfig.name} — Home`}
     >
-      <Image
+      {/* eslint-disable-next-line @next/next/no-img-element */}
+      <img
         src={src}
         alt={siteConfig.name}
-        width={220}
-        height={60}
-        priority={priority}
-        className="h-10 w-auto max-w-[200px] object-contain object-left sm:h-11 sm:max-w-[240px] lg:h-12"
+        width={240}
+        height={64}
+        className="h-10 w-auto max-w-[210px] object-contain object-left sm:h-11 sm:max-w-[250px] lg:h-12"
       />
     </Link>
   );

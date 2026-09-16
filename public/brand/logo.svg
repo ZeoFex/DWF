@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 520 140" role="img" aria-label="Dr. Wynette's Foundation">
+  <!-- Icon: three stylized figures -->
+  <g transform="translate(8, 28)">
+    <!-- Left figure (purple) -->
+    <circle cx="18" cy="14" r="9" fill="#782882"/>
+    <rect x="7" y="26" width="22" height="36" rx="11" fill="#782882"/>
+    <!-- Center figure (blue) -->
+    <circle cx="48" cy="8" r="12" fill="#46A0DC"/>
+    <rect x="32" y="24" width="32" height="50" rx="16" fill="#46A0DC"/>
+    <!-- Right figure (orange) -->
+    <circle cx="78" cy="14" r="9" fill="#E85A28"/>
+    <rect x="67" y="26" width="22" height="36" rx="11" fill="#E85A28"/>
+  </g>
+  <!-- Wordmark -->
+  <g fill="#1E1E1E" font-family="Arial Black, Arial, Helvetica, sans-serif">
+    <text x="120" y="68" font-size="34" font-weight="800" letter-spacing="0.5">DR. WYNETTE&apos;S</text>
+    <text x="120" y="108" font-size="30" font-weight="600" letter-spacing="3.5">FOUNDATION</text>
+  </g>
+</svg>
