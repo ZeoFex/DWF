@@ -12,11 +12,11 @@ const lastUpdated = "July 20, 2026";
 export const metadata: Metadata = {
   title: "Terms & Conditions",
   description:
-    "Terms and Conditions for using the Dr. Winnie's Foundation website — donations, volunteering, content use, and legal terms governed by the laws of Ghana.",
+    "Terms and Conditions for using the Dr. Wynette's Foundation website — donations, volunteering, content use, and legal terms governed by the laws of Ghana.",
   openGraph: {
-    title: "Terms & Conditions | Dr. Winnie's Foundation",
+    title: "Terms & Conditions | Dr. Wynette's Foundation",
     description:
-      "Read the terms governing use of the Dr. Winnie's Foundation website and online services.",
+      "Read the terms governing use of the Dr. Wynette's Foundation website and online services.",
     url: `${siteUrl}/terms`,
   },
   alternates: {
@@ -76,7 +76,7 @@ export default function TermsPage() {
               <TermsSection title="1. Acceptance of Terms">
                 <p>
                   These Terms and Conditions (&quot;Terms&quot;) govern your access
-                  to and use of the website operated by Dr. Winnie&apos;s
+                  to and use of the website operated by Dr. Wynette&apos;s
                   Foundation (&quot;Foundation,&quot; &quot;we,&quot; &quot;us,&quot;
                   or &quot;our&quot;), located at {contact.address.city},{" "}
                   {contact.address.country}. By accessing or using our website, you
@@ -93,7 +93,7 @@ export default function TermsPage() {
 
               <TermsSection title="2. About the Foundation">
                 <p>
-                  Dr. Winnie&apos;s Foundation is a nonprofit organization supporting
+                  Dr. Wynette&apos;s Foundation is a nonprofit organization supporting
                   young women and girls in Ghana through menstrual health
                   education, mental wellness programs, and career development
                   initiatives. Content on this website — including impact figures,
@@ -180,7 +180,7 @@ export default function TermsPage() {
                 <p>
                   All content on this website — including text, graphics, logos,
                   photographs, videos, and design elements — is owned by or licensed
-                  to Dr. Winnie&apos;s Foundation and protected by copyright and
+                  to Dr. Wynette&apos;s Foundation and protected by copyright and
                   other intellectual property laws.
                 </p>
                 <p>
@@ -220,7 +220,7 @@ export default function TermsPage() {
               <TermsSection title="9. Limitation of Liability">
                 <p>
                   To the fullest extent permitted by the laws of Ghana, Dr.
-                  Winnie&apos;s Foundation and its directors, staff, volunteers, and
+                  Wynette&apos;s Foundation and its directors, staff, volunteers, and
                   agents shall not be liable for any indirect, incidental, special,
                   consequential, or punitive damages arising from your use of this
                   website, including loss of data, profits, or goodwill.
@@ -235,7 +235,7 @@ export default function TermsPage() {
 
               <TermsSection title="10. Indemnification">
                 <p>
-                  You agree to indemnify and hold harmless Dr. Winnie&apos;s
+                  You agree to indemnify and hold harmless Dr. Wynette&apos;s
                   Foundation from any claims, damages, losses, or expenses
                   (including reasonable legal fees) arising from your violation of
                   these Terms or misuse of the website.

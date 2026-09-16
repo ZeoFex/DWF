@@ -13,7 +13,7 @@ import { images } from "@/content";
 export const metadata: Metadata = {
   title: "Partner With Us",
   description:
-    "Partner with Dr. Winnie's Foundation — corporate sponsorship, school partnerships, in-kind donations, and community collaborations in Ghana.",
+    "Partner with Dr. Wynette's Foundation — corporate sponsorship, school partnerships, in-kind donations, and community collaborations in Ghana.",
 };
 
 const partnershipTypes = [

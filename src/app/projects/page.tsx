@@ -6,7 +6,7 @@ import { ProjectsFilter } from "./ProjectsFilter";
 export const metadata: Metadata = {
   title: "Projects & Campaigns",
   description:
-    "Explore active, upcoming, and completed projects from Dr. Winnie's Foundation — including the flagship 1000 Girl Project.",
+    "Explore active, upcoming, and completed projects from Dr. Wynette's Foundation — including the flagship 1000 Girl Project.",
 };
 
 export default function ProjectsPage() {

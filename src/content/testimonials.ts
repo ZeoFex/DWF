@@ -27,7 +27,7 @@ export const testimonials: Testimonial[] = [
   {
     id: "t-teacher-1",
     quote:
-      "Dr. Winnie's Foundation didn't just drop off supplies — they trained our teachers and worked with our parents. The change in our school culture is visible.",
+      "Dr. Wynette's Foundation didn't just drop off supplies — they trained our teachers and worked with our parents. The change in our school culture is visible.",
     author: "Mr. Kofi Darko",
     role: "Teacher",
     organization: "Community Junior High School",
@@ -76,7 +76,7 @@ export const testimonials: Testimonial[] = [
   {
     id: "t-partner-1",
     quote:
-      "Partnering with Dr. Winnie's Foundation aligned perfectly with our corporate social responsibility goals. Their professionalism and measurable impact made collaboration easy.",
+      "Partnering with Dr. Wynette's Foundation aligned perfectly with our corporate social responsibility goals. Their professionalism and measurable impact made collaboration easy.",
     author: "Placeholder Corporate Partner Representative",
     role: "CSR Manager",
     organization: "Placeholder Corporate Partner A",
@@ -85,7 +85,7 @@ export const testimonials: Testimonial[] = [
   {
     id: "t-partner-2",
     quote:
-      "As a community foundation, we look for partners who center dignity. Dr. Winnie's Foundation does exactly that — we are proud to support their work. (Illustrative statement.)",
+      "As a community foundation, we look for partners who center dignity. Dr. Wynette's Foundation does exactly that — we are proud to support their work. (Illustrative statement.)",
     author: "Placeholder Foundation Director",
     role: "Executive Director",
     organization: "Placeholder Community Foundation B",

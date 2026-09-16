@@ -6,7 +6,7 @@ import { ResourcesExplorer } from "./ResourcesExplorer";
 export const metadata: Metadata = {
   title: "Resources",
   description:
-    "Browse educational resources from Dr. Winnie's Foundation — guides, articles, videos, and FAQs on menstrual health, mental wellness, and career development.",
+    "Browse educational resources from Dr. Wynette's Foundation — guides, articles, videos, and FAQs on menstrual health, mental wellness, and career development.",
 };
 
 export default function ResourcesPage() {

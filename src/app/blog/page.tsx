@@ -11,11 +11,11 @@ const siteUrl = getSiteUrl();
 export const metadata: Metadata = {
   title: "Blog & News",
   description:
-    "Read stories, program updates, impact highlights, and news from Dr. Winnie's Foundation — empowering girls through health, wellness, and opportunity in Ghana.",
+    "Read stories, program updates, impact highlights, and news from Dr. Wynette's Foundation — empowering girls through health, wellness, and opportunity in Ghana.",
   openGraph: {
-    title: "Blog & News | Dr. Winnie's Foundation",
+    title: "Blog & News | Dr. Wynette's Foundation",
     description:
-      "Featured articles, program updates, and impact stories from Dr. Winnie's Foundation.",
+      "Featured articles, program updates, and impact stories from Dr. Wynette's Foundation.",
     url: `${siteUrl}/blog`,
     images: [{ url: images.blog.default, width: 1200, height: 630 }],
   },

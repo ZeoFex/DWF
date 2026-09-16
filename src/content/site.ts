@@ -1,14 +1,14 @@
 import type { SiteConfig } from "@/types";
 
-/** Site-wide configuration for Dr. Winnie's Foundation. */
+/** Site-wide configuration for Dr. Wynette's Foundation. */
 export const siteConfig: SiteConfig = {
-  name: "Dr. Winnie's Foundation",
+  name: "Dr. Wynette's Foundation",
   shortName: "DWF",
   tagline: "Empowering girls through health, wellness, and opportunity",
   description:
-    "Dr. Winnie's Foundation supports young women and girls in Ghana through menstrual health education, mental wellness programs, and career development initiatives — building confident, capable leaders in their communities.",
+    "Dr. Wynette's Foundation supports young women and girls in Ghana through menstrual health education, mental wellness programs, and career development initiatives — building confident, capable leaders in their communities.",
   contact: {
-    email: "info@drwinniesfoundation.org",
+    email: "info@drwynettesfoundation.org",
     phone: "+233 24 XXX XXXX",
     whatsapp: "+233 24 XXX XXXX",
     whatsappLink: "https://wa.me/23324XXXXXXX",
@@ -30,27 +30,27 @@ export const siteConfig: SiteConfig = {
     {
       platform: "facebook",
       label: "Facebook",
-      href: "https://facebook.com/drwinniesfoundation",
+      href: "https://facebook.com/drwynettesfoundation",
     },
     {
       platform: "instagram",
       label: "Instagram",
-      href: "https://instagram.com/drwinniesfoundation",
+      href: "https://instagram.com/drwynettesfoundation",
     },
     {
       platform: "twitter",
       label: "X (Twitter)",
-      href: "https://twitter.com/drwinniesfoundation",
+      href: "https://twitter.com/drwynettesfoundation",
     },
     {
       platform: "linkedin",
       label: "LinkedIn",
-      href: "https://linkedin.com/company/drwinniesfoundation",
+      href: "https://linkedin.com/company/drwynettesfoundation",
     },
     {
       platform: "youtube",
       label: "YouTube",
-      href: "https://youtube.com/@drwinniesfoundation",
+      href: "https://youtube.com/@drwynettesfoundation",
     },
   ],
   announcementBar: {

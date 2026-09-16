@@ -1,5 +1,5 @@
 /**
- * Mock payment gateway for Dr. Winnie's Foundation.
+ * Mock payment gateway for Dr. Wynette's Foundation.
  * No live payment provider is configured — this layer simulates checkout only.
  */
 

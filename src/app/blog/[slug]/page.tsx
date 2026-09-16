@@ -195,7 +195,7 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
 
       <NewsletterSection
         title="Never Miss an Update"
-        description="Subscribe for new articles, program news, and event invitations from Dr. Winnie's Foundation."
+        description="Subscribe for new articles, program news, and event invitations from Dr. Wynette's Foundation."
       />
     </>
   );

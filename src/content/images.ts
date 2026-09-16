@@ -1,5 +1,5 @@
 /**
- * Centralized image URLs for Dr. Winnie's Foundation.
+ * Centralized image URLs for Dr. Wynette's Foundation.
  * REPLACE_ME: Swap these Unsplash URLs with foundation-owned photography before launch.
  */
 

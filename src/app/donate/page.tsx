@@ -13,7 +13,7 @@ import { PAYMENT_DISCLAIMER } from "@/lib/payments";
 export const metadata: Metadata = {
   title: "Donate",
   description:
-    "Support Dr. Winnie's Foundation — donate to fund dignity kits, wellness programs, mentorship, and career development for girls in Ghana.",
+    "Support Dr. Wynette's Foundation — donate to fund dignity kits, wellness programs, mentorship, and career development for girls in Ghana.",
 };
 
 interface DonatePageProps {

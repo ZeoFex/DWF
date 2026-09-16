@@ -1,6 +1,6 @@
-# Dr. Winnie's Foundation Website
+# Dr. Wynette's Foundation Website
 
-Marketing site + CMS admin for **Dr. Winnie's Foundation** — menstrual health education, mental health awareness, career development, and community outreach in Ghana.
+Marketing site + CMS admin for **Dr. Wynette's Foundation** — menstrual health education, mental health awareness, career development, and community outreach in Ghana.
 
 ## Stack
 

@@ -87,12 +87,12 @@ export function getOutlookCalendarUrl(event: Event): string {
 /** Trigger a download of an ICS calendar file for an event. */
 export function downloadIcsFile(event: Event): void {
   const { start, end } = parseEventTimes(event.date, event.time);
-  const uid = `${event.slug}@drwinniesfoundation.org`;
+  const uid = `${event.slug}@drwynettesfoundation.org`;
 
   const ics = [
     "BEGIN:VCALENDAR",
     "VERSION:2.0",
-    "PRODID:-//Dr Winnie's Foundation//Events//EN",
+    "PRODID:-//Dr Wynette's Foundation//Events//EN",
     "BEGIN:VEVENT",
     `UID:${uid}`,
     `DTSTAMP:${formatIcsDate(new Date())}`,

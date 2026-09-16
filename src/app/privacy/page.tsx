@@ -12,11 +12,11 @@ const lastUpdated = "July 20, 2026";
 export const metadata: Metadata = {
   title: "Privacy Policy",
   description:
-    "Privacy Policy for Dr. Winnie's Foundation — how we collect, use, and protect personal information for visitors, donors, volunteers, and program participants in Ghana.",
+    "Privacy Policy for Dr. Wynette's Foundation — how we collect, use, and protect personal information for visitors, donors, volunteers, and program participants in Ghana.",
   openGraph: {
-    title: "Privacy Policy | Dr. Winnie's Foundation",
+    title: "Privacy Policy | Dr. Wynette's Foundation",
     description:
-      "Learn how Dr. Winnie's Foundation handles your personal data in accordance with applicable privacy standards in Ghana.",
+      "Learn how Dr. Wynette's Foundation handles your personal data in accordance with applicable privacy standards in Ghana.",
     url: `${siteUrl}/privacy`,
   },
   alternates: {
@@ -52,7 +52,7 @@ export default function PrivacyPage() {
     <>
       <PageHero
         title="Privacy Policy"
-        description="Your privacy matters to us. This policy explains how Dr. Winnie's Foundation collects, uses, and protects personal information."
+        description="Your privacy matters to us. This policy explains how Dr. Wynette's Foundation collects, uses, and protects personal information."
         breadcrumbs={[
           { label: "Home", href: "/" },
           { label: "Privacy Policy" },
@@ -76,7 +76,7 @@ export default function PrivacyPage() {
             <div className="mt-10 space-y-12">
               <PolicySection title="1. Introduction">
                 <p>
-                  Dr. Winnie&apos;s Foundation (&quot;we,&quot; &quot;us,&quot; or
+                  Dr. Wynette&apos;s Foundation (&quot;we,&quot; &quot;us,&quot; or
                   &quot;our&quot;) is a nonprofit organization based in Accra,
                   Ghana, dedicated to empowering girls through health, wellness,
                   and opportunity. This Privacy Policy describes how we collect,

@@ -59,7 +59,7 @@ export function AdminSidebar() {
         <Link href="/admin" className="block">
           <span className="text-sm font-semibold tracking-wide">DWF Admin</span>
           <span className="mt-0.5 block text-xs text-[#1E1E1E]/80">
-            Dr. Winnie&apos;s Foundation
+            Dr. Wynette&apos;s Foundation
           </span>
         </Link>
       </div>

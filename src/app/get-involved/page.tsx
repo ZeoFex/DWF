@@ -19,7 +19,7 @@ import { images } from "@/content";
 export const metadata: Metadata = {
   title: "Get Involved",
   description:
-    "Join Dr. Winnie's Foundation — volunteer your time, partner with us, donate to our campaigns, or sponsor a girl's journey.",
+    "Join Dr. Wynette's Foundation — volunteer your time, partner with us, donate to our campaigns, or sponsor a girl's journey.",
 };
 
 const participationOptions = [

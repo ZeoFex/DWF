@@ -12,7 +12,7 @@ import { images } from "@/content";
 export const metadata: Metadata = {
   title: "Volunteer",
   description:
-    "Apply to volunteer with Dr. Winnie's Foundation — support menstrual health workshops, mentorship, kit assembly, and community outreach in Ghana.",
+    "Apply to volunteer with Dr. Wynette's Foundation — support menstrual health workshops, mentorship, kit assembly, and community outreach in Ghana.",
 };
 
 const volunteerHighlights = [

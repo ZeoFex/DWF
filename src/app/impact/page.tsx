@@ -19,7 +19,7 @@ import {
 export const metadata: Metadata = {
   title: "Our Impact",
   description:
-    "See the impact of Dr. Winnie's Foundation — statistics, success stories, community reach, and annual reports across Ghana.",
+    "See the impact of Dr. Wynette's Foundation — statistics, success stories, community reach, and annual reports across Ghana.",
 };
 
 export default function ImpactPage() {

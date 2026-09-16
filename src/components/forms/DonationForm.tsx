@@ -210,10 +210,10 @@ export function DonationForm({
             <p className="mt-4 text-xs text-[#1E1E1E]/60">
               Online payment processing is not live. To donate directly, contact{" "}
               <a
-                href="mailto:info@drwinniesfoundation.org"
+                href="mailto:info@drwynettesfoundation.org"
                 className="text-[#46A0DC] underline"
               >
-                info@drwinniesfoundation.org
+                info@drwynettesfoundation.org
               </a>
               .
             </p>

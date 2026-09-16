@@ -9,7 +9,7 @@ export default async function AdminSettingsPage() {
     settings = await prisma.siteSettings.create({
       data: {
         id: "default",
-        siteName: "Dr. Winnie's Foundation",
+        siteName: "Dr. Wynette's Foundation",
         tagline: "",
         description: "",
         email: "",

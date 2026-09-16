@@ -167,7 +167,7 @@ export function BlogExplorer({ posts }: BlogExplorerProps) {
 
         <SectionHeading
           title="Latest Articles"
-          description="Stories, updates, and insights from Dr. Winnie's Foundation programs and community."
+          description="Stories, updates, and insights from Dr. Wynette's Foundation programs and community."
           className="mt-12"
         />
 

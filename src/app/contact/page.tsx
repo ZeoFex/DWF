@@ -35,9 +35,9 @@ const socialIcons: Record<SocialPlatform, typeof Facebook> = {
 export const metadata: Metadata = {
   title: "Contact Us",
   description:
-    "Get in touch with Dr. Winnie's Foundation in East Legon, Accra. Email, phone, office hours, and a contact form for inquiries about programs, volunteering, and partnerships.",
+    "Get in touch with Dr. Wynette's Foundation in East Legon, Accra. Email, phone, office hours, and a contact form for inquiries about programs, volunteering, and partnerships.",
   openGraph: {
-    title: "Contact Us | Dr. Winnie's Foundation",
+    title: "Contact Us | Dr. Wynette's Foundation",
     description:
       "Reach our team in Accra, Ghana — programs, volunteering, donations, and partnership inquiries welcome.",
     url: `${siteUrl}/contact`,
@@ -219,7 +219,7 @@ export default function ContactPage() {
           <div className="mx-auto mt-8 max-w-5xl overflow-hidden rounded-2xl border border-[#46A0DC]/10 shadow-sm">
             {mapsEmbedUrl ? (
               <iframe
-                title="Dr. Winnie's Foundation office location on Google Maps"
+                title="Dr. Wynette's Foundation office location on Google Maps"
                 src={mapsEmbedUrl}
                 className="aspect-video w-full border-0"
                 loading="lazy"

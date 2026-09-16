@@ -28,7 +28,7 @@ import {
 export const metadata: Metadata = {
   title: "Home",
   description:
-    "Dr. Winnie's Foundation empowers girls in Ghana through menstrual health education, mental wellness programs, and career development. Donate, volunteer, or partner with us today.",
+    "Dr. Wynette's Foundation empowers girls in Ghana through menstrual health education, mental wellness programs, and career development. Donate, volunteer, or partner with us today.",
 };
 
 export default function HomePage() {
@@ -108,7 +108,7 @@ export default function HomePage() {
               <SectionHeading
                 eyebrow="About Us"
                 title="Building Confident, Capable Leaders"
-                description="Dr. Winnie's Foundation meets girls where they are — with health education, emotional support, and career opportunities designed to work together. We believe dignity, not charity, is the foundation of lasting change."
+                description="Dr. Wynette's Foundation meets girls where they are — with health education, emotional support, and career opportunities designed to work together. We believe dignity, not charity, is the foundation of lasting change."
               />
               <p className="mt-4 text-[#1E1E1E]/75 leading-relaxed">
                 From dignity kit distributions to mentorship circles and STEM

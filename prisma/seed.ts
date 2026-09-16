@@ -10,7 +10,7 @@ const adapter = new PrismaNeonHttp(process.env.DATABASE_URL!, {
 const prisma = new PrismaClient({ adapter });
 
 async function main() {
-  const email = process.env.ADMIN_SEED_EMAIL || "admin@drwinniesfoundation.org";
+  const email = process.env.ADMIN_SEED_EMAIL || "admin@drwynettesfoundation.org";
   const password = process.env.ADMIN_SEED_PASSWORD || "ChangeMe123!";
   const name = process.env.ADMIN_SEED_NAME || "Site Admin";
 
@@ -38,11 +38,11 @@ async function main() {
     update: {},
     create: {
       id: "default",
-      siteName: "Dr. Winnie's Foundation",
+      siteName: "Dr. Wynette's Foundation",
       tagline: "Empowering girls through health, wellness, and opportunity",
       description:
-        "Dr. Winnie's Foundation supports young women and girls in Ghana through menstrual health education, mental wellness programs, and career development initiatives.",
-      email: "info@drwinniesfoundation.org",
+        "Dr. Wynette's Foundation supports young women and girls in Ghana through menstrual health education, mental wellness programs, and career development initiatives.",
+      email: "info@drwynettesfoundation.org",
       phone: "+233 24 XXX XXXX",
       whatsapp: "+233 24 XXX XXXX",
       whatsappLink: "https://wa.me/23324XXXXXXX",
@@ -61,16 +61,16 @@ async function main() {
       announcementHref: "/projects/1000-girl-project",
       announcementActive: true,
       socialLinks: [
-        { platform: "facebook", label: "Facebook", href: "https://facebook.com/drwinniesfoundation" },
-        { platform: "instagram", label: "Instagram", href: "https://instagram.com/drwinniesfoundation" },
-        { platform: "twitter", label: "X (Twitter)", href: "https://twitter.com/drwinniesfoundation" },
-        { platform: "linkedin", label: "LinkedIn", href: "https://linkedin.com/company/drwinniesfoundation" },
-        { platform: "youtube", label: "YouTube", href: "https://youtube.com/@drwinniesfoundation" },
+        { platform: "facebook", label: "Facebook", href: "https://facebook.com/drwynettesfoundation" },
+        { platform: "instagram", label: "Instagram", href: "https://instagram.com/drwynettesfoundation" },
+        { platform: "twitter", label: "X (Twitter)", href: "https://twitter.com/drwynettesfoundation" },
+        { platform: "linkedin", label: "LinkedIn", href: "https://linkedin.com/company/drwynettesfoundation" },
+        { platform: "youtube", label: "YouTube", href: "https://youtube.com/@drwynettesfoundation" },
       ],
       heroHeadline:
         "Empowering Communities Through Health Education, Menstrual Dignity and Youth Development.",
       heroSupporting:
-        "Dr. Winnie's Foundation is committed to improving lives through menstrual health education, mental health awareness, career development, and community outreach.",
+        "Dr. Wynette's Foundation is committed to improving lives through menstrual health education, mental health awareness, career development, and community outreach.",
       heroImageUrl:
         "https://images.unsplash.com/photo-1523050854058-8df90110c9f1?w=1600&q=80",
       aboutPreview:
@@ -267,7 +267,7 @@ async function main() {
       id: "seed-founder",
       name: "Dr. Wynette Mensah",
       role: "Founder & Executive Director",
-      bio: "Dr. Wynette Mensah founded Dr. Winnie's Foundation to create dignity-centered programs addressing health, wellness, and career pathways for girls in Ghana. (Illustrative public-facing bio.)",
+      bio: "Dr. Wynette Mensah founded Dr. Wynette's Foundation to create dignity-centered programs addressing health, wellness, and career pathways for girls in Ghana. (Illustrative public-facing bio.)",
       imageUrl:
         "https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e?w=600&q=80",
       isFounder: true,

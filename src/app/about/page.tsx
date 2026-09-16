@@ -25,7 +25,7 @@ import {
 export const metadata: Metadata = {
   title: "About Us",
   description:
-    "Learn about Dr. Winnie's Foundation — our story, vision, mission, values, and the team working to empower girls across Ghana.",
+    "Learn about Dr. Wynette's Foundation — our story, vision, mission, values, and the team working to empower girls across Ghana.",
 };
 
 const valueIconMap = {
@@ -43,7 +43,7 @@ export default function AboutPage() {
   return (
     <>
       <PageHero
-        title="About Dr. Winnie's Foundation"
+        title="About Dr. Wynette's Foundation"
         description="Rooted in dignity, driven by community, and committed to every girl's right to health, wellness, and opportunity."
         backgroundImage={images.hero.about}
         breadcrumbs={[{ label: "Home", href: "/" }, { label: "About" }]}
