@@ -10,26 +10,13 @@ import {
   PartnerLogo,
   SectionHeading,
 } from "@/components";
-import { projects } from "@/content";
-import {
-  getPublicProjectBySlug,
-  getPublicProjects,
-} from "@/lib/public-projects";
+import { getPublicProjectBySlug } from "@/lib/public-projects";
 
 interface ProjectDetailPageProps {
   params: Promise<{ slug: string }>;
 }
 
 export const dynamic = "force-dynamic";
-
-export async function generateStaticParams() {
-  const cmsProjects = await getPublicProjects();
-  const slugs = new Set([
-    ...cmsProjects.map((project) => project.slug),
-    ...projects.map((project) => project.slug),
-  ]);
-  return [...slugs].map((slug) => ({ slug }));
-}
 
 export async function generateMetadata({
   params,

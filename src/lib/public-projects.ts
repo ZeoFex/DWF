@@ -24,11 +24,6 @@ function mapStatus(status: DbProject["status"]): ProjectStatus {
   }
 }
 
-function asStringArray(value: unknown): string[] {
-  if (!Array.isArray(value)) return [];
-  return value.filter((item): item is string => typeof item === "string");
-}
-
 function asMilestones(value: unknown): { date: string; label: string }[] {
   if (!Array.isArray(value)) return [];
   return value
