@@ -15,12 +15,11 @@ import {
   SectionHeading,
   TeamCard,
 } from "@/components";
-import {
-  getFounder,
-  getTeamMembers,
-  images,
-  valuesData,
-} from "@/content";
+import { images, valuesData } from "@/content";
+import { getPublishedTeamMembers } from "@/lib/cms";
+import type { TeamMember } from "@/types";
+
+export const dynamic = "force-dynamic";
 
 export const metadata: Metadata = {
   title: "About Us",
@@ -36,9 +35,28 @@ const valueIconMap = {
   education: BookOpen,
 } as const;
 
-export default function AboutPage() {
-  const founder = getFounder();
-  const team = getTeamMembers();
+function mapTeamMember(
+  member: Awaited<ReturnType<typeof getPublishedTeamMembers>>[number]
+): TeamMember {
+  return {
+    id: member.id,
+    name: member.name,
+    role: member.role,
+    bio: member.bio,
+    imageUrl:
+      member.imageUrl ||
+      `https://ui-avatars.com/api/?name=${encodeURIComponent(member.name)}&background=46A0DC&color=fff&size=600`,
+    email: member.email ?? undefined,
+    isFounder: member.isFounder,
+    isIllustrative: true,
+  };
+}
+
+export default async function AboutPage() {
+  const dbMembers = await getPublishedTeamMembers();
+  const members = dbMembers.map(mapTeamMember);
+  const founder = members.find((member) => member.isFounder);
+  const team = members.filter((member) => !member.isFounder);
 
   return (
     <>
@@ -212,13 +230,19 @@ export default function AboutPage() {
             align="center"
             className="mb-12"
           />
-          <ul className="grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
-            {team.map((member) => (
-              <li key={member.id}>
-                <TeamCard member={member} />
-              </li>
-            ))}
-          </ul>
+          {team.length === 0 ? (
+            <p className="text-center text-sm text-[#1E1E1E]/55">
+              Team profiles will appear here once published in the CMS.
+            </p>
+          ) : (
+            <ul className="grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
+              {team.map((member) => (
+                <li key={member.id}>
+                  <TeamCard member={member} />
+                </li>
+              ))}
+            </ul>
+          )}
         </Container>
       </section>
 
