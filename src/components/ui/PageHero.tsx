@@ -9,6 +9,8 @@ interface PageHeroProps {
   breadcrumbs?: BreadcrumbItem[];
   backgroundImage?: string;
   className?: string;
+  /** Wider justified body copy for long descriptions */
+  longDescription?: boolean;
 }
 
 export function PageHero({
@@ -17,6 +19,7 @@ export function PageHero({
   breadcrumbs,
   backgroundImage,
   className,
+  longDescription = false,
 }: PageHeroProps) {
   return (
     <section
@@ -53,7 +56,14 @@ export function PageHero({
           {title}
         </h1>
         {description && (
-          <p className="mt-4 max-w-2xl text-lg leading-relaxed text-white/90 sm:text-xl">
+          <p
+            className={cn(
+              "mt-4 leading-relaxed text-white/90",
+              longDescription
+                ? "max-w-3xl text-base text-pretty sm:text-lg sm:text-justify"
+                : "max-w-2xl text-lg sm:text-xl"
+            )}
+          >
             {description}
           </p>
         )}

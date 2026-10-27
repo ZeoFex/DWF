@@ -148,7 +148,10 @@ export function ProjectForm({ project }: ProjectFormProps) {
         <AdminField label="Impact points" hint="One per line">
           <AdminTextarea name="impact" defaultValue={joinJsonArray(project?.impact ?? [])} rows={3} />
         </AdminField>
-        <AdminField label="Gallery URLs" hint="One per line">
+        <AdminField
+          label="Gallery URLs"
+          hint="One per line. Use direct image URLs (Cloudinary) for thumbnails, or a Google Drive folder link for a “View Photo Gallery” button."
+        >
           <AdminTextarea name="galleryUrls" defaultValue={joinJsonArray(project?.galleryUrls ?? [])} rows={3} />
         </AdminField>
       </AdminForm>

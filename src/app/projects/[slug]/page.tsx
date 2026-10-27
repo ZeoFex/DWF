@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Image from "next/image";
 import { notFound } from "next/navigation";
+import { ExternalLink, Images } from "lucide-react";
 import {
   Button,
   CampaignProgress,
@@ -11,6 +12,28 @@ import {
   SectionHeading,
 } from "@/components";
 import { getPublicProjectBySlug } from "@/lib/public-projects";
+
+function isExternalGalleryLink(url: string): boolean {
+  try {
+    const host = new URL(url).hostname;
+    return (
+      host.includes("drive.google.com") ||
+      host.includes("docs.google.com") ||
+      host.includes("dropbox.com") ||
+      host.includes("onedrive.live.com") ||
+      host.includes("sharepoint.com") ||
+      host.includes("flickr.com") ||
+      host.includes("photos.app.goo.gl")
+    );
+  } catch {
+    return false;
+  }
+}
+
+function isLikelyImageUrl(url: string): boolean {
+  if (isExternalGalleryLink(url)) return false;
+  return /\.(jpe?g|png|webp|gif|avif)(\?|$)/i.test(url) || url.includes("res.cloudinary.com") || url.includes("images.unsplash.com");
+}
 
 interface ProjectDetailPageProps {
   params: Promise<{ slug: string }>;
@@ -63,12 +86,16 @@ export default async function ProjectDetailPage({
     project.goal != null &&
     project.raised != null;
 
+  const galleryLinks = project.galleryImageUrls.filter(isExternalGalleryLink);
+  const galleryImages = project.galleryImageUrls.filter(isLikelyImageUrl);
+
   return (
     <>
       <PageHero
         title={project.title}
         description={project.shortDescription}
         backgroundImage={project.heroImageUrl}
+        longDescription={project.shortDescription.length > 160}
         breadcrumbs={[
           { label: "Home", href: "/" },
           { label: "Projects", href: "/projects" },
@@ -278,30 +305,55 @@ export default async function ProjectDetailPage({
       )}
 
       {/* Gallery */}
-      {project.galleryImageUrls.length > 0 && (
+      {(galleryLinks.length > 0 || galleryImages.length > 0) && (
         <section className="bg-[#F5FAFE] py-16 sm:py-20">
           <Container>
-            <SectionHeading title="Project Gallery" className="mb-10" />
-            <ul className="grid grid-cols-2 gap-3 sm:grid-cols-3 lg:gap-4">
-              {project.galleryImageUrls.map((url, index) => (
-                <li
-                  key={url}
-                  className="relative aspect-square overflow-hidden rounded-2xl"
-                >
-                  <Image
-                    src={url}
-                    alt={`${project.title} photo ${index + 1}`}
-                    fill
-                    className="object-cover"
-                    sizes="(max-width: 768px) 50vw, 33vw"
-                    unoptimized={
-                      url.includes("drive.google.com") ||
-                      url.includes("googleusercontent.com")
-                    }
-                  />
-                </li>
-              ))}
-            </ul>
+            <SectionHeading
+              title="Project Gallery"
+              description={
+                galleryLinks.length > 0
+                  ? "Browse photos from this project in the shared gallery album."
+                  : undefined
+              }
+              className="mb-10"
+            />
+            {galleryLinks.length > 0 && (
+              <div className="mb-8 flex flex-wrap gap-3">
+                {galleryLinks.map((url, index) => (
+                  <a
+                    key={url}
+                    href={url}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center gap-2 rounded-xl bg-[#46A0DC] px-5 py-3 text-sm font-semibold text-white shadow-sm transition-colors hover:bg-[#368FC8]"
+                  >
+                    <Images className="h-4 w-4" aria-hidden />
+                    {galleryLinks.length === 1
+                      ? "View Photo Gallery"
+                      : `View Gallery ${index + 1}`}
+                    <ExternalLink className="h-3.5 w-3.5 opacity-90" aria-hidden />
+                  </a>
+                ))}
+              </div>
+            )}
+            {galleryImages.length > 0 && (
+              <ul className="grid grid-cols-2 gap-3 sm:grid-cols-3 lg:gap-4">
+                {galleryImages.map((url, index) => (
+                  <li
+                    key={url}
+                    className="relative aspect-square overflow-hidden rounded-2xl"
+                  >
+                    <Image
+                      src={url}
+                      alt={`${project.title} photo ${index + 1}`}
+                      fill
+                      className="object-cover"
+                      sizes="(max-width: 768px) 50vw, 33vw"
+                    />
+                  </li>
+                ))}
+              </ul>
+            )}
           </Container>
         </section>
       )}

@@ -107,18 +107,13 @@ export function mapDbProjectToPublic(project: DbProject): Project {
         : fallback?.activities ?? [],
     impact:
       project.impact.length > 0 ? project.impact : fallback?.impact ?? [],
-    sponsors:
-      asSponsors(project.sponsors).length > 0
-        ? asSponsors(project.sponsors)
-        : fallback?.sponsors ?? [],
+    // Trust CMS empty arrays — do not reinject static placeholder sponsors/gallery
+    sponsors: asSponsors(project.sponsors),
     updates:
       asUpdates(project.updates).length > 0
         ? asUpdates(project.updates)
         : fallback?.updates ?? [],
-    galleryImageUrls:
-      project.galleryUrls.length > 0
-        ? project.galleryUrls
-        : fallback?.galleryImageUrls ?? [],
+    galleryImageUrls: project.galleryUrls,
     heroImageUrl:
       project.heroImageUrl ||
       fallback?.heroImageUrl ||
