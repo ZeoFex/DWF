@@ -10,21 +10,32 @@ import {
   PartnerLogo,
   SectionHeading,
 } from "@/components";
-import { getProjectBySlug, projects } from "@/content";
+import { projects } from "@/content";
+import {
+  getPublicProjectBySlug,
+  getPublicProjects,
+} from "@/lib/public-projects";
 
 interface ProjectDetailPageProps {
   params: Promise<{ slug: string }>;
 }
 
+export const dynamic = "force-dynamic";
+
 export async function generateStaticParams() {
-  return projects.map((project) => ({ slug: project.slug }));
+  const cmsProjects = await getPublicProjects();
+  const slugs = new Set([
+    ...cmsProjects.map((project) => project.slug),
+    ...projects.map((project) => project.slug),
+  ]);
+  return [...slugs].map((slug) => ({ slug }));
 }
 
 export async function generateMetadata({
   params,
 }: ProjectDetailPageProps): Promise<Metadata> {
   const { slug } = await params;
-  const project = getProjectBySlug(slug);
+  const project = await getPublicProjectBySlug(slug);
 
   if (!project) {
     return { title: "Project Not Found" };
@@ -54,7 +65,7 @@ export default async function ProjectDetailPage({
   params,
 }: ProjectDetailPageProps) {
   const { slug } = await params;
-  const project = getProjectBySlug(slug);
+  const project = await getPublicProjectBySlug(slug);
 
   if (!project) {
     notFound();
@@ -193,30 +204,32 @@ export default async function ProjectDetailPage({
       </section>
 
       {/* Timeline / Milestones */}
-      <section className="py-16 sm:py-20">
-        <Container>
-          <SectionHeading title="Project Milestones" className="mb-10" />
-          <ol className="relative space-y-6 border-l-2 border-[#46A0DC]/20 pl-8">
-            {project.timeline.milestones.map((milestone) => (
-              <li key={milestone.date} className="relative">
-                <span
-                  className="absolute -left-[2.125rem] top-1 h-3 w-3 rounded-full border-2 border-[#46A0DC] bg-white"
-                  aria-hidden="true"
-                />
-                <time
-                  dateTime={milestone.date}
-                  className="text-sm font-semibold text-[#782882]"
-                >
-                  {formatDate(milestone.date)}
-                </time>
-                <p className="mt-1 font-medium text-[#1E1E1E]">
-                  {milestone.label}
-                </p>
-              </li>
-            ))}
-          </ol>
-        </Container>
-      </section>
+      {project.timeline.milestones.length > 0 && (
+        <section className="py-16 sm:py-20">
+          <Container>
+            <SectionHeading title="Project Milestones" className="mb-10" />
+            <ol className="relative space-y-6 border-l-2 border-[#46A0DC]/20 pl-8">
+              {project.timeline.milestones.map((milestone) => (
+                <li key={milestone.date} className="relative">
+                  <span
+                    className="absolute -left-[2.125rem] top-1 h-3 w-3 rounded-full border-2 border-[#46A0DC] bg-white"
+                    aria-hidden="true"
+                  />
+                  <time
+                    dateTime={milestone.date}
+                    className="text-sm font-semibold text-[#782882]"
+                  >
+                    {formatDate(milestone.date)}
+                  </time>
+                  <p className="mt-1 font-medium text-[#1E1E1E]">
+                    {milestone.label}
+                  </p>
+                </li>
+              ))}
+            </ol>
+          </Container>
+        </section>
+      )}
 
       {/* Updates */}
       {project.updates.length > 0 && (
@@ -278,27 +291,33 @@ export default async function ProjectDetailPage({
       )}
 
       {/* Gallery */}
-      <section className="bg-[#F5FAFE] py-16 sm:py-20">
-        <Container>
-          <SectionHeading title="Project Gallery" className="mb-10" />
-          <ul className="grid grid-cols-2 gap-3 sm:grid-cols-3 lg:gap-4">
-            {project.galleryImageUrls.map((url, index) => (
-              <li
-                key={url}
-                className="relative aspect-square overflow-hidden rounded-2xl"
-              >
-                <Image
-                  src={url}
-                  alt={`${project.title} photo ${index + 1}`}
-                  fill
-                  className="object-cover"
-                  sizes="(max-width: 768px) 50vw, 33vw"
-                />
-              </li>
-            ))}
-          </ul>
-        </Container>
-      </section>
+      {project.galleryImageUrls.length > 0 && (
+        <section className="bg-[#F5FAFE] py-16 sm:py-20">
+          <Container>
+            <SectionHeading title="Project Gallery" className="mb-10" />
+            <ul className="grid grid-cols-2 gap-3 sm:grid-cols-3 lg:gap-4">
+              {project.galleryImageUrls.map((url, index) => (
+                <li
+                  key={url}
+                  className="relative aspect-square overflow-hidden rounded-2xl"
+                >
+                  <Image
+                    src={url}
+                    alt={`${project.title} photo ${index + 1}`}
+                    fill
+                    className="object-cover"
+                    sizes="(max-width: 768px) 50vw, 33vw"
+                    unoptimized={
+                      url.includes("drive.google.com") ||
+                      url.includes("googleusercontent.com")
+                    }
+                  />
+                </li>
+              ))}
+            </ul>
+          </Container>
+        </section>
+      )}
 
       <CtaSection
         title={`Support ${project.title}`}

@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Container, PageHero, SectionHeading } from "@/components";
-import { images, projects } from "@/content";
+import { images } from "@/content";
+import { getPublicProjects } from "@/lib/public-projects";
 import { ProjectsFilter } from "./ProjectsFilter";
 
 export const metadata: Metadata = {
@@ -9,7 +10,11 @@ export const metadata: Metadata = {
     "Explore active, upcoming, and completed projects from Dr. Wynette's Foundation — including the flagship 1000 Girl Project.",
 };
 
-export default function ProjectsPage() {
+export const dynamic = "force-dynamic";
+
+export default async function ProjectsPage() {
+  const projects = await getPublicProjects();
+
   return (
     <>
       <PageHero

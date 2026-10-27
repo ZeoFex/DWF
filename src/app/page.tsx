@@ -16,7 +16,6 @@ import {
   TestimonialsSection,
 } from "@/components";
 import {
-  getFeaturedProject,
   getLatestPosts,
   images,
   impactData,
@@ -24,6 +23,7 @@ import {
   programs,
   siteConfig,
 } from "@/content";
+import { getPublicFeaturedProject } from "@/lib/public-projects";
 
 export const metadata: Metadata = {
   title: "Home",
@@ -31,8 +31,10 @@ export const metadata: Metadata = {
     "Dr. Wynette's Foundation empowers girls in Ghana through menstrual health education, mental wellness programs, and career development. Donate, volunteer, or partner with us today.",
 };
 
-export default function HomePage() {
-  const featuredProject = getFeaturedProject();
+export const dynamic = "force-dynamic";
+
+export default async function HomePage() {
+  const featuredProject = await getPublicFeaturedProject();
   const latestPosts = getLatestPosts(3);
   const featuredStory = impactData.successStories[0];
 
