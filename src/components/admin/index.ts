@@ -6,6 +6,7 @@ export { ConfirmButton } from "./ConfirmButton";
 export { DataTable } from "./DataTable";
 export type { DataTableColumn } from "./DataTable";
 export { EmptyAdminState } from "./EmptyAdminState";
+export { GalleryUrlsField } from "./GalleryUrlsField";
 export { MediaDropField } from "./MediaDropField";
 export { PageHeader } from "./PageHeader";
 export { StatCard } from "./StatCard";

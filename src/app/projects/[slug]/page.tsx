@@ -1,5 +1,4 @@
 import type { Metadata } from "next";
-import Image from "next/image";
 import { notFound } from "next/navigation";
 import { ExternalLink, Images } from "lucide-react";
 import {
@@ -7,6 +6,7 @@ import {
   CampaignProgress,
   Container,
   CtaSection,
+  ImageSlideshow,
   PageHero,
   PartnerLogo,
   SectionHeading,
@@ -337,22 +337,12 @@ export default async function ProjectDetailPage({
               </div>
             )}
             {galleryImages.length > 0 && (
-              <ul className="grid grid-cols-2 gap-3 sm:grid-cols-3 lg:gap-4">
-                {galleryImages.map((url, index) => (
-                  <li
-                    key={url}
-                    className="relative aspect-square overflow-hidden rounded-2xl"
-                  >
-                    <Image
-                      src={url}
-                      alt={`${project.title} photo ${index + 1}`}
-                      fill
-                      className="object-cover"
-                      sizes="(max-width: 768px) 50vw, 33vw"
-                    />
-                  </li>
-                ))}
-              </ul>
+              <ImageSlideshow
+                images={galleryImages.map((url, index) => ({
+                  url,
+                  alt: `${project.title} photo ${index + 1}`,
+                }))}
+              />
             )}
           </Container>
         </section>

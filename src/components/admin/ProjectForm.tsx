@@ -10,6 +10,7 @@ import {
   AdminSelect,
   AdminTextarea,
   ConfirmButton,
+  GalleryUrlsField,
   MediaDropField,
 } from "@/components/admin";
 import { joinJsonArray, parseJsonArray } from "@/lib/admin-utils";
@@ -148,11 +149,11 @@ export function ProjectForm({ project }: ProjectFormProps) {
         <AdminField label="Impact points" hint="One per line">
           <AdminTextarea name="impact" defaultValue={joinJsonArray(project?.impact ?? [])} rows={3} />
         </AdminField>
-        <AdminField
-          label="Gallery URLs"
-          hint="One per line. Use direct image URLs (Cloudinary) for thumbnails, or a Google Drive folder link for a “View Photo Gallery” button."
-        >
-          <AdminTextarea name="galleryUrls" defaultValue={joinJsonArray(project?.galleryUrls ?? [])} rows={3} />
+        <AdminField label="Project gallery">
+          <GalleryUrlsField
+            defaultUrls={project?.galleryUrls ?? []}
+            folder="projects"
+          />
         </AdminField>
       </AdminForm>
       {!isNew ? (

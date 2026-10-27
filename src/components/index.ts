@@ -18,6 +18,7 @@ export { LoadingState } from "@/components/ui/LoadingState";
 export { ErrorState } from "@/components/ui/ErrorState";
 export { Modal } from "@/components/ui/Modal";
 export { Lightbox } from "@/components/ui/Lightbox";
+export { ImageSlideshow } from "@/components/ui/ImageSlideshow";
 export { CampaignProgress } from "@/components/ui/CampaignProgress";
 export { ImpactCounter } from "@/components/ui/ImpactCounter";
 export { Container } from "@/components/ui/Container";
